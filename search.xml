@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[first one]]></title>
-    <url>%2F2018%2F04%2F15%2Ffirst-one%2F</url>
-    <content type="text"><![CDATA[##第一 ###第二 https://www.baidu.com hehe $\sqrt{a-b}$1int main()]]></content>
+    <title><![CDATA[使用Hexo next搭建博客]]></title>
+    <url>%2F2018%2F04%2F16%2Fsample%2F</url>
+    <content type="text"><![CDATA[1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &lt; /body&gt;之前添加代码 1234&#123;% if theme.canvas_nest %&#125;&lt;script type=&quot;text/javascript&quot;color=&quot;0,0,0&quot; opacity=&apos;0.5&apos; zIndex=&quot;-2&quot; count=&quot;50&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;&#123;% endif %&#125; 配置项说明 color ：线条颜色, 默认: &#39;0,0,0&#39;；三个数字分别为(R,G,B) opacity: 线条透明度（0~1）, 默认: 0.5 count: 线条的总数量, 默认: 150 zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1]]></content>
+      <categories>
+        <category>搭建next主题博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
   </entry>
 </search>
