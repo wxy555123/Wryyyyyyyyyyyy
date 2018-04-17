@@ -3,9 +3,21 @@
   <entry>
     <title><![CDATA[使用Hexo next搭建博客]]></title>
     <url>%2F2018%2F04%2F16%2Fsample%2F</url>
-    <content type="text"><![CDATA[1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &lt; /body&gt;之前添加代码 1234&#123;% if theme.canvas_nest %&#125;&lt;script type=&quot;text/javascript&quot;color=&quot;0,0,0&quot; opacity=&apos;0.5&apos; zIndex=&quot;-2&quot; count=&quot;50&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;&#123;% endif %&#125; 配置项说明 color ：线条颜色, 默认: &#39;0,0,0&#39;；三个数字分别为(R,G,B) opacity: 线条透明度（0~1）, 默认: 0.5 count: 线条的总数量, 默认: 150 zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1]]></content>
+    <content type="text"><![CDATA[1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &lt; /body&gt;之前添加代码 1234&#123;% if theme.canvas_nest %&#125;&lt;script type=&quot;text/javascript&quot;color=&quot;0,0,0&quot; opacity=&apos;0.5&apos; zIndex=&quot;-2&quot; count=&quot;50&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;&#123;% endif %&#125; 配置项说明 color ：线条颜色, 默认: &#39;0,0,0&#39;；三个数字分别为(R,G,B) opacity: 线条透明度（0~1）, 默认: 0.5 count: 线条的总数量, 默认: 150 zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1 2 直接展开文章全部目录搜索打开这个文件：sidebar-toc.styl 把下面的内容注释掉： 1234567//取消逐渐展开，改为直接展开所有TOC//.post-toc .nav .nav-child &#123; display: none; &#125;.post-toc .nav .active &gt; .nav-child &#123; display: block; &#125;.post-toc .nav .active-current &gt; .nav-child &#123; display: block; &amp; &gt; .nav-item &#123; display: block; &#125;&#125; 3 添加文章结束标记在 next\layout_macro\post.swig 中wechat-subscriber.swig 上面加入如下代码： 1234&lt;!-- 添加文章结束标记 --&gt;&#123;% if not is_index %&#125; &lt;div style=&quot;text-align:center;color: #000;font-size:14px;&quot;&gt;----------------- The End -----------------&lt;/div&gt;&#123;% endif %&#125;]]></content>
       <categories>
         <category>搭建next主题博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试]]></title>
+    <url>%2F2018%2F04%2F16%2Ftest%2F</url>
+    <content type="text"><![CDATA[对象字面量与单例以对象字面量(Object Literal)定义的对象本身即为单例： 12345678910111213141516var o1 = &#123; name: &quot;SP1 Object Literal&quot;, getName: function() &#123; return this.name; &#125;&#125;;var o2 = &#123; name: &quot;SP1 Object Literal&quot;, getName: function() &#123; return this.name; &#125;&#125;;// o2的键值与o1完全相同，但他们是不同的对象。console.log(o1 === o2); // false 对象字面量实现单例模式的另外一种形式： 12345678910var o = (function()&#123; var name = &quot;SP2 IIFE Method&quot;; var getName = function() &#123; return this.name; &#125;; return &#123; name: name, getName: getName &#125;;&#125;()); 三级333333333333333333个 构造函数与单例通过 new 操作符调用构造函数创建对象的方式中，实现单例模式的关键点在于： 第一次调用构造函数时，存储创建的实例 后续的调用，直接返回实例 依据这个思路，有三种实现方式。 第一种最为简单，但也是最不可靠的方式：将实例存储在全局变量中。 12345678910111213// 存储实例的全局变量。因为这个全局变量可能被改写，所以此方法不可靠。var o = null;function SingletonPattern3() &#123; if (o) &#123; return o; &#125; this.name = &quot;SP3&quot;; o = this;&#125;var s1 = new SingletonPattern3();var s2 = new SingletonPattern3();console.log(s1 === s2); // true 第二种方法，将实例存储在构造函数的静态属性中。相对第一种方式，此方式显然会比较安全一些，但此构造函数的静态属性仍然存在被修改的可能性。]]></content>
+      <categories>
+        <category>测试</category>
       </categories>
       <tags>
         <tag>hexo</tag>

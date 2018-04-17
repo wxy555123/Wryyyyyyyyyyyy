@@ -445,7 +445,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 990px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -457,7 +457,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 990px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -474,7 +474,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 990px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #208605;
+  background: #ff4766;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1922,9 +1922,6 @@ pre .javascript .function {
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: 1.8;
-}
-.post-toc .nav .nav-child {
-  display: none;
 }
 .post-toc .nav .active > .nav-child {
   display: block;
@@ -2499,7 +2496,7 @@ ul.breadcrumb li+li:last-child {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 1230px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2559,7 +2556,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 .container .main-inner {
-  width: 960px;
+  width: 1230px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2575,7 +2572,7 @@ ul.breadcrumb li+li:last-child {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 700px;
+  width: 990px;
   background: #fff;
   min-height: 700px;
   box-shadow: initial;
@@ -2618,7 +2615,7 @@ ul.breadcrumb li+li:last-child {
   display: none;
 }
 .footer-inner {
-  width: 960px;
+  width: 1230px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2945,4 +2942,11 @@ ul.breadcrumb li+li:last-child {
   .post-body {
     text-align: justify;
   }
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 2px 0 0 rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 2px 0 0 rgba(202,203,204,0.5);
 }
