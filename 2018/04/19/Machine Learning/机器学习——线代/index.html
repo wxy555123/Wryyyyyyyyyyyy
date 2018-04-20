@@ -118,20 +118,31 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="新日暮里的幻想乡">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="行列式1 矩阵的行列式和他的转置的行列式相等 向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身 投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：b在a上的投影 = $\frac {a^T b} {|">
+<meta name="keywords" content="机器学习,数学,线代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行列式、向量、矩阵范数">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/Machine Learning/机器学习——线代/index.html">
 <meta property="og:site_name" content="新日暮里的幻想乡">
+<meta property="og:description" content="行列式1 矩阵的行列式和他的转置的行列式相等 向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身 投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：b在a上的投影 = $\frac {a^T b} {|">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-19-52-26.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-19-56-23.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-19-56-55.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-19-57-09.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-20-32-56.png">
+<meta property="og:updated_time" content="2018-04-20T12:33:08.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新日暮里的幻想乡">
+<meta name="twitter:title" content="行列式、向量、矩阵范数">
+<meta name="twitter:description" content="行列式1 矩阵的行列式和他的转置的行列式相等 向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身 投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：b在a上的投影 = $\frac {a^T b} {|">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/19/Machine%20Learning/机器学习——线代/2018-04-20-19-52-26.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/Machine Learning/机器学习——线代/"/>
 
 
 
@@ -141,7 +152,7 @@
   };
 </script>
 
-  <title>归档 | 新日暮里的幻想乡</title>
+  <title>行列式、向量、矩阵范数 | 新日暮里的幻想乡</title>
   
 
 
@@ -198,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,7 +273,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -334,328 +345,264 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/Machine Learning/机器学习——线代/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wxy555123">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新日暮里的幻想乡">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">行列式、向量、矩阵范数
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-04-19 00:51:27" itemprop="dateCreated datePublished" datetime="2018-04-19T00:51:27+08:00">2018-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-04-20 20:33:08" itemprop="dateModified" datetime="2018-04-20T20:33:08+08:00">2018-04-20</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习基础/" itemprop="url" rel="index"><span itemprop="name">机器学习基础</span></a></span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习基础/线代/" itemprop="url" rel="index"><span itemprop="name">线代</span></a></span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/19/Machine Learning/机器学习——线代/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/19/Machine Learning/机器学习——线代/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/19/Numpy/Numpy常用函数/" itemprop="url">
-              
-                <span itemprop="name">Numpy常用函数</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T12:49:42+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/19/Pandas/Pandas常用功能/" itemprop="url">
-              
-                <span itemprop="name">Pandas常用功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T12:49:42+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/19/Machine Learning/机器学习——线代/" itemprop="url">
-              
-                <span itemprop="name">行列式、向量、矩阵范数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T00:51:27+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/19/OTHERS/备忘记录/" itemprop="url">
-              
-                <span itemprop="name">备忘记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T00:51:27+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/19/Python/Python常用功能/" itemprop="url">
-              
-                <span itemprop="name">Python常用功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T00:51:27+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>1 矩阵的行列式和他的转置的行列式相等</p>
+<h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><h3 id="向量内积-和-投影"><a href="#向量内积-和-投影" class="headerlink" title="向量内积 和 投影"></a>向量内积 和 投影</h3><p><img src="/2018/04/19/Machine Learning/机器学习——线代/2018-04-20-19-52-26.png" alt=""><br>内积：<br>1用点乘：a•b<br>2用转置乘：a^T b<br>3向量的模是范数的一种<br>4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身</p>
+<p>投影：<br>1 b在a上的投影 = |b|cosθ<br>2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；<br>3 由2又有：b在a上的投影 = $\frac {a^T b} {||a||}$ ★</p>
+<h3 id="向量外积"><a href="#向量外积" class="headerlink" title="向量外积"></a>向量外积</h3><h3 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h3><ul>
+<li>向量范数的定义和性质：</li>
+</ul>
+<p><img src="/2018/04/19/Machine Learning/机器学习——线代/2018-04-20-19-56-23.png" alt=""><br>齐次性：数乘以后会放大相应的倍数</p>
+<ul>
+<li>1-范数、2-范数、无穷范数：</li>
+</ul>
+<p><img src="/2018/04/19/Machine Learning/机器学习——线代/2018-04-20-19-56-55.png" alt=""></p>
+<ul>
+<li>稀疏性 和 0-范数：</li>
+</ul>
+<p><img src="/2018/04/19/Machine Learning/机器学习——线代/2018-04-20-19-57-09.png" alt=""><br><img src="/2018/04/19/Machine Learning/机器学习——线代/2018-04-20-20-32-56.png" alt=""></p>
+<h2 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h2>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/16/Hexo/Hexo Next优化&踩坑/" itemprop="url">
-              
-                <span itemprop="name">Hexo Next优化&踩坑</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-16T00:00:00+08:00"
-              content="2018-04-16" >
-          04-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/16/Hexo/MathJax数学公式语法/" itemprop="url">
-              
-                <span itemprop="name">MathJax数学公式语法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-16T00:00:00+08:00"
-              content="2018-04-16" >
-          04-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+	
+	<!-- 添加文章结束标记 -->
+	
+		<br/>
+		<div style="text-align:center;color: #000;font-size:14px;">꧁༺The༒End༻꧂</div>
+		<br/>
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/线代/" rel="tag"><i class="fa fa-tag"></i> 线代</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/OTHERS/备忘记录/" rel="next" title="备忘记录">
+                <i class="fa fa-chevron-left"></i> 备忘记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/19/Pandas/Pandas常用功能/" rel="prev" title="Pandas常用功能">
+                Pandas常用功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -676,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -781,6 +737,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量内积-和-投影"><span class="nav-text">向量内积 和 投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量外积"><span class="nav-text">向量外积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量范数"><span class="nav-text">向量范数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵范数"><span class="nav-text">矩阵范数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -936,6 +908,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
@@ -950,6 +926,23 @@
     <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/04/19/Machine Learning/机器学习——线代/';
+        this.page.identifier = '2018/04/19/Machine Learning/机器学习——线代/';
+        this.page.title = '行列式、向量、矩阵范数';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1317,6 +1310,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
