@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="新日暮里的幻想乡">
 <meta property="og:description" content="一、界面 篇1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &amp;lt; /body&amp;gt;之前添加代码 1234&amp;#123;% if theme.canvas_nest %&amp;#125;&amp;lt;script type=&amp;quot;tex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-21T06:31:29.148Z">
+<meta property="og:updated_time" content="2018-04-21T10:13:23.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Next优化&amp;踩坑">
 <meta name="twitter:description" content="一、界面 篇1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &amp;lt; /body&amp;gt;之前添加代码 1234&amp;#123;% if theme.canvas_nest %&amp;#125;&amp;lt;script type=&amp;quot;tex">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-21 14:31:29" itemprop="dateModified" datetime="2018-04-21T14:31:29+08:00">2018-04-21</time>
+                <time title="更新于：2018-04-21 18:13:23" itemprop="dateModified" datetime="2018-04-21T18:13:23+08:00">2018-04-21</time>
               
             
           </span>
@@ -532,10 +532,14 @@
 <p>（注：中间的命令可以用哦个首字母简写）</p>
 </li>
 </ul>
-<h2 id="2-修改Hexo生成文件模版"><a href="#2-修改Hexo生成文件模版" class="headerlink" title="2 修改Hexo生成文件模版"></a>2 修改Hexo生成文件模版</h2><p>可在根目录 scaffolds 文件夹下修改3类文章模版</p>
-<h2 id="3-添加创建文件后，用atom自动打开脚本"><a href="#3-添加创建文件后，用atom自动打开脚本" class="headerlink" title="3 添加创建文件后，用atom自动打开脚本"></a>3 添加创建文件后，用atom自动打开脚本</h2><p>在根目录下新建 scripts 文件夹，里面新建 js 文件 名字随意，代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">"child_process"</span>).exec;</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">"new"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">	exec(<span class="string">"atom.exe "</span> + [data.path]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>以后每次执行 hexo n 新建文件后都会自动运行 Typora 打开编辑</p>
+<h2 id="2-Git命令"><a href="#2-Git命令" class="headerlink" title="2 Git命令"></a>2 Git命令</h2><ul>
+<li>清空你的 github.io 仓库项目中所有文件<br>进入到.deploy_git 文件夹下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -rf *</span><br><span class="line">git commit -m &apos;clean all file&apos;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-修改Hexo生成文件模版"><a href="#3-修改Hexo生成文件模版" class="headerlink" title="3 修改Hexo生成文件模版"></a>3 修改Hexo生成文件模版</h2><p>可在根目录 scaffolds 文件夹下修改3类文章模版</p>
+<h2 id="4-添加创建文件后，用vscode自动打开脚本"><a href="#4-添加创建文件后，用vscode自动打开脚本" class="headerlink" title="4 添加创建文件后，用vscode自动打开脚本"></a>4 添加创建文件后，用vscode自动打开脚本</h2><p>在根目录下新建 scripts 文件夹，里面新建 js 文件 名字随意，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">"child_process"</span>).exec;</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">"new"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">	exec(<span class="string">"Code.exe "</span> + [data.path]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以后每次执行 hexo n 新建文件后都会自动运行 vscode 打开编辑</p>
 
       
     </div>
@@ -570,18 +574,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/Hexo/MathJax数学公式语法/" rel="next" title="MathJax数学公式语法">
-                <i class="fa fa-chevron-left"></i> MathJax数学公式语法
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/Python/Python常用功能/" rel="prev" title="Python常用功能">
-                Python常用功能 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/Hexo/MathJax数学公式语法/" rel="prev" title="MathJax数学公式语法">
+                MathJax数学公式语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -795,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、界面-篇"><span class="nav-text">一、界面 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-添加动态背景"><span class="nav-text">1 添加动态背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-layout-swig"><span class="nav-text">修改_layout.swig</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置项说明"><span class="nav-text">配置项说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-直接展开文章全部目录"><span class="nav-text">2 直接展开文章全部目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文章结束标记"><span class="nav-text">3 添加文章结束标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实现主页文章预览效果"><span class="nav-text">4 实现主页文章预览效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加MathJax数学公式支持"><span class="nav-text">5 添加MathJax数学公式支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题中开启mathjax开关"><span class="nav-text">在主题中开启mathjax开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换Hexo的markdown渲染引擎"><span class="nav-text">更换Hexo的markdown渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-调整页面CSS布局"><span class="nav-text">6 调整页面CSS布局</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、操作-篇"><span class="nav-text">二、操作 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hexo命令"><span class="nav-text">1 Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改Hexo生成文件模版"><span class="nav-text">2 修改Hexo生成文件模版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加创建文件后，用atom自动打开脚本"><span class="nav-text">3 添加创建文件后，用atom自动打开脚本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、界面-篇"><span class="nav-text">一、界面 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-添加动态背景"><span class="nav-text">1 添加动态背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-layout-swig"><span class="nav-text">修改_layout.swig</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置项说明"><span class="nav-text">配置项说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-直接展开文章全部目录"><span class="nav-text">2 直接展开文章全部目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文章结束标记"><span class="nav-text">3 添加文章结束标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实现主页文章预览效果"><span class="nav-text">4 实现主页文章预览效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加MathJax数学公式支持"><span class="nav-text">5 添加MathJax数学公式支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题中开启mathjax开关"><span class="nav-text">在主题中开启mathjax开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换Hexo的markdown渲染引擎"><span class="nav-text">更换Hexo的markdown渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-调整页面CSS布局"><span class="nav-text">6 调整页面CSS布局</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、操作-篇"><span class="nav-text">二、操作 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hexo命令"><span class="nav-text">1 Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Git命令"><span class="nav-text">2 Git命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改Hexo生成文件模版"><span class="nav-text">3 修改Hexo生成文件模版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-添加创建文件后，用vscode自动打开脚本"><span class="nav-text">4 添加创建文件后，用vscode自动打开脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1005,7 +1005,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.date,
+            id: '1523808000000',
             owner: 'wxy555123',
             repo: 'wxy555123.github.io',
             
