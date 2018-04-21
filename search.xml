@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Numpy常用函数]]></title>
+    <url>%2F2018%2F04%2F19%2FNumpy%2FNumpy%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[Numpynp.matrix()：矩阵标准写法1234567891011&gt;&gt;&gt; a = np.matrix('1 2 7; 3 4 8; 5 6 9') #单行写法&gt;&gt;&gt; a #矩阵的换行必须是用分号(;)隔开，内部数据必须为字符串形式(“ ”)，矩matrix([[1, 2, 7], #阵的元素之间必须以空格隔开。[3, 4, 8],[5, 6, 9]])&gt;&gt;&gt; b=np.array([[1,5],[3,2]])&gt;&gt;&gt; x=np.matrix(b) #矩阵中的data可以为数组对象。&gt;&gt;&gt; xmatrix([[1, 5],[3, 2]]) np.inf：无穷大np.set_printoptions(suppress=True)不用科学记数法输出 np.multiply()：矩阵对应元素相乘numpy.linalg：矩阵运算，中的常用函数diag 以一维数组的形式返回方阵的对角线元素dot 矩阵乘法trace 计算对角线元素的和det 计算矩阵行列式eig 计算方阵的本征值和本征向量inv 计算方阵的逆pinv 计算矩阵的Moore-Penrose伪逆qr 计算qr分解svd 计算奇异值分解solve 解线性方程组Ax=b，其中A为一个方阵lstsq 计算Ax=b的最小二乘解norm 计算范数（ord=指定范数），默认为２范数]]></content>
+      <categories>
+        <category>Numpy</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Pandas常用功能]]></title>
     <url>%2F2018%2F04%2F19%2FPandas%2FPandas%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"></content>
@@ -9,11 +17,11 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Numpy常用函数]]></title>
-    <url>%2F2018%2F04%2F19%2FNumpy%2FNumpy%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%2F</url>
-    <content type="text"><![CDATA[Numpynp.matrix()：矩阵标准写法1234567891011&gt;&gt;&gt; a = np.matrix('1 2 7; 3 4 8; 5 6 9') #单行写法&gt;&gt;&gt; a #矩阵的换行必须是用分号(;)隔开，内部数据必须为字符串形式(“ ”)，矩matrix([[1, 2, 7], #阵的元素之间必须以空格隔开。[3, 4, 8],[5, 6, 9]])&gt;&gt;&gt; b=np.array([[1,5],[3,2]])&gt;&gt;&gt; x=np.matrix(b) #矩阵中的data可以为数组对象。&gt;&gt;&gt; xmatrix([[1, 5],[3, 2]]) np.inf：无穷大np.set_printoptions(suppress=True)不用科学记数法输出 np.multiply()：矩阵对应元素相乘numpy.linalg：矩阵运算，中的常用函数diag 以一维数组的形式返回方阵的对角线元素dot 矩阵乘法trace 计算对角线元素的和det 计算矩阵行列式eig 计算方阵的本征值和本征向量inv 计算方阵的逆pinv 计算矩阵的Moore-Penrose伪逆qr 计算qr分解svd 计算奇异值分解solve 解线性方程组Ax=b，其中A为一个方阵lstsq 计算Ax=b的最小二乘解norm 计算范数（ord=指定范数），默认为２范数]]></content>
+    <title><![CDATA[备忘记录]]></title>
+    <url>%2F2018%2F04%2F19%2FOTHERS%2F%E5%A4%87%E5%BF%98%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[变量命名标准整型：语义名数组：语义名+S 或 语义名+Arr一般：语义名+数据结构名+其他特征 比如：classArrTry]]></content>
       <categories>
-        <category>Numpy</category>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
@@ -29,14 +37,6 @@
         <tag>数学</tag>
         <tag>线代</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[备忘记录]]></title>
-    <url>%2F2018%2F04%2F19%2FOTHERS%2F%E5%A4%87%E5%BF%98%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[变量命名标准整型：语义名数组：语义名+S 或 语义名+Arr一般：语义名+数据结构名+其他特征 比如：classArrTry]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[Python常用功能]]></title>
