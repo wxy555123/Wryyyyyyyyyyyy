@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_in_action/PCA主成分分析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_theory/1机器学习流程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wxy555123">
@@ -369,8 +369,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/machine_learning_in_action/PCA主成分分析/" itemprop="url">
-                  PCA 手写主成分分析
+                <a class="post-title-link" href="/2018/04/19/machine_learning_theory/1机器学习流程/" itemprop="url">
+                  1机器学习流程
                 </a>
               
             
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-24 15:12:55" itemprop="dateModified" datetime="2018-04-24T15:12:55+08:00">2018-04-24</time>
+                <time title="更新于：2018-05-04 14:38:20" itemprop="dateModified" datetime="2018-05-04T14:38:20+08:00">2018-05-04</time>
               
             
           </span>
@@ -430,7 +430,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-in-action/" itemprop="url" rel="index"><span itemprop="name">machine_learning_in_action</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-theory/" itemprop="url" rel="index"><span itemprop="name">machine_learning_theory</span></a></span>
 
                 
                 
@@ -466,194 +466,12 @@
       
         
           
-          PCA 手写主成分分析1234import numpy as npimport pandas as pddf = pd.read_csv('iris.data')df.head()
+          一、数据收集并给定标签数据预处理1）归一化2）数据清洗先直观上 去掉不需要的列特征。 包括：1.预测后才出现的特征（比如：实际发放的贷款）、2.高度相关的特征（比如：123和ABC）、3.关系不大的特征（比如：ID等）4.列属性只有一个值的　需要先排除列中 nan 值，再用 unique() 判定
 
-
-    .dataframe thead tr:only-child th {
-        text-alig
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/machine_learning_in_action/PCA主成分分析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<!-- 添加文章结束标记 -->
-	
-	
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/pandas/Pandas常用功能、函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wxy555123">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="新日暮里的幻想乡">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/19/pandas/Pandas常用功能、函数/" itemprop="url">
-                  Pandas常用功能、函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2018-04-19 12:49:42" itemprop="dateCreated datePublished" datetime="2018-04-19T12:49:42+08:00">2018-04-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2018-04-23 16:35:51" itemprop="dateModified" datetime="2018-04-23T16:35:51+08:00">2018-04-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/pandas/" itemprop="url" rel="index"><span itemprop="name">pandas</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/pandas/Pandas常用功能、函数/#more" rel="contents">
+            <a class="btn" href="/2018/04/19/machine_learning_theory/1机器学习流程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -891,7 +709,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_in_action/CreditCard/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/pandas/Pandas常用功能、函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wxy555123">
@@ -910,8 +728,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/machine_learning_in_action/CreditCard/" itemprop="url">
-                  数据挖掘——信用卡欺诈检测
+                <a class="post-title-link" href="/2018/04/19/pandas/Pandas常用功能、函数/" itemprop="url">
+                  Pandas常用功能、函数
                 </a>
               
             
@@ -937,7 +755,7 @@
                 
               
 
-              <time title="创建于：2018-04-19 00:51:27" itemprop="dateCreated datePublished" datetime="2018-04-19T00:51:27+08:00">2018-04-19</time>
+              <time title="创建于：2018-04-19 12:49:42" itemprop="dateCreated datePublished" datetime="2018-04-19T12:49:42+08:00">2018-04-19</time>
             
 
             
@@ -954,7 +772,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-23 16:45:47" itemprop="dateModified" datetime="2018-04-23T16:45:47+08:00">2018-04-23</time>
+                <time title="更新于：2018-04-23 16:35:51" itemprop="dateModified" datetime="2018-04-23T16:35:51+08:00">2018-04-23</time>
               
             
           </span>
@@ -971,7 +789,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-in-action/" itemprop="url" rel="index"><span itemprop="name">machine_learning_in_action</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/pandas/" itemprop="url" rel="index"><span itemprop="name">pandas</span></a></span>
 
                 
                 
@@ -1007,12 +825,11 @@
       
         
           
-          案例：用 逻辑回归 预测 信用卡欺诈12345import pandas as pdimport matplotlib.pyplot as pltimport numpy as np%matplotlib inline
-12data = pd.read_csv("creditcard.csv")da
-          ...
+          
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/machine_learning_in_action/CreditCard/#more" rel="contents">
+            <a class="btn" href="/2018/04/19/pandas/Pandas常用功能、函数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1253,7 +1070,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_in_action/CreditCard/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wxy555123">
@@ -1272,8 +1089,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/" itemprop="url">
-                  1向量、矩阵、向量范数、矩阵范数
+                <a class="post-title-link" href="/2018/04/19/machine_learning_in_action/CreditCard/" itemprop="url">
+                  数据挖掘——信用卡欺诈检测
                 </a>
               
             
@@ -1316,7 +1133,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-05-03 11:59:21" itemprop="dateModified" datetime="2018-05-03T11:59:21+08:00">2018-05-03</time>
+                <time title="更新于：2018-04-23 16:45:47" itemprop="dateModified" datetime="2018-04-23T16:45:47+08:00">2018-04-23</time>
               
             
           </span>
@@ -1333,14 +1150,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a></span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/math/linear-algebra/" itemprop="url" rel="index"><span itemprop="name">linear_algebra</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-in-action/" itemprop="url" rel="index"><span itemprop="name">machine_learning_in_action</span></a></span>
 
                 
                 
@@ -1376,12 +1186,200 @@
       
         
           
-          向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身
-投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：
+          案例：用 逻辑回归 预测 信用卡欺诈12345import pandas as pdimport matplotlib.pyplot as pltimport numpy as np%matplotlib inline
+12data = pd.read_csv("creditcard.csv")da
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/#more" rel="contents">
+            <a class="btn" href="/2018/04/19/machine_learning_in_action/CreditCard/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<!-- 添加文章结束标记 -->
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wxy555123">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新日暮里的幻想乡">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/tensorflow/0_Tensorflow整理/" itemprop="url">
+                  Tensorflow整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-04-19 00:51:27" itemprop="dateCreated datePublished" datetime="2018-04-19T00:51:27+08:00">2018-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-05-03 21:56:03" itemprop="dateModified" datetime="2018-05-03T21:56:03+08:00">2018-05-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          整理特色语法类
+输出数值要加 .eval()
+
+计算类
+tf.nn.sigmoid() 
+tf.nn.softmax
+tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。
+tf.add()
+tf.matmul()
+tf.reduce_mea
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/19/tensorflow/0_Tensorflow整理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1979,7 +1977,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wxy555123">
@@ -1998,8 +1996,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/tensorflow/0_Tensorflow整理/" itemprop="url">
-                  Tensorflow整理
+                <a class="post-title-link" href="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/" itemprop="url">
+                  1向量、矩阵、向量范数、矩阵范数
                 </a>
               
             
@@ -2042,7 +2040,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-05-03 21:56:03" itemprop="dateModified" datetime="2018-05-03T21:56:03+08:00">2018-05-03</time>
+                <time title="更新于：2018-05-03 11:59:21" itemprop="dateModified" datetime="2018-05-03T11:59:21+08:00">2018-05-03</time>
               
             
           </span>
@@ -2059,7 +2057,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a></span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/math/linear-algebra/" itemprop="url" rel="index"><span itemprop="name">linear_algebra</span></a></span>
 
                 
                 
@@ -2095,20 +2100,12 @@
       
         
           
-          整理特色语法类
-输出数值要加 .eval()
-
-计算类
-tf.nn.sigmoid() 
-tf.nn.softmax
-tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。
-tf.add()
-tf.matmul()
-tf.reduce_mea
+          向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身
+投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/tensorflow/0_Tensorflow整理/#more" rel="contents">
+            <a class="btn" href="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
