@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-03T13:31:39.792Z</updated>
+  <updated>2018-05-04T04:39:25.923Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>欢迎光临，BLOG刚弄不久正在施工 文章陆续上传中...</title>
+    <link href="http://yoursite.com/2018/04/29/OTHERS/%E7%BD%AE%E9%A1%B6%E4%BF%A1%E6%81%AF/"/>
+    <id>http://yoursite.com/2018/04/29/OTHERS/置顶信息/</id>
+    <published>2018-04-28T16:51:27.000Z</published>
+    <updated>2018-05-04T04:39:25.923Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>4线性方程求解</title>
@@ -37,22 +53,6 @@
       <category term="math" scheme="http://yoursite.com/categories/math/"/>
     
       <category term="linear_algebra" scheme="http://yoursite.com/categories/math/linear-algebra/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>欢迎光临，BLOG刚弄不久正在施工 文章陆续上传中...</title>
-    <link href="http://yoursite.com/2018/04/29/OTHERS/%E7%BD%AE%E9%A1%B6%E4%BF%A1%E6%81%AF/"/>
-    <id>http://yoursite.com/2018/04/29/OTHERS/置顶信息/</id>
-    <published>2018-04-28T16:51:27.000Z</published>
-    <updated>2018-05-04T04:39:25.923Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
     
     
   </entry>
@@ -155,6 +155,38 @@
   </entry>
   
   <entry>
+    <title>直线和平面方程</title>
+    <link href="http://yoursite.com/2018/04/20/math/calculus/%E7%9B%B4%E7%BA%BF%E5%92%8C%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/04/20/math/calculus/直线和平面方程/</id>
+    <published>2018-04-19T16:51:27.000Z</published>
+    <updated>2018-05-04T12:56:17.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、直线"><a href="#一、直线" class="headerlink" title="一、直线"></a>一、直线</h2><p>直线方程</p><div class="table-container"><table><thead><tr><th>方程名称</th><th>形式</th><th>说明</th></tr></thead><tbody><tr><td>一般式</td><td>ax+by+c=0</td><td>优点：可以表示平面上的任意一条直线缺点：要确定的常数较多</td></tr><tr><td>斜截式</td><td>y=kx+b</td><td>优点：只需要斜率和截距缺点：不能表示垂直x轴的直线x=a</td></tr><tr><td>点斜式</td><td>y-y0=k(x-x0)</td><td>优点：只需要一个点和斜率缺点：不能表示垂直x轴的直线x=a</td></tr><tr><td>两点式</td><td>(y-y1)/(y2-y1)=(x-x1)/(x2-x1)</td><td>优点：只需要2个点缺点：不能表示两点x1=x2或y1=y2时的直线（即垂直或水平直线）</td></tr><tr><td>截距式</td><td>x/a+y/b=1</td><td>优点：只需要x轴截距a和y轴截距b缺点：不能表示截距为0时的直线,比如正比例直线</td></tr></tbody></table></div><h2 id="二、平面"><a href="#二、平面" class="headerlink" title="二、平面"></a>二、平面</h2><p>平面方程常用4种</p><div class="table-container"><table><thead><tr><th>方程名称</th><th>形式</th><th>说明</th></tr></thead><tbody><tr><td>一般式</td><td>Ax+By+Cz+D=0</td><td></td></tr><tr><td>截距式</td><td>x/a+y/b+z/c=1</td><td></td></tr><tr><td>点法式</td><td>A(x-x0)+B(y-y0)+C(z-z0)=0</td><td>向量(A,B,C)为平面的法向量</td></tr><tr><td>法线式</td><td>xcosα+ycosβ+zcosγ=p</td><td>其中cosα、cosβ、cosγ是平面法矢量的方向余弦，p为原点到平面的距离。</td></tr></tbody></table></div><p>​                                                                                 平面方程全部7种</p><p><img src="/2018/04/20/math/calculus/直线和平面方程/20180310005032167.png" alt=""><br><img src="/2018/04/20/math/calculus/直线和平面方程/2018031000522558.png" alt=""></p><h2 id="三、超平面"><a href="#三、超平面" class="headerlink" title="三、超平面"></a>三、超平面</h2><p>二维空间的超平面是一条直线，三维空间的超平面是一个平面，而N维空间的超平面则是N-1维的仿射空间。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、直线&quot;&gt;&lt;a href=&quot;#一、直线&quot; class=&quot;headerlink&quot; title=&quot;一、直线&quot;&gt;&lt;/a&gt;一、直线&lt;/h2&gt;&lt;p&gt;直线方程&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;t
+      
+    
+    </summary>
+    
+      <category term="math" scheme="http://yoursite.com/categories/math/"/>
+    
+      <category term="calculus" scheme="http://yoursite.com/categories/math/calculus/"/>
+    
+    
+      <category term="平面方程" scheme="http://yoursite.com/tags/%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2矩阵的运算、行列式</title>
     <link href="http://yoursite.com/2018/04/20/math/linear_algebra/2%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97%E3%80%81%E8%A1%8C%E5%88%97%E5%BC%8F/"/>
     <id>http://yoursite.com/2018/04/20/math/linear_algebra/2矩阵的运算、行列式/</id>
@@ -176,63 +208,6 @@
     
       <category term="linear_algebra" scheme="http://yoursite.com/categories/math/linear-algebra/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>直线和平面方程</title>
-    <link href="http://yoursite.com/2018/04/20/math/calculus/%E7%9B%B4%E7%BA%BF%E5%92%8C%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/04/20/math/calculus/直线和平面方程/</id>
-    <published>2018-04-19T16:51:27.000Z</published>
-    <updated>2018-05-04T05:07:24.504Z</updated>
-    
-    <content type="html"><![CDATA[<p>一、直线</p><p>直线方程</p><div class="table-container"><table><thead><tr><th>方程名称</th><th>形式</th><th>说明</th></tr></thead><tbody><tr><td>一般式</td><td>ax+by+c=0</td><td>优点：可以表示平面上的任意一条直线缺点：要确定的常数较多</td></tr><tr><td>斜截式</td><td>y=kx+b</td><td>优点：只需要斜率和截距缺点：不能表示垂直x轴的直线x=a</td></tr><tr><td>点斜式</td><td>y-y0=k(x-x0)</td><td>优点：只需要一个点和斜率缺点：不能表示垂直x轴的直线x=a</td></tr><tr><td>两点式</td><td>(y-y1)/(y2-y1)=(x-x1)/(x2-x1)</td><td>优点：只需要2个点缺点：不能表示两点x1=x2或y1=y2时的直线（即垂直或水平直线）</td></tr><tr><td>截距式</td><td>x/a+y/b=1</td><td>优点：只需要x轴截距a和y轴截距b缺点：不能表示截距为0时的直线,比如正比例直线</td></tr></tbody></table></div><p>二、平面</p><p>平面方程常用4种</p><div class="table-container"><table><thead><tr><th>方程名称</th><th>形式</th><th>说明</th></tr></thead><tbody><tr><td>一般式</td><td>Ax+By+Cz+D=0</td><td></td></tr><tr><td>截距式</td><td>x/a+y/b+z/c=1</td><td></td></tr><tr><td>点法式</td><td>A(x-x0)+B(y-y0)+C(z-z0)=0</td><td>向量(A,B,C)为平面的法向量</td></tr><tr><td>法线式</td><td>xcosα+ycosβ+zcosγ=p</td><td>其中cosα、cosβ、cosγ是平面法矢量的方向余弦，p为原点到平面的距离。</td></tr></tbody></table></div><p>​                                                                                 平面方程全部7种</p><p><img src="/2018/04/20/math/calculus/直线和平面方程/20180310005032167.png" alt=""><br><img src="/2018/04/20/math/calculus/直线和平面方程/2018031000522558.png" alt=""></p><p>三、超平面</p><p>二维空间的超平面是一条直线，三维空间的超平面是一个平面，而N维空间的超平面则是N-1维的仿射空间。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一、直线&lt;/p&gt;
-&lt;p&gt;直线方程&lt;/p&gt;
-&lt;div class=&quot;table-container&quot;&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;方程名称&lt;/th&gt;
-&lt;th&gt;形式&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-      
-    
-    </summary>
-    
-      <category term="math" scheme="http://yoursite.com/categories/math/"/>
-    
-      <category term="calculus" scheme="http://yoursite.com/categories/math/calculus/"/>
-    
-    
-      <category term="平面方程" scheme="http://yoursite.com/tags/%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pandas常用功能、函数</title>
-    <link href="http://yoursite.com/2018/04/19/pandas/Pandas%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E3%80%81%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2018/04/19/pandas/Pandas常用功能、函数/</id>
-    <published>2018-04-19T04:49:42.000Z</published>
-    <updated>2018-04-23T08:35:51.474Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="pandas" scheme="http://yoursite.com/categories/pandas/"/>
-    
-    
-      <category term="pandas" scheme="http://yoursite.com/tags/pandas/"/>
     
   </entry>
   
@@ -266,6 +241,31 @@
   </entry>
   
   <entry>
+    <title>1机器学习流程</title>
+    <link href="http://yoursite.com/2018/04/19/machine_learning_theory/1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/04/19/machine_learning_theory/1机器学习流程/</id>
+    <published>2018-04-19T04:49:42.000Z</published>
+    <updated>2018-05-04T06:38:20.543Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、数据收集并给定标签"><a href="#一、数据收集并给定标签" class="headerlink" title="一、数据收集并给定标签"></a>一、数据收集并给定标签</h1><h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="1）归一化"><a href="#1）归一化" class="headerlink" title="1）归一化"></a>1）归一化</h3><h3 id="2）数据清洗"><a href="#2）数据清洗" class="headerlink" title="2）数据清洗"></a>2）数据清洗</h3><p>先直观上 去掉不需要的列特征。 包括：<br>1.预测后才出现的特征（比如：实际发放的贷款）、<br>2.高度相关的特征（比如：123和ABC）、<br>3.关系不大的特征（比如：ID等）<br>4.列属性只有一个值的<br>　需要先排除列中 nan 值，再用 unique() 判定</p><h3 id="3）缺失值处理"><a href="#3）缺失值处理" class="headerlink" title="3）缺失值处理"></a>3）缺失值处理</h3><p>先查找列缺失值多的，去掉这些列，只剩下缺失值少的列。之后直接去掉那些样本行即可</p><h3 id="4）字符串值处理"><a href="#4）字符串值处理" class="headerlink" title="4）字符串值处理"></a>4）字符串值处理</h3><p>把 object 类型转为 int 和 float 类型。包括：<br>1.one-hot 编码<br>2.列属性数字替换</p><h3 id="5）数据样本均衡分析"><a href="#5）数据样本均衡分析" class="headerlink" title="5）数据样本均衡分析"></a>5）数据样本均衡分析</h3><p>样本分布不均衡：指的是 label 不同的样本数量差距很大。<br>如果数据样本不均衡，容易导致分类器效果很差。<br>为了解决，有以下2种方案：</p><p>P1：oversample 或 undersample<br>P2：用模型参数 调节分类惩罚权重比参数： class_weight，适用于所有分类算法</p><h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><h2 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a>数据集划分</h2><h1 id="二、训练一个分类器"><a href="#二、训练一个分类器" class="headerlink" title="二、训练一个分类器"></a>二、训练一个分类器</h1><h2 id="选择模型"><a href="#选择模型" class="headerlink" title="选择模型"></a>选择模型</h2><h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><h1 id="三、模型测试、评估"><a href="#三、模型测试、评估" class="headerlink" title="三、模型测试、评估"></a>三、模型测试、评估</h1><h2 id="选择模型评估方法"><a href="#选择模型评估方法" class="headerlink" title="选择模型评估方法"></a>选择模型评估方法</h2><p>1.交叉验证 + 指标（比如：精度、TPR）<br>2.均方误差<br>3.交叉熵</p><h2 id="模型评估结果分析"><a href="#模型评估结果分析" class="headerlink" title="模型评估结果分析"></a>模型评估结果分析</h2><p>如果分类效果不佳，可采取以下措施：</p><ul><li>调节分类惩罚系数比（可在模型参数中调节）</li><li>调节模型其他参数</li><li>考虑 过拟合 可能，去掉一些列</li><li>集成多个模型</li><li>尝试其他模型</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、数据收集并给定标签&quot;&gt;&lt;a href=&quot;#一、数据收集并给定标签&quot; class=&quot;headerlink&quot; title=&quot;一、数据收集并给定标签&quot;&gt;&lt;/a&gt;一、数据收集并给定标签&lt;/h1&gt;&lt;h2 id=&quot;数据预处理&quot;&gt;&lt;a href=&quot;#数据预处理&quot; class
+      
+    
+    </summary>
+    
+      <category term="machine_learning_theory" scheme="http://yoursite.com/categories/machine-learning-theory/"/>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>贷款分析</title>
     <link href="http://yoursite.com/2018/04/19/machine_learning_in_action/%E8%B4%B7%E6%AC%BE%E5%88%86%E6%9E%90/"/>
     <id>http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/</id>
@@ -293,27 +293,20 @@
   </entry>
   
   <entry>
-    <title>1机器学习流程</title>
-    <link href="http://yoursite.com/2018/04/19/machine_learning_theory/1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/04/19/machine_learning_theory/1机器学习流程/</id>
+    <title>Pandas常用功能、函数</title>
+    <link href="http://yoursite.com/2018/04/19/pandas/Pandas%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E3%80%81%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/04/19/pandas/Pandas常用功能、函数/</id>
     <published>2018-04-19T04:49:42.000Z</published>
-    <updated>2018-05-04T06:38:20.543Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、数据收集并给定标签"><a href="#一、数据收集并给定标签" class="headerlink" title="一、数据收集并给定标签"></a>一、数据收集并给定标签</h1><h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="1）归一化"><a href="#1）归一化" class="headerlink" title="1）归一化"></a>1）归一化</h3><h3 id="2）数据清洗"><a href="#2）数据清洗" class="headerlink" title="2）数据清洗"></a>2）数据清洗</h3><p>先直观上 去掉不需要的列特征。 包括：<br>1.预测后才出现的特征（比如：实际发放的贷款）、<br>2.高度相关的特征（比如：123和ABC）、<br>3.关系不大的特征（比如：ID等）<br>4.列属性只有一个值的<br>　需要先排除列中 nan 值，再用 unique() 判定</p><h3 id="3）缺失值处理"><a href="#3）缺失值处理" class="headerlink" title="3）缺失值处理"></a>3）缺失值处理</h3><p>先查找列缺失值多的，去掉这些列，只剩下缺失值少的列。之后直接去掉那些样本行即可</p><h3 id="4）字符串值处理"><a href="#4）字符串值处理" class="headerlink" title="4）字符串值处理"></a>4）字符串值处理</h3><p>把 object 类型转为 int 和 float 类型。包括：<br>1.one-hot 编码<br>2.列属性数字替换</p><h3 id="5）数据样本均衡分析"><a href="#5）数据样本均衡分析" class="headerlink" title="5）数据样本均衡分析"></a>5）数据样本均衡分析</h3><p>样本分布不均衡：指的是 label 不同的样本数量差距很大。<br>如果数据样本不均衡，容易导致分类器效果很差。<br>为了解决，有以下2种方案：</p><p>P1：oversample 或 undersample<br>P2：用模型参数 调节分类惩罚权重比参数： class_weight，适用于所有分类算法</p><h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><h2 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a>数据集划分</h2><h1 id="二、训练一个分类器"><a href="#二、训练一个分类器" class="headerlink" title="二、训练一个分类器"></a>二、训练一个分类器</h1><h2 id="选择模型"><a href="#选择模型" class="headerlink" title="选择模型"></a>选择模型</h2><h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><h1 id="三、模型测试、评估"><a href="#三、模型测试、评估" class="headerlink" title="三、模型测试、评估"></a>三、模型测试、评估</h1><h2 id="选择模型评估方法"><a href="#选择模型评估方法" class="headerlink" title="选择模型评估方法"></a>选择模型评估方法</h2><p>1.交叉验证 + 指标（比如：精度、TPR）<br>2.均方误差<br>3.交叉熵</p><h2 id="模型评估结果分析"><a href="#模型评估结果分析" class="headerlink" title="模型评估结果分析"></a>模型评估结果分析</h2><p>如果分类效果不佳，可采取以下措施：</p><ul><li>调节分类惩罚系数比（可在模型参数中调节）</li><li>调节模型其他参数</li><li>考虑 过拟合 可能，去掉一些列</li><li>集成多个模型</li><li>尝试其他模型</li></ul>]]></content>
+    <updated>2018-04-23T08:35:51.474Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;一、数据收集并给定标签&quot;&gt;&lt;a href=&quot;#一、数据收集并给定标签&quot; class=&quot;headerlink&quot; title=&quot;一、数据收集并给定标签&quot;&gt;&lt;/a&gt;一、数据收集并给定标签&lt;/h1&gt;&lt;h2 id=&quot;数据预处理&quot;&gt;&lt;a href=&quot;#数据预处理&quot; class
-      
-    
     </summary>
     
-      <category term="machine_learning_theory" scheme="http://yoursite.com/categories/machine-learning-theory/"/>
+      <category term="pandas" scheme="http://yoursite.com/categories/pandas/"/>
     
     
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="pandas" scheme="http://yoursite.com/tags/pandas/"/>
     
   </entry>
   
@@ -343,31 +336,6 @@
   </entry>
   
   <entry>
-    <title>Tensorflow整理</title>
-    <link href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow%E6%95%B4%E7%90%86/"/>
-    <id>http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/</id>
-    <published>2018-04-18T16:51:27.000Z</published>
-    <updated>2018-05-03T13:56:03.008Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h1><h2 id="特色语法类"><a href="#特色语法类" class="headerlink" title="特色语法类"></a>特色语法类</h2><ul><li>输出数值要加 .eval()</li></ul><h2 id="计算类"><a href="#计算类" class="headerlink" title="计算类"></a>计算类</h2><ul><li>tf.nn.sigmoid() </li><li>tf.nn.softmax</li><li>tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。</li><li>tf.add()</li><li>tf.matmul()</li><li>tf.reduce_mean()</li><li>tf.square()平方<h2 id="算法类-优化器"><a href="#算法类-优化器" class="headerlink" title="算法类 优化器"></a>算法类 优化器</h2>tf.train.GradientDescentOptimizer()：梯度下降</li></ul><h2 id="功能类"><a href="#功能类" class="headerlink" title="功能类"></a>功能类</h2><ul><li>tf.equal(a, b)  ：比较是否相等</li><li>tf.cast(a, “float”)  :类型转换</li><li>tf.placeholder(“float”, [None, 10]) ：None is for infinite 这是一个n行10列的动态矩阵</li><li>tf.InteractiveSession(): 它能让你在运行图的时候，插入一些计算图</li><li>tf.Session(): 需要在启动session之前构建整个计算图，然后启动该计算图。</li><li>tf.random_normal([2, 3], mean=-1, stddev=4) ：高斯初始化生成一个 均值为-1，方差为4的矩阵</li></ul><h2 id="经验总结类"><a href="#经验总结类" class="headerlink" title="经验总结类"></a>经验总结类</h2><ul><li>Tensorflow 定义的任何数据类型都推荐用 float32</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;整理&quot;&gt;&lt;a href=&quot;#整理&quot; class=&quot;headerlink&quot; title=&quot;整理&quot;&gt;&lt;/a&gt;整理&lt;/h1&gt;&lt;h2 id=&quot;特色语法类&quot;&gt;&lt;a href=&quot;#特色语法类&quot; class=&quot;headerlink&quot; title=&quot;特色语法类&quot;&gt;&lt;/a&gt;特色语法
-      
-    
-    </summary>
-    
-      <category term="tensorflow" scheme="http://yoursite.com/categories/tensorflow/"/>
-    
-    
-      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
     <title>备忘记录</title>
     <link href="http://yoursite.com/2018/04/19/OTHERS/%E5%A4%87%E5%BF%98%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2018/04/19/OTHERS/备忘记录/</id>
@@ -388,86 +356,6 @@
     
       <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>1向量、矩阵、向量范数、矩阵范数</title>
-    <link href="http://yoursite.com/2018/04/19/math/linear_algebra/1%E5%90%91%E9%87%8F%E3%80%81%E7%9F%A9%E9%98%B5%E3%80%81%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E3%80%81%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0/"/>
-    <id>http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/</id>
-    <published>2018-04-18T16:51:27.000Z</published>
-    <updated>2018-05-03T03:59:21.303Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><h3 id="向量内积-和-投影"><a href="#向量内积-和-投影" class="headerlink" title="向量内积 和 投影"></a>向量内积 和 投影</h3><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-52-26.png" alt=""><br>内积：<br>1用点乘：a•b<br>2用转置乘：a^T b<br>3向量的模是范数的一种<br>4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身</p><p>投影：<br>1 b在a上的投影 = |b|cosθ<br>2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；<br>3 由2又有：b在a上的投影 = $\frac {a^T b} {||a||}$ ★</p><h3 id="向量外积"><a href="#向量外积" class="headerlink" title="向量外积"></a>向量外积</h3><h3 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h3><ol><li>向量范数的定义和性质：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-56-23.png" alt=""><br>齐次性：数乘以后会放大相应的倍数</p><ol><li>1-范数、2-范数、无穷范数：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-56-55.png" alt=""></p><ol><li>稀疏性 和 0-范数：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-57-09.png" alt=""><br>稀疏性用到的范数：<br>特殊的0-范数，他不满足齐次性；<br>所以需要1-范数来辅助解决；</p><ol><li>范数的几何意义：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-20-32-56.png" alt=""><br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-29-03.png" alt=""></p><h3 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h3><ol><li>初始单位向两组</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-30-44.png" alt=""></p><ol><li>向量组等价</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-16.png" alt=""></p><ol><li>线性相关 和 线性无关<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-28.png" alt=""></li><li>施密特正交化<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-41.png" alt=""><br>由施密特正交化生成的 正交向量组 和 之前的线性无关向量组 可以互相线性表示</li></ol><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><ul><li>O矩阵<br>所有元素都为0的矩阵<br><br></li><li>一阶矩阵(a)<br>等同于数a<br><br></li><li>矩阵的内积<br>内积 A·B  &lt;=&gt;  ${A^T}B$<h2 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h2><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-22-17-47-24.png" alt=""><br>矩阵的范数比向量的范数多一条相容性</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;向量&quot;&gt;&lt;a href=&quot;#向量&quot; class=&quot;headerlink&quot; title=&quot;向量&quot;&gt;&lt;/a&gt;向量&lt;/h2&gt;&lt;h3 id=&quot;向量内积-和-投影&quot;&gt;&lt;a href=&quot;#向量内积-和-投影&quot; class=&quot;headerlink&quot; title=&quot;向量内积 和 
-      
-    
-    </summary>
-    
-      <category term="math" scheme="http://yoursite.com/categories/math/"/>
-    
-      <category term="linear_algebra" scheme="http://yoursite.com/categories/math/linear-algebra/"/>
-    
-    
-      <category term="范数" scheme="http://yoursite.com/tags/%E8%8C%83%E6%95%B0/"/>
-    
-      <category term="外积" scheme="http://yoursite.com/tags/%E5%A4%96%E7%A7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tensorflow基本语法</title>
-    <link href="http://yoursite.com/2018/04/19/tensorflow/1_Tensorflow%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/04/19/tensorflow/1_Tensorflow基本用法/</id>
-    <published>2018-04-18T16:51:27.000Z</published>
-    <updated>2018-04-27T06:34:13.804Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量-和-Session-定义"><a href="#变量-和-Session-定义" class="headerlink" title="变量 和 Session()定义"></a>变量 和 Session()定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="comment"># Create a variable.</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]]) </span><br><span class="line"></span><br><span class="line">y = tf.matmul(w, x)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#variables have to be explicitly initialized before you can run Ops</span></span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  <span class="comment">#第一种 session()定义方式</span></span><br><span class="line">    sess.run(init_op)</span><br><span class="line">    <span class="keyword">print</span> (y.eval())</span><br></pre></td></tr></table></figure><pre><code>Tensor(&quot;Variable_11/read:0&quot;, shape=(1, 2), dtype=float32)[[ 2.]]</code></pre><p>计算操作需要在 Session()——会话（计算图的区域） 中进行；<br>而且在使用 variable 时还需要 初始化全局变量操作</p><h2 id="矩阵-和-常量"><a href="#矩阵-和-常量" class="headerlink" title="矩阵 和 常量"></a>矩阵 和 常量</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># float32</span></span><br><span class="line">tf.zeros([3, 4], int32) ==&gt; [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.zeros_like(tensor) ==&gt; [[0, 0, 0], [0, 0, 0]]</span><br><span class="line">tf.ones([2, 3], int32) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.ones_like(tensor) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 1-D Tensor populated with value list.</span></span><br><span class="line">tensor = tf.constant([1, 2, 3, 4, 5, 6, 7]) =&gt; [1 2 3 4 5 6 7]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 2-D tensor populated with scalar value -1.</span></span><br><span class="line">tensor = tf.constant(-1.0, shape=[2, 3]) =&gt; [[-1. -1. -1.]</span><br><span class="line">                                              [<span class="number">-1.</span> <span class="number">-1.</span> <span class="number">-1.</span>]]</span><br><span class="line"></span><br><span class="line">tf.linspace(10.0, 12.0, 3, name="linspace") =&gt; [ 10.0  11.0  12.0]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 令'start' is 3</span></span><br><span class="line"><span class="comment"># 'limit' is 18</span></span><br><span class="line"><span class="comment"># 'delta' is 3</span></span><br><span class="line">tf.range(start, limit, delta) ==&gt; [3, 6, 9, 12, 15]</span><br></pre></td></tr></table></figure><p>对比 Numpy 操作，发现区别并不大</p><h2 id="另一种-Session-定义"><a href="#另一种-Session-定义" class="headerlink" title="另一种 Session() 定义"></a>另一种 Session() 定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment"># 初始化生成一个 均值为-1，方差为4的矩阵</span></span><br><span class="line">norm = tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], mean=<span class="number">-1</span>, stddev=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Shuffle the first dimension of a tensor</span></span><br><span class="line">c = tf.constant([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">shuff = tf.random_shuffle(c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Each time we run these ops, different results are generated</span></span><br><span class="line">sess = tf.Session()  <span class="comment">#第二种 session()定义方式</span></span><br><span class="line"><span class="keyword">print</span> (sess.run(norm))</span><br><span class="line"><span class="keyword">print</span> (sess.run(shuff))</span><br></pre></td></tr></table></figure><pre><code>[[ 3.78657341 -3.94182277 -3.65419507] [-7.0396409  -5.51102114  3.56082773]][[5 6] [1 2] [3 4]]</code></pre><h2 id="累加-演示"><a href="#累加-演示" class="headerlink" title="累加 演示"></a>累加 演示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">state = tf.Variable(<span class="number">0</span>)</span><br><span class="line">new_value = tf.add(state, tf.constant(<span class="number">1</span>))</span><br><span class="line">update = tf.assign(state, new_value)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    print(sess.run(state))    </span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        sess.run(update)</span><br><span class="line">        print(sess.run(state))</span><br></pre></td></tr></table></figure><pre><code>0123</code></pre><h2 id="train-Saver-保存-Session-操作"><a href="#train-Saver-保存-Session-操作" class="headerlink" title="train.Saver() 保存 Session() 操作"></a>train.Saver() 保存 Session() 操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#tf.train.Saver</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]])</span><br><span class="line">y = tf.matmul(w, x)</span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init_op)</span><br><span class="line"><span class="comment"># Do some work with the model.</span></span><br><span class="line"><span class="comment"># Save the variables to disk.</span></span><br><span class="line">    save_path = saver.save(sess, <span class="string">"C://tensorflow//model//test"</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"Model saved in file: "</span>, save_path)</span><br></pre></td></tr></table></figure><pre><code>Model saved in file:  C://tensorflow//model//test</code></pre><h2 id="convert-to-tensor-转换-numpy-的语法为-tensorflow-类型"><a href="#convert-to-tensor-转换-numpy-的语法为-tensorflow-类型" class="headerlink" title="convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型"></a>convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">ta = tf.convert_to_tensor(a)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">     print(sess.run(ta))</span><br></pre></td></tr></table></figure><pre><code>[[ 0.  0.  0.] [ 0.  0.  0.] [ 0.  0.  0.]]</code></pre><p>不推荐使用，还是建议使用 tensorflow 语法</p><h2 id="placeholder-定义-待输入占位变量"><a href="#placeholder-定义-待输入占位变量" class="headerlink" title="placeholder() 定义 待输入占位变量"></a>placeholder() 定义 待输入占位变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input1 = tf.placeholder(tf.float32)</span><br><span class="line">input2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.mul(input1, input2)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>], input2:[<span class="number">2.</span>]&#125;))</span><br></pre></td></tr></table></figure><pre><code>[array([ 14.], dtype=float32)]</code></pre><p>这些变量可以在使用时再临时 用 feed_dict字典格式 赋值</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;变量-和-Session-定义&quot;&gt;&lt;a href=&quot;#变量-和-Session-定义&quot; class=&quot;headerlink&quot; title=&quot;变量 和 Session()定义&quot;&gt;&lt;/a&gt;变量 和 Session()定义&lt;/h2&gt;&lt;figure class=&quot;high
-      
-    
-    </summary>
-    
-      <category term="tensorflow" scheme="http://yoursite.com/categories/tensorflow/"/>
-    
-    
-      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python常用功能、函数</title>
-    <link href="http://yoursite.com/2018/04/19/python/Python%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E3%80%81%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2018/04/19/python/Python常用功能、函数/</id>
-    <published>2018-04-18T16:51:27.000Z</published>
-    <updated>2018-05-04T05:13:04.645Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h2><p>1简单的文件读写</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"123.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line">content = f.read();</span><br><span class="line">print(content);</span><br><span class="line">f.close();</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"123.txt"</span>, <span class="string">"a+"</span>);</span><br><span class="line">f.write(<span class="string">"\n"</span>);</span><br><span class="line">f.write(<span class="string">"222222222222"</span>);</span><br><span class="line">f.close();</span><br></pre></td></tr></table></figure><p>2读取数据到矩阵</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取txt二维数据到矩阵</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">(fileName)</span>:</span>    </span><br><span class="line">    dataMat = np.mat([<span class="number">0</span>,<span class="number">0</span>])               </span><br><span class="line">    f = open(fileName)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        curLine = line.strip().split(<span class="string">'\t'</span>)</span><br><span class="line">        <span class="keyword">if</span> len(curLine)==<span class="number">1</span> : </span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        curLineMat = np.mat(curLine)</span><br><span class="line">        dataMat = np.vstack((dataMat, curLineMat))  <span class="comment">#拼接矩阵</span></span><br><span class="line">    dataMat = dataMat[<span class="number">1</span>:,:].astype(float)   <span class="comment">#不要第一行；转为纯数字</span></span><br><span class="line">    <span class="keyword">return</span> dataMat</span><br></pre></td></tr></table></figure><h2 id="set"><a href="#set" class="headerlink" title="set()"></a>set()</h2><p>将一个字符串拆成 单个字符 组成的字符集，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = set(<span class="string">'runoob'</span>) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = set(<span class="string">'google'</span>) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x, y (set([<span class="string">'b'</span>, <span class="string">'r'</span>, <span class="string">'u'</span>, <span class="string">'o'</span>, <span class="string">'n'</span>]), set([<span class="string">'e'</span>, <span class="string">'o'</span>, <span class="string">'g'</span>, <span class="string">'l'</span>])) <span class="comment"># 重复的被删除 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x &amp; y <span class="comment"># 交集 set(['o']) </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x | y <span class="comment"># 并集 set(['b', 'e', 'g', 'l', 'o', 'n', 'r', 'u']) </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x - y <span class="comment"># 差集 set(['r', 'b', 'u', 'n']) </span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure><h2 id="copy"><a href="#copy" class="headerlink" title="copy()"></a>copy()</h2><ol><li>= 赋值 传引用 =》内存不独立 =》 同步跟随变化</li><li>copy 浅拷贝 只拷贝父对象 =》父对象内存独立 =》只有子对象跟随变化</li><li>deepcopy 深拷贝 拷贝对象及其子对象 =》全部内存独立 =》 不跟随变化<br>（深拷贝 和 浅拷贝——只对数组结构有用，int之类的没用）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]] <span class="comment">#原始对象</span></span><br><span class="line"> </span><br><span class="line">b = a <span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c = copy.copy(a) <span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d = copy.deepcopy(a) <span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"> </span><br><span class="line">a.append(<span class="number">5</span>) <span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">4</span>].append(<span class="string">'c'</span>) <span class="comment">#修改对象a中的['a', 'b']数组对象</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> <span class="string">'a = '</span>, a</span><br><span class="line"><span class="keyword">print</span> <span class="string">'b = '</span>, b</span><br><span class="line"><span class="keyword">print</span> <span class="string">'c = '</span>, c</span><br><span class="line"><span class="keyword">print</span> <span class="string">'d = '</span>, d</span><br><span class="line">输出结果：</span><br><span class="line">a =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">b =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">c =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]]</span><br><span class="line">d =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]]</span><br></pre></td></tr></table></figure></li></ol><h2 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()</h2><p>zip函数接受任意多个序列作为参数，返回一个tuple列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(zip(range(<span class="number">3</span>),range(<span class="number">5</span>)))</span><br><span class="line">[(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> zip(range(<span class="number">3</span>),range(<span class="number">5</span>)):</span><br><span class="line">    print(i)</span><br><span class="line">    print(j)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure></p><h2 id="运算符and和or"><a href="#运算符and和or" class="headerlink" title="运算符and和or"></a>运算符and和or</h2><p> 注意：and or 是python特有的短路运算符</p><ol><li>表达式从左至右运算，若 or 的左侧逻辑值为 True ，则短路 or 后所有的表达式（不管是 and 还是 or），直接输出 or 左侧表达式 。</li><li>表达式从左至右运算，若 and 的左侧逻辑值为 False ，则短路其后所有 and 表达式，直到有 or 出现，输出 and 左侧表达式到 or 的左侧，参与接下来的逻辑运算。</li><li>若 or 的左侧为 False ，或者 and 的左侧为 True 则不能使用短路逻辑。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;open&quot;&gt;&lt;a href=&quot;#open&quot; class=&quot;headerlink&quot; title=&quot;open()&quot;&gt;&lt;/a&gt;open()&lt;/h2&gt;&lt;p&gt;1简单的文件读写&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
@@ -524,6 +412,111 @@
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python常用功能、函数</title>
+    <link href="http://yoursite.com/2018/04/19/python/Python%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E3%80%81%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/04/19/python/Python常用功能、函数/</id>
+    <published>2018-04-18T16:51:27.000Z</published>
+    <updated>2018-05-04T05:13:04.645Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h2><p>1简单的文件读写</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"123.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line">content = f.read();</span><br><span class="line">print(content);</span><br><span class="line">f.close();</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"123.txt"</span>, <span class="string">"a+"</span>);</span><br><span class="line">f.write(<span class="string">"\n"</span>);</span><br><span class="line">f.write(<span class="string">"222222222222"</span>);</span><br><span class="line">f.close();</span><br></pre></td></tr></table></figure><p>2读取数据到矩阵</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取txt二维数据到矩阵</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">(fileName)</span>:</span>    </span><br><span class="line">    dataMat = np.mat([<span class="number">0</span>,<span class="number">0</span>])               </span><br><span class="line">    f = open(fileName)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        curLine = line.strip().split(<span class="string">'\t'</span>)</span><br><span class="line">        <span class="keyword">if</span> len(curLine)==<span class="number">1</span> : </span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        curLineMat = np.mat(curLine)</span><br><span class="line">        dataMat = np.vstack((dataMat, curLineMat))  <span class="comment">#拼接矩阵</span></span><br><span class="line">    dataMat = dataMat[<span class="number">1</span>:,:].astype(float)   <span class="comment">#不要第一行；转为纯数字</span></span><br><span class="line">    <span class="keyword">return</span> dataMat</span><br></pre></td></tr></table></figure><h2 id="set"><a href="#set" class="headerlink" title="set()"></a>set()</h2><p>将一个字符串拆成 单个字符 组成的字符集，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = set(<span class="string">'runoob'</span>) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = set(<span class="string">'google'</span>) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x, y (set([<span class="string">'b'</span>, <span class="string">'r'</span>, <span class="string">'u'</span>, <span class="string">'o'</span>, <span class="string">'n'</span>]), set([<span class="string">'e'</span>, <span class="string">'o'</span>, <span class="string">'g'</span>, <span class="string">'l'</span>])) <span class="comment"># 重复的被删除 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x &amp; y <span class="comment"># 交集 set(['o']) </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x | y <span class="comment"># 并集 set(['b', 'e', 'g', 'l', 'o', 'n', 'r', 'u']) </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x - y <span class="comment"># 差集 set(['r', 'b', 'u', 'n']) </span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure><h2 id="copy"><a href="#copy" class="headerlink" title="copy()"></a>copy()</h2><ol><li>= 赋值 传引用 =》内存不独立 =》 同步跟随变化</li><li>copy 浅拷贝 只拷贝父对象 =》父对象内存独立 =》只有子对象跟随变化</li><li>deepcopy 深拷贝 拷贝对象及其子对象 =》全部内存独立 =》 不跟随变化<br>（深拷贝 和 浅拷贝——只对数组结构有用，int之类的没用）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]] <span class="comment">#原始对象</span></span><br><span class="line"> </span><br><span class="line">b = a <span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c = copy.copy(a) <span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d = copy.deepcopy(a) <span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"> </span><br><span class="line">a.append(<span class="number">5</span>) <span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">4</span>].append(<span class="string">'c'</span>) <span class="comment">#修改对象a中的['a', 'b']数组对象</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> <span class="string">'a = '</span>, a</span><br><span class="line"><span class="keyword">print</span> <span class="string">'b = '</span>, b</span><br><span class="line"><span class="keyword">print</span> <span class="string">'c = '</span>, c</span><br><span class="line"><span class="keyword">print</span> <span class="string">'d = '</span>, d</span><br><span class="line">输出结果：</span><br><span class="line">a =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">b =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">c =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]]</span><br><span class="line">d =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]]</span><br></pre></td></tr></table></figure></li></ol><h2 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()</h2><p>zip函数接受任意多个序列作为参数，返回一个tuple列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(zip(range(<span class="number">3</span>),range(<span class="number">5</span>)))</span><br><span class="line">[(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> zip(range(<span class="number">3</span>),range(<span class="number">5</span>)):</span><br><span class="line">    print(i)</span><br><span class="line">    print(j)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure></p><h2 id="运算符and和or"><a href="#运算符and和or" class="headerlink" title="运算符and和or"></a>运算符and和or</h2><p> 注意：and or 是python特有的短路运算符</p><ol><li>表达式从左至右运算，若 or 的左侧逻辑值为 True ，则短路 or 后所有的表达式（不管是 and 还是 or），直接输出 or 左侧表达式 。</li><li>表达式从左至右运算，若 and 的左侧逻辑值为 False ，则短路其后所有 and 表达式，直到有 or 出现，输出 and 左侧表达式到 or 的左侧，参与接下来的逻辑运算。</li><li>若 or 的左侧为 False ，或者 and 的左侧为 True 则不能使用短路逻辑。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;open&quot;&gt;&lt;a href=&quot;#open&quot; class=&quot;headerlink&quot; title=&quot;open()&quot;&gt;&lt;/a&gt;open()&lt;/h2&gt;&lt;p&gt;1简单的文件读写&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tensorflow基本语法</title>
+    <link href="http://yoursite.com/2018/04/19/tensorflow/1_Tensorflow%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/04/19/tensorflow/1_Tensorflow基本用法/</id>
+    <published>2018-04-18T16:51:27.000Z</published>
+    <updated>2018-04-27T06:34:13.804Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量-和-Session-定义"><a href="#变量-和-Session-定义" class="headerlink" title="变量 和 Session()定义"></a>变量 和 Session()定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="comment"># Create a variable.</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]]) </span><br><span class="line"></span><br><span class="line">y = tf.matmul(w, x)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#variables have to be explicitly initialized before you can run Ops</span></span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  <span class="comment">#第一种 session()定义方式</span></span><br><span class="line">    sess.run(init_op)</span><br><span class="line">    <span class="keyword">print</span> (y.eval())</span><br></pre></td></tr></table></figure><pre><code>Tensor(&quot;Variable_11/read:0&quot;, shape=(1, 2), dtype=float32)[[ 2.]]</code></pre><p>计算操作需要在 Session()——会话（计算图的区域） 中进行；<br>而且在使用 variable 时还需要 初始化全局变量操作</p><h2 id="矩阵-和-常量"><a href="#矩阵-和-常量" class="headerlink" title="矩阵 和 常量"></a>矩阵 和 常量</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># float32</span></span><br><span class="line">tf.zeros([3, 4], int32) ==&gt; [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.zeros_like(tensor) ==&gt; [[0, 0, 0], [0, 0, 0]]</span><br><span class="line">tf.ones([2, 3], int32) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.ones_like(tensor) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 1-D Tensor populated with value list.</span></span><br><span class="line">tensor = tf.constant([1, 2, 3, 4, 5, 6, 7]) =&gt; [1 2 3 4 5 6 7]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 2-D tensor populated with scalar value -1.</span></span><br><span class="line">tensor = tf.constant(-1.0, shape=[2, 3]) =&gt; [[-1. -1. -1.]</span><br><span class="line">                                              [<span class="number">-1.</span> <span class="number">-1.</span> <span class="number">-1.</span>]]</span><br><span class="line"></span><br><span class="line">tf.linspace(10.0, 12.0, 3, name="linspace") =&gt; [ 10.0  11.0  12.0]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 令'start' is 3</span></span><br><span class="line"><span class="comment"># 'limit' is 18</span></span><br><span class="line"><span class="comment"># 'delta' is 3</span></span><br><span class="line">tf.range(start, limit, delta) ==&gt; [3, 6, 9, 12, 15]</span><br></pre></td></tr></table></figure><p>对比 Numpy 操作，发现区别并不大</p><h2 id="另一种-Session-定义"><a href="#另一种-Session-定义" class="headerlink" title="另一种 Session() 定义"></a>另一种 Session() 定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment"># 初始化生成一个 均值为-1，方差为4的矩阵</span></span><br><span class="line">norm = tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], mean=<span class="number">-1</span>, stddev=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Shuffle the first dimension of a tensor</span></span><br><span class="line">c = tf.constant([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">shuff = tf.random_shuffle(c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Each time we run these ops, different results are generated</span></span><br><span class="line">sess = tf.Session()  <span class="comment">#第二种 session()定义方式</span></span><br><span class="line"><span class="keyword">print</span> (sess.run(norm))</span><br><span class="line"><span class="keyword">print</span> (sess.run(shuff))</span><br></pre></td></tr></table></figure><pre><code>[[ 3.78657341 -3.94182277 -3.65419507] [-7.0396409  -5.51102114  3.56082773]][[5 6] [1 2] [3 4]]</code></pre><h2 id="累加-演示"><a href="#累加-演示" class="headerlink" title="累加 演示"></a>累加 演示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">state = tf.Variable(<span class="number">0</span>)</span><br><span class="line">new_value = tf.add(state, tf.constant(<span class="number">1</span>))</span><br><span class="line">update = tf.assign(state, new_value)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    print(sess.run(state))    </span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        sess.run(update)</span><br><span class="line">        print(sess.run(state))</span><br></pre></td></tr></table></figure><pre><code>0123</code></pre><h2 id="train-Saver-保存-Session-操作"><a href="#train-Saver-保存-Session-操作" class="headerlink" title="train.Saver() 保存 Session() 操作"></a>train.Saver() 保存 Session() 操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#tf.train.Saver</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]])</span><br><span class="line">y = tf.matmul(w, x)</span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init_op)</span><br><span class="line"><span class="comment"># Do some work with the model.</span></span><br><span class="line"><span class="comment"># Save the variables to disk.</span></span><br><span class="line">    save_path = saver.save(sess, <span class="string">"C://tensorflow//model//test"</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"Model saved in file: "</span>, save_path)</span><br></pre></td></tr></table></figure><pre><code>Model saved in file:  C://tensorflow//model//test</code></pre><h2 id="convert-to-tensor-转换-numpy-的语法为-tensorflow-类型"><a href="#convert-to-tensor-转换-numpy-的语法为-tensorflow-类型" class="headerlink" title="convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型"></a>convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">ta = tf.convert_to_tensor(a)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">     print(sess.run(ta))</span><br></pre></td></tr></table></figure><pre><code>[[ 0.  0.  0.] [ 0.  0.  0.] [ 0.  0.  0.]]</code></pre><p>不推荐使用，还是建议使用 tensorflow 语法</p><h2 id="placeholder-定义-待输入占位变量"><a href="#placeholder-定义-待输入占位变量" class="headerlink" title="placeholder() 定义 待输入占位变量"></a>placeholder() 定义 待输入占位变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input1 = tf.placeholder(tf.float32)</span><br><span class="line">input2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.mul(input1, input2)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>], input2:[<span class="number">2.</span>]&#125;))</span><br></pre></td></tr></table></figure><pre><code>[array([ 14.], dtype=float32)]</code></pre><p>这些变量可以在使用时再临时 用 feed_dict字典格式 赋值</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;变量-和-Session-定义&quot;&gt;&lt;a href=&quot;#变量-和-Session-定义&quot; class=&quot;headerlink&quot; title=&quot;变量 和 Session()定义&quot;&gt;&lt;/a&gt;变量 和 Session()定义&lt;/h2&gt;&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+      <category term="tensorflow" scheme="http://yoursite.com/categories/tensorflow/"/>
+    
+    
+      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tensorflow整理</title>
+    <link href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow%E6%95%B4%E7%90%86/"/>
+    <id>http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/</id>
+    <published>2018-04-18T16:51:27.000Z</published>
+    <updated>2018-05-03T13:56:03.008Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h1><h2 id="特色语法类"><a href="#特色语法类" class="headerlink" title="特色语法类"></a>特色语法类</h2><ul><li>输出数值要加 .eval()</li></ul><h2 id="计算类"><a href="#计算类" class="headerlink" title="计算类"></a>计算类</h2><ul><li>tf.nn.sigmoid() </li><li>tf.nn.softmax</li><li>tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。</li><li>tf.add()</li><li>tf.matmul()</li><li>tf.reduce_mean()</li><li>tf.square()平方<h2 id="算法类-优化器"><a href="#算法类-优化器" class="headerlink" title="算法类 优化器"></a>算法类 优化器</h2>tf.train.GradientDescentOptimizer()：梯度下降</li></ul><h2 id="功能类"><a href="#功能类" class="headerlink" title="功能类"></a>功能类</h2><ul><li>tf.equal(a, b)  ：比较是否相等</li><li>tf.cast(a, “float”)  :类型转换</li><li>tf.placeholder(“float”, [None, 10]) ：None is for infinite 这是一个n行10列的动态矩阵</li><li>tf.InteractiveSession(): 它能让你在运行图的时候，插入一些计算图</li><li>tf.Session(): 需要在启动session之前构建整个计算图，然后启动该计算图。</li><li>tf.random_normal([2, 3], mean=-1, stddev=4) ：高斯初始化生成一个 均值为-1，方差为4的矩阵</li></ul><h2 id="经验总结类"><a href="#经验总结类" class="headerlink" title="经验总结类"></a>经验总结类</h2><ul><li>Tensorflow 定义的任何数据类型都推荐用 float32</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;整理&quot;&gt;&lt;a href=&quot;#整理&quot; class=&quot;headerlink&quot; title=&quot;整理&quot;&gt;&lt;/a&gt;整理&lt;/h1&gt;&lt;h2 id=&quot;特色语法类&quot;&gt;&lt;a href=&quot;#特色语法类&quot; class=&quot;headerlink&quot; title=&quot;特色语法类&quot;&gt;&lt;/a&gt;特色语法
+      
+    
+    </summary>
+    
+      <category term="tensorflow" scheme="http://yoursite.com/categories/tensorflow/"/>
+    
+    
+      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1向量、矩阵、向量范数、矩阵范数</title>
+    <link href="http://yoursite.com/2018/04/19/math/linear_algebra/1%E5%90%91%E9%87%8F%E3%80%81%E7%9F%A9%E9%98%B5%E3%80%81%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E3%80%81%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/</id>
+    <published>2018-04-18T16:51:27.000Z</published>
+    <updated>2018-05-03T03:59:21.303Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><h3 id="向量内积-和-投影"><a href="#向量内积-和-投影" class="headerlink" title="向量内积 和 投影"></a>向量内积 和 投影</h3><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-52-26.png" alt=""><br>内积：<br>1用点乘：a•b<br>2用转置乘：a^T b<br>3向量的模是范数的一种<br>4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身</p><p>投影：<br>1 b在a上的投影 = |b|cosθ<br>2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；<br>3 由2又有：b在a上的投影 = $\frac {a^T b} {||a||}$ ★</p><h3 id="向量外积"><a href="#向量外积" class="headerlink" title="向量外积"></a>向量外积</h3><h3 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h3><ol><li>向量范数的定义和性质：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-56-23.png" alt=""><br>齐次性：数乘以后会放大相应的倍数</p><ol><li>1-范数、2-范数、无穷范数：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-56-55.png" alt=""></p><ol><li>稀疏性 和 0-范数：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-57-09.png" alt=""><br>稀疏性用到的范数：<br>特殊的0-范数，他不满足齐次性；<br>所以需要1-范数来辅助解决；</p><ol><li>范数的几何意义：</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-20-32-56.png" alt=""><br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-29-03.png" alt=""></p><h3 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h3><ol><li>初始单位向两组</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-30-44.png" alt=""></p><ol><li>向量组等价</li></ol><p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-16.png" alt=""></p><ol><li>线性相关 和 线性无关<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-28.png" alt=""></li><li>施密特正交化<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-41.png" alt=""><br>由施密特正交化生成的 正交向量组 和 之前的线性无关向量组 可以互相线性表示</li></ol><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><ul><li>O矩阵<br>所有元素都为0的矩阵<br><br></li><li>一阶矩阵(a)<br>等同于数a<br><br></li><li>矩阵的内积<br>内积 A·B  &lt;=&gt;  ${A^T}B$<h2 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h2><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-22-17-47-24.png" alt=""><br>矩阵的范数比向量的范数多一条相容性</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;向量&quot;&gt;&lt;a href=&quot;#向量&quot; class=&quot;headerlink&quot; title=&quot;向量&quot;&gt;&lt;/a&gt;向量&lt;/h2&gt;&lt;h3 id=&quot;向量内积-和-投影&quot;&gt;&lt;a href=&quot;#向量内积-和-投影&quot; class=&quot;headerlink&quot; title=&quot;向量内积 和 
+      
+    
+    </summary>
+    
+      <category term="math" scheme="http://yoursite.com/categories/math/"/>
+    
+      <category term="linear_algebra" scheme="http://yoursite.com/categories/math/linear-algebra/"/>
+    
+    
+      <category term="范数" scheme="http://yoursite.com/tags/%E8%8C%83%E6%95%B0/"/>
+    
+      <category term="外积" scheme="http://yoursite.com/tags/%E5%A4%96%E7%A7%AF/"/>
     
   </entry>
   

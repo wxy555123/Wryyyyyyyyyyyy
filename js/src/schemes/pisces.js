@@ -10,7 +10,10 @@ $(document).ready(function () {
         footerOffset = getFooterOffset(),
         sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight(),
         contentHeight = $('#content').height();
-
+	
+	//CUSTOM ������Ӷ�����ͷ��������������
+    //setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
+	
     // Not affix if sidebar taller then content (to prevent bottom jumping).
     if (headerOffset + sidebarHeight < contentHeight) {
       sidebarInner.affix({
@@ -21,7 +24,7 @@ $(document).ready(function () {
       });
     }
 
-    setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
+
   }
 
   function resizeListener () {
