@@ -1250,20 +1250,6 @@ pre .javascript .function {
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
 }
-.use-motion .post-block,
-.use-motion .pagination,
-.use-motion .comments {
-  opacity: 0;
-}
-.use-motion .post-header {
-  opacity: 0;
-}
-.use-motion .post-body {
-  opacity: 0;
-}
-.use-motion .collection-title {
-  opacity: 0;
-}
 .posts-expand {
   padding-top: 40px;
 }
@@ -1826,7 +1812,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #fff90b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2955,14 +2941,6 @@ ul.breadcrumb li+li:last-child {
     text-align: justify;
   }
 }
-.btn {
-  color: #333;
-  border: 2px solid #555;
-}
-.btn:hover {
-  background: #555;
-  border: 2px solid #555;
-}
 .category-all-title {
   display: none;
 }
@@ -2971,10 +2949,6 @@ ul.breadcrumb li+li:last-child {
 }
 .category-all {
   font-size: 20px;
-}
-.sidebar-position-right .footer-inner {
-  padding-left: 40px;
-  padding-right: 280px;
 }
 .posts-expand .post-eof {
   display: block;
@@ -2987,9 +2961,13 @@ ul.breadcrumb li+li:last-child {
 .links-of-author-item {
   text-align: center;
 }
-.sidebar-inner {
-  padding: 20px 0 0 0;
+.sidebar {
+  margin-top: 341px;
 }
-.music163 {
-  margin: 20px 0 0 0;
+.sidebar-inner {
+  padding: 20px;
+}
+.sidebar-position-right .footer-inner {
+  padding-left: 40px;
+  padding-right: 280px;
 }
