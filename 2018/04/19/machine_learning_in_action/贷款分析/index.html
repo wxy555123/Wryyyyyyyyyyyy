@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #000000; /*��������ɫ*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #CCCCCC, 0 0 5px     #CCCCCC; /*��Ӱ��ɫ*/
+    }
+    .pace .pace-activity {
+        border-top-color: #FFFFFF;    /*�ϱ߿���ɫ*/
+        border-left-color: #FFFFFF;    /*��߿���ɫ*/
+    }
+</style>
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="123456import pandas as pdloans_2007 = pd.read_csv(&apos;LoanStats3a.csv&apos;, skiprows=1)half_count = len(loans_2007) / 2loans_2007 = loans_2007.dropna(thresh=half_count, axis=1)loans_2007 = loans_2007.drop([&apos;">
+<meta name="keywords" content="pandas列属性数字替换,pandas缺失值处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贷款分析">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/index.html">
+<meta property="og:site_name" content="新日暮里的幻想乡">
+<meta property="og:description" content="123456import pandas as pdloans_2007 = pd.read_csv(&apos;LoanStats3a.csv&apos;, skiprows=1)half_count = len(loans_2007) / 2loans_2007 = loans_2007.dropna(thresh=half_count, axis=1)loans_2007 = loans_2007.drop([&apos;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/QQ%E6%88%AA%E5%9B%BE20180425000738.jpg">
+<meta property="og:updated_time" content="2018-05-04T08:07:29.339Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="贷款分析">
+<meta name="twitter:description" content="123456import pandas as pdloans_2007 = pd.read_csv(&apos;LoanStats3a.csv&apos;, skiprows=1)half_count = len(loans_2007) / 2loans_2007 = loans_2007.dropna(thresh=half_count, axis=1)loans_2007 = loans_2007.drop([&apos;">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/QQ%E6%88%AA%E5%9B%BE20180425000738.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="新日暮里的幻想乡" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>贷款分析 | 新日暮里的幻想乡</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8b8d3dbc822302a739163af5eeb0d699";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新日暮里的幻想乡</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">boy next door</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_in_action/贷款分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wxy555123">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新日暮里的幻想乡">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">贷款分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-04-19 12:49:42" itemprop="dateCreated datePublished" datetime="2018-04-19T12:49:42+08:00">2018-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-05-04 16:07:29" itemprop="dateModified" datetime="2018-05-04T16:07:29+08:00">2018-05-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-in-action/" itemprop="url" rel="index"><span itemprop="name">machine_learning_in_action</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/19/machine_learning_in_action/贷款分析/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/19/machine_learning_in_action/贷款分析/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">loans_2007 = pd.read_csv(<span class="string">'LoanStats3a.csv'</span>, skiprows=<span class="number">1</span>)</span><br><span class="line">half_count = len(loans_2007) / <span class="number">2</span></span><br><span class="line">loans_2007 = loans_2007.dropna(thresh=half_count, axis=<span class="number">1</span>)</span><br><span class="line">loans_2007 = loans_2007.drop([<span class="string">'desc'</span>, <span class="string">'url'</span>],axis=<span class="number">1</span>)</span><br><span class="line">loans_2007.to_csv(<span class="string">'loans_2007.csv'</span>, index=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>D:\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py:2717: DtypeWarning: Columns (0,47) have mixed types. Specify dtype option on import or set low_memory=False.
+  interactivity=interactivity, compiler=compiler, result=result)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">loans_2007 = pd.read_csv(<span class="string">"loans_2007.csv"</span>)</span><br><span class="line"><span class="comment">#loans_2007.drop_duplicates()</span></span><br><span class="line">print(loans_2007.iloc[<span class="number">0</span>].head(<span class="number">15</span>))</span><br><span class="line">print(loans_2007.shape[<span class="number">1</span>]) <span class="comment">#共52个特征</span></span><br></pre></td></tr></table></figure>
+<pre><code>id                        1077501
+member_id              1.2966e+06
+loan_amnt                    5000
+funded_amnt                  5000
+funded_amnt_inv              4975
+term                    36 months
+int_rate                   10.65%
+installment                162.87
+grade                           B
+sub_grade                      B2
+emp_title                     NaN
+emp_length              10+ years
+home_ownership               RENT
+annual_inc                  24000
+verification_status      Verified
+Name: 0, dtype: object
+52
+
+
+D:\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py:2717: DtypeWarning: Columns (0) have mixed types. Specify dtype option on import or set low_memory=False.
+  interactivity=interactivity, compiler=compiler, result=result)
+</code></pre><h2 id="预处理——数据清洗"><a href="#预处理——数据清洗" class="headerlink" title="预处理——数据清洗"></a>预处理——数据清洗</h2><p>先直观上 去掉不需要的特征。<br>包括： 1.预测后才出现的特征（比如：实际发放的贷款）、2.高度相关的特征（比如：123和ABC）、3。关系不大的特征（比如：ID等）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loans_2007 = loans_2007.drop([<span class="string">"id"</span>, <span class="string">"member_id"</span>, <span class="string">"funded_amnt"</span>, <span class="string">"funded_amnt_inv"</span>, <span class="string">"grade"</span>, <span class="string">"sub_grade"</span>, <span class="string">"emp_title"</span>, <span class="string">"issue_d"</span>], axis=<span class="number">1</span>)</span><br><span class="line">loans_2007 = loans_2007.drop([<span class="string">"zip_code"</span>, <span class="string">"out_prncp"</span>, <span class="string">"out_prncp_inv"</span>, <span class="string">"total_pymnt"</span>, <span class="string">"total_pymnt_inv"</span>, <span class="string">"total_rec_prncp"</span>], axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loans_2007 = loans_2007.drop([<span class="string">"total_rec_int"</span>, <span class="string">"total_rec_late_fee"</span>, <span class="string">"recoveries"</span>, <span class="string">"collection_recovery_fee"</span>, <span class="string">"last_pymnt_d"</span>, <span class="string">"last_pymnt_amnt"</span>], axis=<span class="number">1</span>)</span><br><span class="line">print(loans_2007.iloc[<span class="number">0</span>])</span><br><span class="line">print(loans_2007.shape[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>loan_amnt                            5000
+term                            36 months
+int_rate                           10.65%
+installment                        162.87
+emp_length                      10+ years
+home_ownership                       RENT
+annual_inc                          24000
+verification_status              Verified
+loan_status                    Fully Paid
+pymnt_plan                              n
+purpose                       credit_card
+title                            Computer
+addr_state                             AZ
+dti                                 27.65
+delinq_2yrs                             0
+earliest_cr_line                 Jan-1985
+inq_last_6mths                          1
+open_acc                                3
+pub_rec                                 0
+revol_bal                           13648
+revol_util                          83.7%
+total_acc                               9
+initial_list_status                     f
+last_credit_pull_d               Nov-2016
+collections_12_mths_ex_med              0
+policy_code                             1
+application_type               INDIVIDUAL
+acc_now_delinq                          0
+chargeoff_within_12_mths                0
+delinq_amnt                             0
+pub_rec_bankruptcies                    0
+tax_liens                               0
+Name: 0, dtype: object
+32
+</code></pre><h2 id="预处理——label列属性数字替换"><a href="#预处理——label列属性数字替换" class="headerlink" title="预处理——label列属性数字替换"></a>预处理——label列属性数字替换</h2><p>对label属性进行统计，选择适合用于分类的属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(loans_2007[<span class="string">'loan_status'</span>].value_counts())</span><br></pre></td></tr></table></figure>
+<pre><code>Fully Paid                                             33902
+Charged Off                                             5658
+Does not meet the credit policy. Status:Fully Paid      1988
+Does not meet the credit policy. Status:Charged Off      761
+Current                                                  201
+Late (31-120 days)                                        10
+In Grace Period                                            9
+Late (16-30 days)                                          5
+Default                                                    1
+Name: loan_status, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 属性为Fully Paid 和 Charged off 的替换为 1 和 0</span></span><br><span class="line"><span class="comment"># 只取这部分数据</span></span><br><span class="line">loans_2007 = loans_2007[(loans_2007[<span class="string">'loan_status'</span>] == <span class="string">"Fully Paid"</span>) | (loans_2007[<span class="string">'loan_status'</span>] == <span class="string">"Charged Off"</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换指定列的 指定属性为 指定的值★</span></span><br><span class="line">status_replace = &#123;</span><br><span class="line">    <span class="string">"loan_status"</span> : &#123;</span><br><span class="line">        <span class="string">"Fully Paid"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">"Charged Off"</span>: <span class="number">0</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loans_2007 = loans_2007.replace(status_replace)</span><br></pre></td></tr></table></figure>
+<h2 id="预处理——最后再去掉列属性只有一个的列"><a href="#预处理——最后再去掉列属性只有一个的列" class="headerlink" title="预处理——最后再去掉列属性只有一个的列"></a>预处理——最后再去掉列属性只有一个的列</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#let's look for any columns that contain only one unique value and remove them</span></span><br><span class="line"></span><br><span class="line">orig_columns = loans_2007.columns</span><br><span class="line">drop_columns = []</span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> orig_columns:</span><br><span class="line">    col_series = loans_2007[col].dropna().unique() <span class="comment">#这里要去掉空值nan以后 再判定列的属性是否只有一个</span></span><br><span class="line">    <span class="keyword">if</span> len(col_series) == <span class="number">1</span>:</span><br><span class="line">        drop_columns.append(col)</span><br><span class="line">loans_2007 = loans_2007.drop(drop_columns, axis=<span class="number">1</span>)</span><br><span class="line">print(drop_columns)</span><br><span class="line">print(loans_2007.shape)</span><br><span class="line">loans_2007.to_csv(<span class="string">'filtered_loans_2007.csv'</span>, index=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;initial_list_status&#39;, &#39;collections_12_mths_ex_med&#39;, &#39;policy_code&#39;, &#39;application_type&#39;, &#39;acc_now_delinq&#39;, &#39;chargeoff_within_12_mths&#39;, &#39;delinq_amnt&#39;, &#39;tax_liens&#39;]
+(39560, 24)
+</code></pre><p>处理完毕，最终得到24列数据</p>
+<h2 id="预处理——缺失值"><a href="#预处理——缺失值" class="headerlink" title="预处理——缺失值"></a>预处理——缺失值</h2><p>先查找列缺失值多的，去掉这些列，只剩下缺失值少的列。之后直接去掉那些样本行即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">loans = pd.read_csv(<span class="string">'filtered_loans_2007.csv'</span>)</span><br><span class="line">null_counts = loans.isnull().sum()</span><br><span class="line">print(null_counts)</span><br></pre></td></tr></table></figure>
+<pre><code>loan_amnt                 0
+term                      0
+int_rate                  0
+installment               0
+emp_length                0
+home_ownership            0
+annual_inc                0
+verification_status       0
+loan_status               0
+pymnt_plan                0
+purpose                   0
+title                    10
+addr_state                0
+dti                       0
+delinq_2yrs               0
+earliest_cr_line          0
+inq_last_6mths            0
+open_acc                  0
+pub_rec                   0
+revol_bal                 0
+revol_util               50
+total_acc                 0
+last_credit_pull_d        2
+pub_rec_bankruptcies    697
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loans = loans.drop(<span class="string">"pub_rec_bankruptcies"</span>, axis=<span class="number">1</span>)</span><br><span class="line">loans = loans.dropna(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>object     12
+float64    10
+int64       1
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 处理完缺失值，统计每种数据类型的列 有几个</span></span><br><span class="line">print(loans.dtypes.value_counts())</span><br></pre></td></tr></table></figure>
+<h2 id="预处理——字符串值转换"><a href="#预处理——字符串值转换" class="headerlink" title="预处理——字符串值转换"></a>预处理——字符串值转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">object_columns_df = loans.select_dtypes(include=[<span class="string">"object"</span>])</span><br><span class="line">print(object_columns_df.iloc[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>term                     36 months
+int_rate                    10.65%
+emp_length               10+ years
+home_ownership                RENT
+verification_status       Verified
+pymnt_plan                       n
+purpose                credit_card
+title                     Computer
+addr_state                      AZ
+earliest_cr_line          Jan-1985
+revol_util                   83.7%
+last_credit_pull_d        Nov-2016
+Name: 0, dtype: object
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cols = [<span class="string">'home_ownership'</span>, <span class="string">'verification_status'</span>, <span class="string">'emp_length'</span>, <span class="string">'term'</span>, <span class="string">'addr_state'</span>]</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cols:</span><br><span class="line">    print(loans[c].value_counts())</span><br></pre></td></tr></table></figure>
+<pre><code>RENT        18780
+MORTGAGE    17574
+OWN          3045
+OTHER          96
+NONE            3
+Name: home_ownership, dtype: int64
+Not Verified       16856
+Verified           12705
+Source Verified     9937
+Name: verification_status, dtype: int64
+10+ years    8821
+&lt; 1 year     4563
+2 years      4371
+3 years      4074
+4 years      3409
+5 years      3270
+1 year       3227
+6 years      2212
+7 years      1756
+8 years      1472
+9 years      1254
+n/a          1069
+Name: emp_length, dtype: int64
+ 36 months    29041
+ 60 months    10457
+Name: term, dtype: int64
+CA    7070
+NY    3788
+FL    2856
+TX    2714
+NJ    1838
+IL    1517
+PA    1504
+VA    1400
+GA    1393
+MA    1336
+OH    1208
+MD    1049
+AZ     874
+WA     834
+CO     786
+NC     780
+CT     747
+MI     722
+MO     682
+MN     611
+NV     492
+SC     470
+WI     453
+AL     446
+OR     445
+LA     435
+KY     325
+OK     298
+KS     269
+UT     256
+AR     243
+DC     211
+RI     198
+NM     188
+WV     176
+HI     172
+NH     172
+DE     113
+MT      84
+WY      83
+AK      79
+SD      63
+VT      54
+MS      19
+TN      17
+IN       9
+ID       6
+IA       5
+NE       5
+ME       3
+Name: addr_state, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这2个特征内容差不多，选择去掉title列</span></span><br><span class="line">print(loans[<span class="string">"purpose"</span>].value_counts())</span><br><span class="line">print(loans[<span class="string">"title"</span>].value_counts())</span><br></pre></td></tr></table></figure>
+<pre><code>debt_consolidation    18533
+credit_card            5099
+other                  3963
+home_improvement       2965
+major_purchase         2181
+small_business         1815
+car                    1544
+wedding                 945
+medical                 692
+moving                  581
+vacation                379
+house                   378
+educational             320
+renewable_energy        103
+Name: purpose, dtype: int64
+Debt Consolidation                         2168
+Debt Consolidation Loan                    1706
+Personal Loan                               658
+Consolidation                               509
+debt consolidation                          502
+Credit Card Consolidation                   356
+Home Improvement                            354
+Debt consolidation                          333
+Small Business Loan                         322
+Credit Card Loan                            313
+Personal                                    308
+Consolidation Loan                          255
+Home Improvement Loan                       246
+personal loan                               234
+personal                                    220
+Loan                                        212
+Wedding Loan                                209
+consolidation                               200
+Car Loan                                    200
+Other Loan                                  190
+Credit Card Payoff                          155
+Wedding                                     152
+Major Purchase Loan                         144
+Credit Card Refinance                       143
+Consolidate                                 127
+Medical                                     122
+Credit Card                                 117
+home improvement                            111
+My Loan                                      94
+Credit Cards                                 93
+                                           ... 
+DebtConsolidationn                            1
+ Freedom                                      1
+Credit Card Consolidation Loan - SEG          1
+SOLAR PV                                      1
+Pay on Credit card                            1
+To pay off balloon payments due               1
+Paying off the debt                           1
+Payoff ING PLOC                               1
+Josh CC Loan                                  1
+House payoff                                  1
+Taking care of Business                       1
+Gluten Free Bakery in ideal town for it       1
+Startup Money for Small Business              1
+FundToFinanceCar                              1
+getting ready for Baby                        1
+Dougs Wedding Loan                            1
+d rock                                        1
+LC Loan 2                                     1
+swimming pool repair                          1
+engagement                                    1
+Cut the credit cards Loan                     1
+vinman                                        1
+working hard to get out of debt               1
+consolidate the rest of my debt               1
+Medical/Vacation                              1
+2BDebtFree                                    1
+Paying Off High Interest Credit Cards!        1
+Baby on the way!                              1
+cart loan                                     1
+Consolidaton                                  1
+Name: title, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mapping_dict = &#123;</span><br><span class="line">    <span class="string">"emp_length"</span>: &#123;</span><br><span class="line">        <span class="string">"10+ years"</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="string">"9 years"</span>: <span class="number">9</span>,</span><br><span class="line">        <span class="string">"8 years"</span>: <span class="number">8</span>,</span><br><span class="line">        <span class="string">"7 years"</span>: <span class="number">7</span>,</span><br><span class="line">        <span class="string">"6 years"</span>: <span class="number">6</span>,</span><br><span class="line">        <span class="string">"5 years"</span>: <span class="number">5</span>,</span><br><span class="line">        <span class="string">"4 years"</span>: <span class="number">4</span>,</span><br><span class="line">        <span class="string">"3 years"</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="string">"2 years"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">"1 year"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">"&lt; 1 year"</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="string">"n/a"</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">loans = loans.drop([<span class="string">"last_credit_pull_d"</span>, <span class="string">"earliest_cr_line"</span>, <span class="string">"addr_state"</span>, <span class="string">"title"</span>], axis=<span class="number">1</span>)</span><br><span class="line">loans[<span class="string">"int_rate"</span>] = loans[<span class="string">"int_rate"</span>].str.rstrip(<span class="string">"%"</span>).astype(<span class="string">"float"</span>)</span><br><span class="line">loans[<span class="string">"revol_util"</span>] = loans[<span class="string">"revol_util"</span>].str.rstrip(<span class="string">"%"</span>).astype(<span class="string">"float"</span>)</span><br><span class="line">loans = loans.replace(mapping_dict)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cat_columns = [<span class="string">"home_ownership"</span>, <span class="string">"verification_status"</span>, <span class="string">"emp_length"</span>, <span class="string">"purpose"</span>, <span class="string">"term"</span>]</span><br><span class="line">dummy_df = pd.get_dummies(loans[cat_columns])</span><br><span class="line">loans = pd.concat([loans, dummy_df], axis=<span class="number">1</span>)</span><br><span class="line">loans = loans.drop(cat_columns, axis=<span class="number">1</span>)</span><br><span class="line">loans = loans.drop(<span class="string">"pymnt_plan"</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loans.to_csv(<span class="string">'cleaned_loans2007.csv'</span>, index=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="模型训练、评估、调参——训练目标是盈利最大化"><a href="#模型训练、评估、调参——训练目标是盈利最大化" class="headerlink" title="模型训练、评估、调参——训练目标是盈利最大化"></a>模型训练、评估、调参——训练目标是盈利最大化</h2><p>模型训练目标：<br><img src="/2018/04/19/machine_learning_in_action/贷款分析/QQ%E6%88%AA%E5%9B%BE20180425000738.jpg" alt=""><br>是确保TP的数量至少是FP的10倍。<br>然而这里不适合使用精度，故我们选择 TPR 和 FPR ，要使 TPR尽可能大， FPR 尽可能小</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">loans = pd.read_csv(<span class="string">"cleaned_loans2007.csv"</span>)</span><br><span class="line">print(loans.info())</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 39498 entries, 0 to 39497
+Data columns (total 37 columns):
+loan_amnt                              39498 non-null float64
+int_rate                               39498 non-null float64
+installment                            39498 non-null float64
+annual_inc                             39498 non-null float64
+loan_status                            39498 non-null int64
+dti                                    39498 non-null float64
+delinq_2yrs                            39498 non-null float64
+inq_last_6mths                         39498 non-null float64
+open_acc                               39498 non-null float64
+pub_rec                                39498 non-null float64
+revol_bal                              39498 non-null float64
+revol_util                             39498 non-null float64
+total_acc                              39498 non-null float64
+home_ownership_MORTGAGE                39498 non-null int64
+home_ownership_NONE                    39498 non-null int64
+home_ownership_OTHER                   39498 non-null int64
+home_ownership_OWN                     39498 non-null int64
+home_ownership_RENT                    39498 non-null int64
+verification_status_Not Verified       39498 non-null int64
+verification_status_Source Verified    39498 non-null int64
+verification_status_Verified           39498 non-null int64
+purpose_car                            39498 non-null int64
+purpose_credit_card                    39498 non-null int64
+purpose_debt_consolidation             39498 non-null int64
+purpose_educational                    39498 non-null int64
+purpose_home_improvement               39498 non-null int64
+purpose_house                          39498 non-null int64
+purpose_major_purchase                 39498 non-null int64
+purpose_medical                        39498 non-null int64
+purpose_moving                         39498 non-null int64
+purpose_other                          39498 non-null int64
+purpose_renewable_energy               39498 non-null int64
+purpose_small_business                 39498 non-null int64
+purpose_vacation                       39498 non-null int64
+purpose_wedding                        39498 non-null int64
+term_ 36 months                        39498 non-null int64
+term_ 60 months                        39498 non-null int64
+dtypes: float64(12), int64(25)
+memory usage: 11.1 MB
+None
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># False positives.</span></span><br><span class="line">fp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">fp = len(predictions[fp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True positives.</span></span><br><span class="line">tp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">tp = len(predictions[tp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># False negatives.</span></span><br><span class="line">fn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">fn = len(predictions[fn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True negatives</span></span><br><span class="line">tn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">tn = len(predictions[tn_filter])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">cols = loans.columns</span><br><span class="line">train_cols = cols.drop(<span class="string">"loan_status"</span>)</span><br><span class="line">features = loans[train_cols]</span><br><span class="line">target = loans[<span class="string">"loan_status"</span>]</span><br><span class="line">lr.fit(features, target)</span><br><span class="line">predictions = lr.predict(features)</span><br></pre></td></tr></table></figure>
+<h3 id="第一次，逻辑回归"><a href="#第一次，逻辑回归" class="headerlink" title="第一次，逻辑回归"></a>第一次，逻辑回归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> cross_val_predict, KFold</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">kf = KFold(features.shape[<span class="number">0</span>], random_state=<span class="number">1</span>)</span><br><span class="line">predictions = cross_val_predict(lr, features, target, cv=kf)</span><br><span class="line">predictions = pd.Series(predictions)</span><br><span class="line"></span><br><span class="line"><span class="comment"># False positives.</span></span><br><span class="line">fp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">fp = len(predictions[fp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True positives.</span></span><br><span class="line">tp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">tp = len(predictions[tp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># False negatives.</span></span><br><span class="line">fn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">fn = len(predictions[fn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True negatives</span></span><br><span class="line">tn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">tn = len(predictions[tn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rates</span></span><br><span class="line">tpr = tp / float((tp + fn))</span><br><span class="line">fpr = fp / float((fp + tn))</span><br><span class="line"></span><br><span class="line">print(tpr)</span><br><span class="line">print(fpr)</span><br><span class="line"><span class="keyword">print</span> predictions[:<span class="number">20</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>0.999084438406
+0.998049299521
+0     1
+1     1
+2     1
+3     1
+4     1
+5     1
+6     1
+7     1
+8     1
+9     1
+10    1
+11    1
+12    1
+13    1
+14    1
+15    1
+16    1
+17    1
+18    1
+19    1
+dtype: int64
+</code></pre><p>因为样本不均衡导致效果不好。</p>
+<h3 id="第二次，逻辑回归，设置模型参数-class-weight-”balanced”-，让模型自动添加惩罚权重"><a href="#第二次，逻辑回归，设置模型参数-class-weight-”balanced”-，让模型自动添加惩罚权重" class="headerlink" title="第二次，逻辑回归，设置模型参数 class_weight=”balanced” ，让模型自动添加惩罚权重"></a>第二次，逻辑回归，设置模型参数 class_weight=”balanced” ，让模型自动添加惩罚权重</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> cross_val_predict</span><br><span class="line">lr = LogisticRegression(class_weight=<span class="string">"balanced"</span>)</span><br><span class="line">kf = KFold(features.shape[<span class="number">0</span>], random_state=<span class="number">1</span>)</span><br><span class="line">predictions = cross_val_predict(lr, features, target, cv=kf)</span><br><span class="line">predictions = pd.Series(predictions)</span><br><span class="line"></span><br><span class="line"><span class="comment"># False positives.</span></span><br><span class="line">fp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">fp = len(predictions[fp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True positives.</span></span><br><span class="line">tp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">tp = len(predictions[tp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># False negatives.</span></span><br><span class="line">fn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">fn = len(predictions[fn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True negatives</span></span><br><span class="line">tn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">tn = len(predictions[tn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rates</span></span><br><span class="line">tpr = tp / float((tp + fn))</span><br><span class="line">fpr = fp / float((fp + tn))</span><br><span class="line"></span><br><span class="line">print(tpr)</span><br><span class="line">print(fpr)</span><br><span class="line"><span class="keyword">print</span> predictions[:<span class="number">20</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>0.670781771464
+0.400780280192
+0     1
+1     0
+2     0
+3     1
+4     1
+5     0
+6     0
+7     0
+8     0
+9     0
+10    1
+11    0
+12    1
+13    1
+14    0
+15    0
+16    1
+17    1
+18    1
+19    0
+dtype: int64
+</code></pre><p>模型终于起了效果，但还是不理想</p>
+<h3 id="第三次，逻辑回归，手动调节-cclass-weight-参数设置惩罚系数"><a href="#第三次，逻辑回归，手动调节-cclass-weight-参数设置惩罚系数" class="headerlink" title="第三次，逻辑回归，手动调节 cclass_weight 参数设置惩罚系数"></a>第三次，逻辑回归，手动调节 cclass_weight 参数设置惩罚系数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> cross_val_predict</span><br><span class="line">penalty = &#123;</span><br><span class="line">    <span class="number">0</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="number">1</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">lr = LogisticRegression(class_weight=penalty)</span><br><span class="line">kf = KFold(features.shape[<span class="number">0</span>], random_state=<span class="number">1</span>)</span><br><span class="line">predictions = cross_val_predict(lr, features, target, cv=kf)</span><br><span class="line">predictions = pd.Series(predictions)</span><br><span class="line"></span><br><span class="line"><span class="comment"># False positives.</span></span><br><span class="line">fp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">fp = len(predictions[fp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True positives.</span></span><br><span class="line">tp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">tp = len(predictions[tp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># False negatives.</span></span><br><span class="line">fn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">fn = len(predictions[fn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True negatives</span></span><br><span class="line">tn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">tn = len(predictions[tn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rates</span></span><br><span class="line">tpr = tp / float((tp + fn))</span><br><span class="line">fpr = fp / float((fp + tn))</span><br><span class="line"></span><br><span class="line">print(tpr)</span><br><span class="line">print(fpr)</span><br></pre></td></tr></table></figure>
+<pre><code>0.731799521545
+0.478985635751
+</code></pre><p>效果又好了一些</p>
+<h3 id="第四次，随机森林"><a href="#第四次，随机森林" class="headerlink" title="第四次，随机森林"></a>第四次，随机森林</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> cross_val_predict</span><br><span class="line">rf = RandomForestClassifier(n_estimators=<span class="number">10</span>,class_weight=<span class="string">"balanced"</span>, random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#print help(RandomForestClassifier)</span></span><br><span class="line">kf = KFold(features.shape[<span class="number">0</span>], random_state=<span class="number">1</span>)</span><br><span class="line">predictions = cross_val_predict(rf, features, target, cv=kf)</span><br><span class="line">predictions = pd.Series(predictions)</span><br><span class="line"></span><br><span class="line"><span class="comment"># False positives.</span></span><br><span class="line">fp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">fp = len(predictions[fp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True positives.</span></span><br><span class="line">tp_filter = (predictions == <span class="number">1</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">tp = len(predictions[tp_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># False negatives.</span></span><br><span class="line">fn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">1</span>)</span><br><span class="line">fn = len(predictions[fn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># True negatives</span></span><br><span class="line">tn_filter = (predictions == <span class="number">0</span>) &amp; (loans[<span class="string">"loan_status"</span>] == <span class="number">0</span>)</span><br><span class="line">tn = len(predictions[tn_filter])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rates</span></span><br><span class="line">tpr = tp / float((tp + fn))</span><br><span class="line">fpr = fp / float((fp + tn))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<!-- 添加文章结束标记 -->
+	
+		
+		<div style="margin: 60px 0 120px 0; text-align:center;color: #000;font-size:14px;">꧁༺The༒End༻꧂</div>
+		
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pandas列属性数字替换/" rel="tag"><i class="fa fa-tag"></i> pandas列属性数字替换</a>
+          
+            <a href="/tags/pandas缺失值处理/" rel="tag"><i class="fa fa-tag"></i> pandas缺失值处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/machine_learning_theory/1机器学习流程/" rel="next" title="1机器学习流程">
+                <i class="fa fa-chevron-left"></i> 1机器学习流程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/20/math/calculus/直线和平面方程/" rel="prev" title="直线和平面方程">
+                直线和平面方程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="wxy555123" />
+            
+              <p class="site-author-name" itemprop="name">wxy555123</p>
+              <p class="site-description motion-element" itemprop="description">沉迷学习，无法自拔</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wxy555123" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wxy555123/activities" target="_blank" title="ZhiHu"><i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:810200579@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          <!-- ����������
+<div class="music163">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=2189499106&auto=0&height=32"></iframe>
+</div>
+-->
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理——数据清洗"><span class="nav-text">预处理——数据清洗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理——label列属性数字替换"><span class="nav-text">预处理——label列属性数字替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理——最后再去掉列属性只有一个的列"><span class="nav-text">预处理——最后再去掉列属性只有一个的列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理——缺失值"><span class="nav-text">预处理——缺失值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理——字符串值转换"><span class="nav-text">预处理——字符串值转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型训练、评估、调参——训练目标是盈利最大化"><span class="nav-text">模型训练、评估、调参——训练目标是盈利最大化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一次，逻辑回归"><span class="nav-text">第一次，逻辑回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二次，逻辑回归，设置模型参数-class-weight-”balanced”-，让模型自动添加惩罚权重"><span class="nav-text">第二次，逻辑回归，设置模型参数 class_weight=”balanced” ，让模型自动添加惩罚权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三次，逻辑回归，手动调节-cclass-weight-参数设置惩罚系数"><span class="nav-text">第三次，逻辑回归，手动调节 cclass_weight 参数设置惩罚系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四次，随机森林"><span class="nav-text">第四次，随机森林</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wxy555123</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.1.0</div>
+
+
+-->
+
+<div class="powered-by">
+<span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: '1524113382000',
+            owner: 'wxy555123',
+            repo: 'wxy555123.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6635c0ca693c03779556c7793801013f02358252',
+            
+                client_id: 'c082f003b32d19d29345'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript"
+color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>

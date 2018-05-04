@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next pisces" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,7 +99,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -137,7 +135,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-28.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-41.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-22-17-47-24.png">
-<meta property="og:updated_time" content="2018-04-23T08:33:01.267Z">
+<meta property="og:updated_time" content="2018-05-03T03:59:21.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1向量、矩阵、向量范数、矩阵范数">
 <meta name="twitter:description" content="向量向量内积 和 投影内积：1用点乘：a•b2用转置乘：a^T b3向量的模是范数的一种4 wT w《=》向量自己做内积 = 自身长度（模）²，因为投影结果还是w向量本身 投影：1 b在a上的投影 = |b|cosθ2 内积 = 向量1在向量2上的投影 * 他的长度（模，绝对值符号）；3 由2又有：b在a上的投影 = $\frac {a^T b} {||a||}$ ★ 向量外积向量范数 向量范数的">
@@ -233,7 +231,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Do you like Van 游戏？</p>
+        <p class="site-subtitle">boy next door</p>
       
   </div>
 
@@ -284,6 +282,14 @@
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
 
       
@@ -424,7 +430,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-23 16:33:01" itemprop="dateModified" datetime="2018-04-23T16:33:01+08:00">2018-04-23</time>
+                <time title="更新于：2018-05-03 11:59:21" itemprop="dateModified" datetime="2018-05-03T11:59:21+08:00">2018-05-03</time>
               
             
           </span>
@@ -503,16 +509,22 @@
 </ol>
 <p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-56-55.png" alt=""></p>
 <ol>
-<li><p>稀疏性 和 0-范数：<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-57-09.png" alt=""><br>稀疏性用到的范数：<br>特殊的0-范数，他不满足齐次性；<br>所以需要1-范数来辅助解决；</p>
-</li>
-<li><p>范数的几何意义：<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-20-32-56.png" alt=""><br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-29-03.png" alt=""></p>
-</li>
+<li>稀疏性 和 0-范数：</li>
 </ol>
+<p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-19-57-09.png" alt=""><br>稀疏性用到的范数：<br>特殊的0-范数，他不满足齐次性；<br>所以需要1-范数来辅助解决；</p>
+<ol>
+<li>范数的几何意义：</li>
+</ol>
+<p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-20-32-56.png" alt=""><br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-29-03.png" alt=""></p>
 <h3 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h3><ol>
-<li><p>初始单位向两组<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-30-44.png" alt=""></p>
-</li>
-<li><p>向量组等价<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-16.png" alt=""></p>
-</li>
+<li>初始单位向两组</li>
+</ol>
+<p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-22-30-44.png" alt=""></p>
+<ol>
+<li>向量组等价</li>
+</ol>
+<p><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-16.png" alt=""></p>
+<ol>
 <li>线性相关 和 线性无关<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-28.png" alt=""></li>
 <li>施密特正交化<br><img src="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/2018-04-20-23-10-41.png" alt=""><br>由施密特正交化生成的 正交向量组 和 之前的线性无关向量组 可以互相线性表示</li>
 </ol>
@@ -563,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/math/linear_algebra/2矩阵的运算、行列式/" rel="next" title="2矩阵的运算、行列式">
-                <i class="fa fa-chevron-left"></i> 2矩阵的运算、行列式
+              <a href="/2018/04/19/tensorflow/0_Tensorflow整理/" rel="next" title="Tensorflow整理">
+                <i class="fa fa-chevron-left"></i> Tensorflow整理
               </a>
             
           </div>
@@ -573,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/python/Python常用功能、函数/" rel="prev" title="Python常用功能、函数">
-                Python常用功能、函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/19/python/Python面向对象和类/" rel="prev" title="Python面向对象和类">
+                Python面向对象和类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -650,7 +662,7 @@
                 alt="wxy555123" />
             
               <p class="site-author-name" itemprop="name">wxy555123</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沉迷学习，无法自拔</p>
           </div>
 
           
@@ -658,9 +670,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives">
+                  <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -693,7 +705,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -738,7 +758,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1425,7 +1459,7 @@
   
 
 <script type="text/javascript"
-color="0,0,0" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 </body>

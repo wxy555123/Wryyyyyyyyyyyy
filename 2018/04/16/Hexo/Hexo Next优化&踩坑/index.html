@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next pisces" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,7 +99,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -126,7 +124,7 @@
 <meta property="og:description" content="一、界面 篇1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &amp;lt; /body&amp;gt;之前添加代码 1234&amp;#123;% if theme.canvas_nest %&amp;#125;&amp;lt;script type=&amp;quot;tex">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/04/16/hexo/Hexo%20Next优化&踩坑/Hexo%20Next优化&踩坑/2018-04-21-19-40-01.png">
-<meta property="og:updated_time" content="2018-04-22T08:01:27.912Z">
+<meta property="og:updated_time" content="2018-05-03T04:40:26.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Next优化&amp;踩坑">
 <meta name="twitter:description" content="一、界面 篇1 添加动态背景修改配置文件在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true 修改_layout.swig打开 next/layout/_layout.swig在 &amp;lt; /body&amp;gt;之前添加代码 1234&amp;#123;% if theme.canvas_nest %&amp;#125;&amp;lt;script type=&amp;quot;tex">
@@ -222,7 +220,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Do you like Van 游戏？</p>
+        <p class="site-subtitle">boy next door</p>
       
   </div>
 
@@ -273,6 +271,14 @@
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
 
       
@@ -413,7 +419,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-22 16:01:27" itemprop="dateModified" datetime="2018-04-22T16:01:27+08:00">2018-04-22</time>
+                <time title="更新于：2018-05-03 12:40:26" itemprop="dateModified" datetime="2018-05-03T12:40:26+08:00">2018-05-03</time>
               
             
           </span>
@@ -513,6 +519,11 @@
 <h2 id="三-修改gitment-swig"><a href="#三-修改gitment-swig" class="headerlink" title="三.修改gitment.swig"></a>三.修改<code>gitment.swig</code></h2><p>在主题下<code>layout/_third-party/comments/</code>目录下中修改文件<code>gitment.swig</code>使得能够正确初始化：</p>
 <p><img src="/2018/04/16/hexo/Hexo Next优化&踩坑/Hexo Next优化&amp;踩坑/2018-04-21-19-40-01.png" alt=""></p>
 <p>修改红框标记的id字段，用日期时间戳代替，使得id不会超过50个字符</p>
+<h2 id="8-博文压缩"><a href="#8-博文压缩" class="headerlink" title="8 博文压缩"></a>8 博文压缩</h2><p>博文压缩用于加快网站访问速度</p>
+<h3 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h3><p>在根目录新建 gulpfile.js 文件<br><br></p>
+<h3 id="step2"><a href="#step2" class="headerlink" title="step2:"></a>step2:</h3><p>方法一，使用下面代码和命令：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlclean = <span class="built_in">require</span>(<span class="string">'gulp-htmlclean'</span>);</span><br><span class="line"><span class="comment">// 压缩 public 目录 css</span></span><br><span class="line">gulp.task(<span class="string">'minify-css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.css'</span>)</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public 目录 html</span></span><br><span class="line">gulp.task(<span class="string">'minify-html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.html'</span>)</span><br><span class="line">    .pipe(htmlclean())</span><br><span class="line">    .pipe(htmlmin(&#123;</span><br><span class="line">         removeComments: <span class="literal">true</span>,</span><br><span class="line">         minifyJS: <span class="literal">true</span>,</span><br><span class="line">         minifyCSS: <span class="literal">true</span>,</span><br><span class="line">         minifyURLs: <span class="literal">true</span>,</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public/js 目录 js</span></span><br><span class="line">gulp.task(<span class="string">'minify-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 执行 gulp 命令时执行的任务</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [</span><br><span class="line">    <span class="string">'minify-html'</span>,<span class="string">'minify-css'</span>,<span class="string">'minify-js'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure></p>
+<p>命令为 hexo g&amp;&amp;gulp<br><br><br>方法二，使用下面代码和命令：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</span><br><span class="line">    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</span><br><span class="line">    cssmin = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</span><br><span class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</span><br><span class="line"><span class="comment">//JS压缩</span></span><br><span class="line">gulp.task(<span class="string">'uglify'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/js/*.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'././public/js/'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//public-fancybox-js压缩</span></span><br><span class="line">gulp.task(<span class="string">'fancybox:js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/fancybox/jquery.fancybox.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'././public/fancybox/'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//public-fancybox-css压缩</span></span><br><span class="line">gulp.task(<span class="string">'fancybox:css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/fancybox/jquery.fancybox.css'</span>)</span><br><span class="line">        .pipe(cssmin())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'././public/fancybox/'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//CSS压缩</span></span><br><span class="line">gulp.task(<span class="string">'cssmin'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/css/style.css'</span>)</span><br><span class="line">        .pipe(cssmin())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'././public/css/'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//图片压缩</span></span><br><span class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'././public/img/*.*'</span>)</span><br><span class="line">        .pipe(imagemin(&#123;</span><br><span class="line">            progressive: <span class="literal">false</span></span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'././public/img/'</span>));</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">'build'</span>, [<span class="string">'uglify'</span>, <span class="string">'cssmin'</span>, <span class="string">'images'</span>, <span class="string">'fancybox:js'</span>, <span class="string">'fancybox:css'</span>]);</span><br></pre></td></tr></table></figure></p>
+<p>命令为 hexo g&amp;&amp;gulp build</p>
 <h1 id="二、操作-篇"><a href="#二、操作-篇" class="headerlink" title="二、操作 篇"></a>二、操作 篇</h1><h2 id="1-Hexo命令"><a href="#1-Hexo命令" class="headerlink" title="1 Hexo命令"></a>1 Hexo命令</h2><ul>
 <li><p>安装主题：用git clone到themes文件夹中</p>
 </li>
@@ -542,6 +553,7 @@
 <h2 id="4-添加创建文件后，用vscode自动打开脚本"><a href="#4-添加创建文件后，用vscode自动打开脚本" class="headerlink" title="4 添加创建文件后，用vscode自动打开脚本"></a>4 添加创建文件后，用vscode自动打开脚本</h2><p>在根目录下新建 scripts 文件夹，里面新建 js 文件 名字随意，代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">"child_process"</span>).exec;</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">"new"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">	exec(<span class="string">"Code.exe "</span> + [data.path]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>以后每次执行 hexo n 新建文件后都会自动运行 vscode 打开编辑</p>
+<h2 id="5修改node-js默认启动路径"><a href="#5修改node-js默认启动路径" class="headerlink" title="5修改node.js默认启动路径"></a>5修改node.js默认启动路径</h2><p>右键node.js快捷方式，把“起始位置”属性修改为以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\wxy555123.github.io\</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -576,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/hexo/MathJax数学公式语法/" rel="next" title="MathJax数学公式语法">
-                <i class="fa fa-chevron-left"></i> MathJax数学公式语法
+              <a href="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/" rel="next" title="数据的标准化（归一化）">
+                <i class="fa fa-chevron-left"></i> 数据的标准化（归一化）
               </a>
             
           </div>
@@ -586,8 +598,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/machine_learning_in_action/CreditCard/" rel="prev" title="数据挖掘——信用卡欺诈检测">
-                数据挖掘——信用卡欺诈检测 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/hexo/MathJax数学公式语法/" rel="prev" title="MathJax数学公式语法">
+                MathJax数学公式语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -663,7 +675,7 @@
                 alt="wxy555123" />
             
               <p class="site-author-name" itemprop="name">wxy555123</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沉迷学习，无法自拔</p>
           </div>
 
           
@@ -671,9 +683,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives">
+                  <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -706,7 +718,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -751,7 +771,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -821,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、界面-篇"><span class="nav-text">一、界面 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-添加动态背景"><span class="nav-text">1 添加动态背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-layout-swig"><span class="nav-text">修改_layout.swig</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置项说明"><span class="nav-text">配置项说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-直接展开文章全部目录"><span class="nav-text">2 直接展开文章全部目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文章结束标记"><span class="nav-text">3 添加文章结束标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实现主页文章预览效果"><span class="nav-text">4 实现主页文章预览效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加MathJax数学公式支持"><span class="nav-text">5 添加MathJax数学公式支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题中开启mathjax开关"><span class="nav-text">在主题中开启mathjax开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换Hexo的markdown渲染引擎"><span class="nav-text">更换Hexo的markdown渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-调整页面CSS布局"><span class="nav-text">6 调整页面CSS布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-添加-Gitment-评论系统"><span class="nav-text">7 添加 Gitment 评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-注册OAuth-Application"><span class="nav-text">一.注册OAuth Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-修改themes-next-config-yml"><span class="nav-text">二.修改themes/next/_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-修改gitment-swig"><span class="nav-text">三.修改gitment.swig</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、操作-篇"><span class="nav-text">二、操作 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hexo命令"><span class="nav-text">1 Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Git命令"><span class="nav-text">2 Git命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改Hexo生成文件模版"><span class="nav-text">3 修改Hexo生成文件模版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-添加创建文件后，用vscode自动打开脚本"><span class="nav-text">4 添加创建文件后，用vscode自动打开脚本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、界面-篇"><span class="nav-text">一、界面 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-添加动态背景"><span class="nav-text">1 添加动态背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-layout-swig"><span class="nav-text">修改_layout.swig</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置项说明"><span class="nav-text">配置项说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-直接展开文章全部目录"><span class="nav-text">2 直接展开文章全部目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文章结束标记"><span class="nav-text">3 添加文章结束标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实现主页文章预览效果"><span class="nav-text">4 实现主页文章预览效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加MathJax数学公式支持"><span class="nav-text">5 添加MathJax数学公式支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题中开启mathjax开关"><span class="nav-text">在主题中开启mathjax开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换Hexo的markdown渲染引擎"><span class="nav-text">更换Hexo的markdown渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-调整页面CSS布局"><span class="nav-text">6 调整页面CSS布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-添加-Gitment-评论系统"><span class="nav-text">7 添加 Gitment 评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-注册OAuth-Application"><span class="nav-text">一.注册OAuth Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-修改themes-next-config-yml"><span class="nav-text">二.修改themes/next/_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-修改gitment-swig"><span class="nav-text">三.修改gitment.swig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-博文压缩"><span class="nav-text">8 博文压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step1"><span class="nav-text">step1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2"><span class="nav-text">step2:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、操作-篇"><span class="nav-text">二、操作 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hexo命令"><span class="nav-text">1 Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Git命令"><span class="nav-text">2 Git命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改Hexo生成文件模版"><span class="nav-text">3 修改Hexo生成文件模版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-添加创建文件后，用vscode自动打开脚本"><span class="nav-text">4 添加创建文件后，用vscode自动打开脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5修改node-js默认启动路径"><span class="nav-text">5修改node.js默认启动路径</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1415,7 +1449,7 @@
   
 
 <script type="text/javascript"
-color="0,0,0" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 </body>

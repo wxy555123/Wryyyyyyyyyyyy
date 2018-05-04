@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #000000; /*��������ɫ*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #CCCCCC, 0 0 5px     #CCCCCC; /*��Ӱ��ɫ*/
+    }
+    .pace .pace-activity {
+        border-top-color: #FFFFFF;    /*�ϱ߿���ɫ*/
+        border-left-color: #FFFFFF;    /*��߿���ɫ*/
+    }
+</style>
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="基于NLP的股价预测123import pandas as pdfrom sklearn.feature_extraction.text import CountVectorizerfrom sklearn.linear_model import LogisticRegression 1data = pd.read_csv(&apos;Combined_News_DJIA.csv&apos;)  每行是某公司 这一天">
+<meta name="keywords" content="NLP,CountVectorizer,LogisticRegression">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于NLP的股价预测">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/machine_learning_in_action/基于NLP的股价预测/index.html">
+<meta property="og:site_name" content="新日暮里的幻想乡">
+<meta property="og:description" content="基于NLP的股价预测123import pandas as pdfrom sklearn.feature_extraction.text import CountVectorizerfrom sklearn.linear_model import LogisticRegression 1data = pd.read_csv(&apos;Combined_News_DJIA.csv&apos;)  每行是某公司 这一天">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-24T06:57:45.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于NLP的股价预测">
+<meta name="twitter:description" content="基于NLP的股价预测123import pandas as pdfrom sklearn.feature_extraction.text import CountVectorizerfrom sklearn.linear_model import LogisticRegression 1data = pd.read_csv(&apos;Combined_News_DJIA.csv&apos;)  每行是某公司 这一天">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="新日暮里的幻想乡" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/machine_learning_in_action/基于NLP的股价预测/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>基于NLP的股价预测 | 新日暮里的幻想乡</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8b8d3dbc822302a739163af5eeb0d699";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新日暮里的幻想乡</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">boy next door</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/machine_learning_in_action/基于NLP的股价预测/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wxy555123">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新日暮里的幻想乡">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于NLP的股价预测
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-04-19 12:49:42" itemprop="dateCreated datePublished" datetime="2018-04-19T12:49:42+08:00">2018-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-04-24 14:57:45" itemprop="dateModified" datetime="2018-04-24T14:57:45+08:00">2018-04-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-learning-in-action/" itemprop="url" rel="index"><span itemprop="name">machine_learning_in_action</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/19/machine_learning_in_action/基于NLP的股价预测/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/19/machine_learning_in_action/基于NLP的股价预测/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基于NLP的股价预测"><a href="#基于NLP的股价预测" class="headerlink" title="基于NLP的股价预测"></a>基于NLP的股价预测</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_csv(<span class="string">'Combined_News_DJIA.csv'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每行是某公司 这一天股市数据；label表示当天涨/跌，Top表示依重要程度排列的当天新闻事件</li>
+<li>通过NLP处理可以把这些字符串转换为 机器认识的语言</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.head()</span><br></pre></td></tr></table></figure>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Label</th>
+      <th>Top1</th>
+      <th>Top2</th>
+      <th>Top3</th>
+      <th>Top4</th>
+      <th>Top5</th>
+      <th>Top6</th>
+      <th>Top7</th>
+      <th>Top8</th>
+      <th>...</th>
+      <th>Top16</th>
+      <th>Top17</th>
+      <th>Top18</th>
+      <th>Top19</th>
+      <th>Top20</th>
+      <th>Top21</th>
+      <th>Top22</th>
+      <th>Top23</th>
+      <th>Top24</th>
+      <th>Top25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-08-08</td>
+      <td>0</td>
+      <td>b"Georgia 'downs two Russian warplanes' as cou...</td>
+      <td>b'BREAKING: Musharraf to be impeached.'</td>
+      <td>b'Russia Today: Columns of troops roll into So...</td>
+      <td>b'Russian tanks are moving towards the capital...</td>
+      <td>b"Afghan children raped with 'impunity,' U.N. ...</td>
+      <td>b'150 Russian tanks have entered South Ossetia...</td>
+      <td>b"Breaking: Georgia invades South Ossetia, Rus...</td>
+      <td>b"The 'enemy combatent' trials are nothing but...</td>
+      <td>...</td>
+      <td>b'Georgia Invades South Ossetia - if Russia ge...</td>
+      <td>b'Al-Qaeda Faces Islamist Backlash'</td>
+      <td>b'Condoleezza Rice: "The US would not act to p...</td>
+      <td>b'This is a busy day:  The European Union has ...</td>
+      <td>b"Georgia will withdraw 1,000 soldiers from Ir...</td>
+      <td>b'Why the Pentagon Thinks Attacking Iran is a ...</td>
+      <td>b'Caucasus in crisis: Georgia invades South Os...</td>
+      <td>b'Indian shoe manufactory  - And again in a se...</td>
+      <td>b'Visitors Suffering from Mental Illnesses Ban...</td>
+      <td>b"No Help for Mexico's Kidnapping Surge"</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-08-11</td>
+      <td>1</td>
+      <td>b'Why wont America and Nato help us? If they w...</td>
+      <td>b'Bush puts foot down on Georgian conflict'</td>
+      <td>b"Jewish Georgian minister: Thanks to Israeli ...</td>
+      <td>b'Georgian army flees in disarray as Russians ...</td>
+      <td>b"Olympic opening ceremony fireworks 'faked'"</td>
+      <td>b'What were the Mossad with fraudulent New Zea...</td>
+      <td>b'Russia angered by Israeli military sale to G...</td>
+      <td>b'An American citizen living in S.Ossetia blam...</td>
+      <td>...</td>
+      <td>b'Israel and the US behind the Georgian aggres...</td>
+      <td>b'"Do not believe TV, neither Russian nor Geor...</td>
+      <td>b'Riots are still going on in Montreal (Canada...</td>
+      <td>b'China to overtake US as largest manufacturer'</td>
+      <td>b'War in South Ossetia [PICS]'</td>
+      <td>b'Israeli Physicians Group Condemns State Tort...</td>
+      <td>b' Russia has just beaten the United States ov...</td>
+      <td>b'Perhaps *the* question about the Georgia - R...</td>
+      <td>b'Russia is so much better at war'</td>
+      <td>b"So this is what it's come to: trading sex fo...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-08-12</td>
+      <td>0</td>
+      <td>b'Remember that adorable 9-year-old who sang a...</td>
+      <td>b"Russia 'ends Georgia operation'"</td>
+      <td>b'"If we had no sexual harassment we would hav...</td>
+      <td>b"Al-Qa'eda is losing support in Iraq because ...</td>
+      <td>b'Ceasefire in Georgia: Putin Outmaneuvers the...</td>
+      <td>b'Why Microsoft and Intel tried to kill the XO...</td>
+      <td>b'Stratfor: The Russo-Georgian War and the Bal...</td>
+      <td>b"I'm Trying to Get a Sense of This Whole Geor...</td>
+      <td>...</td>
+      <td>b'U.S. troops still in Georgia (did you know t...</td>
+      <td>b'Why Russias response to Georgia was right'</td>
+      <td>b'Gorbachev accuses U.S. of making a "serious ...</td>
+      <td>b'Russia, Georgia, and NATO: Cold War Two'</td>
+      <td>b'Remember that adorable 62-year-old who led y...</td>
+      <td>b'War in Georgia: The Israeli connection'</td>
+      <td>b'All signs point to the US encouraging Georgi...</td>
+      <td>b'Christopher King argues that the US and NATO...</td>
+      <td>b'America: The New Mexico?'</td>
+      <td>b"BBC NEWS | Asia-Pacific | Extinction 'by man...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-08-13</td>
+      <td>0</td>
+      <td>b' U.S. refuses Israel weapons to attack Iran:...</td>
+      <td>b"When the president ordered to attack Tskhinv...</td>
+      <td>b' Israel clears troops who killed Reuters cam...</td>
+      <td>b'Britain\'s policy of being tough on drugs is...</td>
+      <td>b'Body of 14 year old found in trunk; Latest (...</td>
+      <td>b'China has moved 10 *million* quake survivors...</td>
+      <td>b"Bush announces Operation Get All Up In Russi...</td>
+      <td>b'Russian forces sink Georgian ships '</td>
+      <td>...</td>
+      <td>b'Elephants extinct by 2020?'</td>
+      <td>b'US humanitarian missions soon in Georgia - i...</td>
+      <td>b"Georgia's DDOS came from US sources"</td>
+      <td>b'Russian convoy heads into Georgia, violating...</td>
+      <td>b'Israeli defence minister: US against strike ...</td>
+      <td>b'Gorbachev: We Had No Choice'</td>
+      <td>b'Witness: Russian forces head towards Tbilisi...</td>
+      <td>b' Quarter of Russians blame U.S. for conflict...</td>
+      <td>b'Georgian president  says US military will ta...</td>
+      <td>b'2006: Nobel laureate Aleksander Solzhenitsyn...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-08-14</td>
+      <td>1</td>
+      <td>b'All the experts admit that we should legalis...</td>
+      <td>b'War in South Osetia - 89 pictures made by a ...</td>
+      <td>b'Swedish wrestler Ara Abrahamian throws away ...</td>
+      <td>b'Russia exaggerated the death toll in South O...</td>
+      <td>b'Missile That Killed 9 Inside Pakistan May Ha...</td>
+      <td>b"Rushdie Condemns Random House's Refusal to P...</td>
+      <td>b'Poland and US agree to missle defense deal. ...</td>
+      <td>b'Will the Russians conquer Tblisi? Bet on it,...</td>
+      <td>...</td>
+      <td>b'Bank analyst forecast Georgian crisis 2 days...</td>
+      <td>b"Georgia confict could set back Russia's US r...</td>
+      <td>b'War in the Caucasus is as much the product o...</td>
+      <td>b'"Non-media" photos of South Ossetia/Georgia ...</td>
+      <td>b'Georgian TV reporter shot by Russian sniper ...</td>
+      <td>b'Saudi Arabia: Mother moves to block child ma...</td>
+      <td>b'Taliban wages war on humanitarian aid workers'</td>
+      <td>b'Russia: World  "can forget about" Georgia\'s...</td>
+      <td>b'Darfur rebels accuse Sudan of mounting major...</td>
+      <td>b'Philippines : Peace Advocate say Muslims nee...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+
+
+
+<h2 id="1-数据简单预处理、划分"><a href="#1-数据简单预处理、划分" class="headerlink" title="1 数据简单预处理、划分"></a>1 数据简单预处理、划分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据日期划分 训练集 测试集</span></span><br><span class="line">train = data[data[<span class="string">'Date'</span>] &lt; <span class="string">'2015-01-01'</span>]</span><br><span class="line">test = data[data[<span class="string">'Date'</span>] &gt; <span class="string">'2014-12-31'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">example = train.iloc[<span class="number">3</span>,<span class="number">10</span>]</span><br><span class="line">print(example)</span><br></pre></td></tr></table></figure>
+<pre><code>b&quot;The commander of a Navy air reconnaissance squadron that provides the President and the defense secretary the airborne ability to command the nation&#39;s nuclear weapons has been relieved of duty&quot;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">example2 = example.lower()</span><br><span class="line">print(example2)</span><br></pre></td></tr></table></figure>
+<pre><code>b&quot;the commander of a navy air reconnaissance squadron that provides the president and the defense secretary the airborne ability to command the nation&#39;s nuclear weapons has been relieved of duty&quot;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">example3 = CountVectorizer().build_tokenizer()(example2)</span><br><span class="line">print(example3)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;the&#39;, &#39;commander&#39;, &#39;of&#39;, &#39;navy&#39;, &#39;air&#39;, &#39;reconnaissance&#39;, &#39;squadron&#39;, &#39;that&#39;, &#39;provides&#39;, &#39;the&#39;, &#39;president&#39;, &#39;and&#39;, &#39;the&#39;, &#39;defense&#39;, &#39;secretary&#39;, &#39;the&#39;, &#39;airborne&#39;, &#39;ability&#39;, &#39;to&#39;, &#39;command&#39;, &#39;the&#39;, &#39;nation&#39;, &#39;nuclear&#39;, &#39;weapons&#39;, &#39;has&#39;, &#39;been&#39;, &#39;relieved&#39;, &#39;of&#39;, &#39;duty&#39;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[x,example3.count(x)] <span class="keyword">for</span> x <span class="keyword">in</span> set(example3)], columns = [<span class="string">'Word'</span>, <span class="string">'Count'</span>])</span><br></pre></td></tr></table></figure>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Word</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>the</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>command</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>secretary</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>weapons</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>has</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>defense</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>commander</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>squadron</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>relieved</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>navy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>of</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>air</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>reconnaissance</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>provides</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>president</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>been</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>to</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>and</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>ability</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>nation</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>that</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>duty</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>nuclear</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>airborne</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="2-基于词频的特征提取——构造词频矩阵"><a href="#2-基于词频的特征提取——构造词频矩阵" class="headerlink" title="2 基于词频的特征提取——构造词频矩阵"></a>2 基于词频的特征提取——构造词频矩阵</h2><p>1）构造一个字符串数组StringList，每个元素是对应行所有top特征字符串拼成的长字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trainheadlines = [] </span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">0</span>,len(train.index)):</span><br><span class="line">    trainheadlines.append(<span class="string">' '</span>.join(str(x) <span class="keyword">for</span> x <span class="keyword">in</span> train.iloc[row,<span class="number">2</span>:<span class="number">27</span>]))</span><br><span class="line">print(trainheadlines[<span class="number">0</span>:<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;b&quot;Georgia \&#39;downs two Russian warplanes\&#39; as countries move to brink of war&quot; b\&#39;BREAKING: Musharraf to be impeached.\&#39; b\&#39;Russia Today: Columns of troops roll into South Ossetia; footage from fighting (YouTube)\&#39; b\&#39;Russian tanks are moving towards the capital of South Ossetia, which has reportedly been completely destroyed by Georgian artillery fire\&#39; b&quot;Afghan children raped with \&#39;impunity,\&#39; U.N. official says - this is sick, a three year old was raped and they do nothing&quot; b\&#39;150 Russian tanks have entered South Ossetia whilst Georgia shoots down two Russian jets.\&#39; b&quot;Breaking: Georgia invades South Ossetia, Russia warned it would intervene on SO\&#39;s side&quot; b&quot;The \&#39;enemy combatent\&#39; trials are nothing but a sham: Salim Haman has been sentenced to 5 1/2 years, but will be kept longer anyway just because they feel like it.&quot; b\&#39;Georgian troops retreat from S. Osettain capital, presumably leaving several hundred people killed. [VIDEO]\&#39; b\&#39;Did the U.S. Prep Georgia for War with Russia?\&#39; b\&#39;Rice Gives Green Light for Israel to Attack Iran: Says U.S. has no veto over Israeli military ops\&#39; b\&#39;Announcing:Class Action Lawsuit on Behalf of American Public Against the FBI\&#39; b&quot;So---Russia and Georgia are at war and the NYT\&#39;s top story is opening ceremonies of the Olympics?  What a fucking disgrace and yet further proof of the decline of journalism.&quot; b&quot;China tells Bush to stay out of other countries\&#39; affairs&quot; b\&#39;Did World War III start today?\&#39; b\&#39;Georgia Invades South Ossetia - if Russia gets involved, will NATO absorb Georgia and unleash a full scale war?\&#39; b\&#39;Al-Qaeda Faces Islamist Backlash\&#39; b\&#39;Condoleezza Rice: &quot;The US would not act to prevent an Israeli strike on Iran.&quot; Israeli Defense Minister Ehud Barak: &quot;Israel is prepared for uncompromising victory in the case of military hostilities.&quot;\&#39; b\&#39;This is a busy day:  The European Union has approved new sanctions against Iran in protest at its nuclear programme.\&#39; b&quot;Georgia will withdraw 1,000 soldiers from Iraq to help fight off Russian forces in Georgia\&#39;s breakaway region of South Ossetia&quot; b\&#39;Why the Pentagon Thinks Attacking Iran is a Bad Idea - US News &amp;amp; World Report\&#39; b\&#39;Caucasus in crisis: Georgia invades South Ossetia\&#39; b\&#39;Indian shoe manufactory  - And again in a series of &quot;you do not like your work?&quot;\&#39; b\&#39;Visitors Suffering from Mental Illnesses Banned from Olympics\&#39; b&quot;No Help for Mexico\&#39;s Kidnapping Surge&quot;&#39;]
+</code></pre><p>2）将这个字符串数组 转换成 词频矩阵，以便可以作为训练集</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">basicvectorizer = CountVectorizer()</span><br><span class="line">basictrain = basicvectorizer.fit_transform(trainheadlines)</span><br><span class="line">print(basictrain.shape) <span class="comment"># 生成了一个词频矩阵，总共1611个样本，31675个不重复的单词</span></span><br></pre></td></tr></table></figure>
+<pre><code>(1611, 31675)
+</code></pre><h2 id="3-用逻辑回归-进行训练，查看训练结果精度-和-每个单词的权重参数ceof"><a href="#3-用逻辑回归-进行训练，查看训练结果精度-和-每个单词的权重参数ceof" class="headerlink" title="3 用逻辑回归 进行训练，查看训练结果精度 和 每个单词的权重参数ceof_"></a>3 用逻辑回归 进行训练，查看训练结果精度 和 每个单词的权重参数ceof_</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 逻辑回归 fit 训练集词频矩阵</span></span><br><span class="line">basicmodel = LogisticRegression()</span><br><span class="line">basicmodel = basicmodel.fit(basictrain, train[<span class="string">"Label"</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">testheadlines = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">0</span>,len(test.index)):</span><br><span class="line">    testheadlines.append(<span class="string">' '</span>.join(str(x) <span class="keyword">for</span> x <span class="keyword">in</span> test.iloc[row,<span class="number">2</span>:<span class="number">27</span>]))</span><br><span class="line">basictest = basicvectorizer.transform(testheadlines)</span><br><span class="line"><span class="comment"># 逻辑回归 predict 测试集词频矩阵</span></span><br><span class="line">predictions = basicmodel.predict(basictest)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构造简易 混淆矩阵</span></span><br><span class="line">pd.crosstab(test[<span class="string">"Label"</span>], predictions, rownames=[<span class="string">"Actual"</span>], colnames=[<span class="string">"Predicted"</span>])</span><br><span class="line"><span class="comment">#0.42</span></span><br></pre></td></tr></table></figure>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Predicted</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>Actual</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>61</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">观察：用精度做的混淆矩阵，精度只有<span class="number">42</span>% 不理想</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">basicwords = basicvectorizer.get_feature_names() <span class="comment"># 得到分词模型中所有单词（特征）</span></span><br><span class="line">basiccoeffs = basicmodel.coef_.tolist()[<span class="number">0</span>] <span class="comment"># 得到logistic模型中所有单词对应的 权重参数</span></span><br><span class="line">coeffdf = pd.DataFrame(&#123;<span class="string">'Word'</span> : basicwords, </span><br><span class="line">                        <span class="string">'Coefficient'</span> : basiccoeffs&#125;)</span><br><span class="line">coeffdf = coeffdf.sort_values([<span class="string">'Coefficient'</span>, <span class="string">'Word'</span>], ascending=[<span class="number">0</span>, <span class="number">1</span>]) <span class="comment"># 从大到小排序</span></span><br><span class="line">coeffdf.head(<span class="number">10</span>) <span class="comment"># 前面的正相关</span></span><br></pre></td></tr></table></figure>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+      <th>Word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19419</th>
+      <td>0.497924</td>
+      <td>nigeria</td>
+    </tr>
+    <tr>
+      <th>25261</th>
+      <td>0.452526</td>
+      <td>self</td>
+    </tr>
+    <tr>
+      <th>29286</th>
+      <td>0.428011</td>
+      <td>tv</td>
+    </tr>
+    <tr>
+      <th>15998</th>
+      <td>0.425863</td>
+      <td>korea</td>
+    </tr>
+    <tr>
+      <th>20135</th>
+      <td>0.425716</td>
+      <td>olympics</td>
+    </tr>
+    <tr>
+      <th>15843</th>
+      <td>0.411636</td>
+      <td>kills</td>
+    </tr>
+    <tr>
+      <th>26323</th>
+      <td>0.411267</td>
+      <td>so</td>
+    </tr>
+    <tr>
+      <th>29256</th>
+      <td>0.394855</td>
+      <td>turn</td>
+    </tr>
+    <tr>
+      <th>10874</th>
+      <td>0.388555</td>
+      <td>fears</td>
+    </tr>
+    <tr>
+      <th>28274</th>
+      <td>0.384031</td>
+      <td>territory</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coeffdf.tail(<span class="number">10</span>) <span class="comment"># 前面的负相关</span></span><br></pre></td></tr></table></figure>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+      <th>Word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27299</th>
+      <td>-0.424441</td>
+      <td>students</td>
+    </tr>
+    <tr>
+      <th>8478</th>
+      <td>-0.427079</td>
+      <td>did</td>
+    </tr>
+    <tr>
+      <th>6683</th>
+      <td>-0.431925</td>
+      <td>congo</td>
+    </tr>
+    <tr>
+      <th>12818</th>
+      <td>-0.444069</td>
+      <td>hacking</td>
+    </tr>
+    <tr>
+      <th>7139</th>
+      <td>-0.448570</td>
+      <td>country</td>
+    </tr>
+    <tr>
+      <th>16949</th>
+      <td>-0.463116</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>3651</th>
+      <td>-0.470454</td>
+      <td>begin</td>
+    </tr>
+    <tr>
+      <th>25433</th>
+      <td>-0.494555</td>
+      <td>sex</td>
+    </tr>
+    <tr>
+      <th>24754</th>
+      <td>-0.549725</td>
+      <td>sanctions</td>
+    </tr>
+    <tr>
+      <th>24542</th>
+      <td>-0.587794</td>
+      <td>run</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="4-改进特征选择方法。用2个单词的词组-进行分词提取特征，构造新的频率矩阵"><a href="#4-改进特征选择方法。用2个单词的词组-进行分词提取特征，构造新的频率矩阵" class="headerlink" title="4 改进特征选择方法。用2个单词的词组 进行分词提取特征，构造新的频率矩阵"></a>4 改进特征选择方法。用2个单词的词组 进行分词提取特征，构造新的频率矩阵</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">advancedvectorizer = CountVectorizer(ngram_range=(<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line">advancedtrain = advancedvectorizer.fit_transform(trainheadlines)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(advancedtrain.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>(1611, 366721)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">advancedmodel = LogisticRegression()</span><br><span class="line">advancedmodel = advancedmodel.fit(advancedtrain, train[<span class="string">"Label"</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">testheadlines = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">0</span>,len(test.index)):</span><br><span class="line">    testheadlines.append(<span class="string">' '</span>.join(str(x) <span class="keyword">for</span> x <span class="keyword">in</span> test.iloc[row,<span class="number">2</span>:<span class="number">27</span>]))</span><br><span class="line">advancedtest = advancedvectorizer.transform(testheadlines)</span><br><span class="line">advpredictions = advancedmodel.predict(advancedtest)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pd.crosstab(test[<span class="string">"Label"</span>], advpredictions, rownames=[<span class="string">"Actual"</span>], colnames=[<span class="string">"Predicted"</span>])</span><br><span class="line"><span class="comment">#.57</span></span><br></pre></td></tr></table></figure>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Predicted</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>Actual</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>66</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>45</td>
+      <td>147</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">advwords = advancedvectorizer.get_feature_names()</span><br><span class="line">advcoeffs = advancedmodel.coef_.tolist()[<span class="number">0</span>]</span><br><span class="line">advcoeffdf = pd.DataFrame(&#123;<span class="string">'Words'</span> : advwords, </span><br><span class="line">                        <span class="string">'Coefficient'</span> : advcoeffs&#125;)</span><br><span class="line">advcoeffdf = advcoeffdf.sort_values([<span class="string">'Coefficient'</span>, <span class="string">'Words'</span>], ascending=[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">advcoeffdf.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+      <th>Words</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>272047</th>
+      <td>0.286533</td>
+      <td>right to</td>
+    </tr>
+    <tr>
+      <th>24710</th>
+      <td>0.275274</td>
+      <td>and other</td>
+    </tr>
+    <tr>
+      <th>285392</th>
+      <td>0.274698</td>
+      <td>set to</td>
+    </tr>
+    <tr>
+      <th>316194</th>
+      <td>0.262873</td>
+      <td>the first</td>
+    </tr>
+    <tr>
+      <th>157511</th>
+      <td>0.227943</td>
+      <td>in china</td>
+    </tr>
+    <tr>
+      <th>159522</th>
+      <td>0.224184</td>
+      <td>in south</td>
+    </tr>
+    <tr>
+      <th>125870</th>
+      <td>0.219130</td>
+      <td>found in</td>
+    </tr>
+    <tr>
+      <th>124411</th>
+      <td>0.216726</td>
+      <td>forced to</td>
+    </tr>
+    <tr>
+      <th>173246</th>
+      <td>0.211137</td>
+      <td>it has</td>
+    </tr>
+    <tr>
+      <th>322590</th>
+      <td>0.209239</td>
+      <td>this is</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">advcoeffdf.tail(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+      <th>Words</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>326846</th>
+      <td>-0.198495</td>
+      <td>to help</td>
+    </tr>
+    <tr>
+      <th>118707</th>
+      <td>-0.201654</td>
+      <td>fire on</td>
+    </tr>
+    <tr>
+      <th>155038</th>
+      <td>-0.209702</td>
+      <td>if he</td>
+    </tr>
+    <tr>
+      <th>242528</th>
+      <td>-0.211303</td>
+      <td>people are</td>
+    </tr>
+    <tr>
+      <th>31669</th>
+      <td>-0.213362</td>
+      <td>around the</td>
+    </tr>
+    <tr>
+      <th>321333</th>
+      <td>-0.215699</td>
+      <td>there is</td>
+    </tr>
+    <tr>
+      <th>327113</th>
+      <td>-0.221812</td>
+      <td>to kill</td>
+    </tr>
+    <tr>
+      <th>340714</th>
+      <td>-0.226289</td>
+      <td>up in</td>
+    </tr>
+    <tr>
+      <th>358917</th>
+      <td>-0.227516</td>
+      <td>with iran</td>
+    </tr>
+    <tr>
+      <th>315485</th>
+      <td>-0.331153</td>
+      <td>the country</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<!-- 添加文章结束标记 -->
+	
+		
+		<div style="margin: 60px 0 120px 0; text-align:center;color: #000;font-size:14px;">꧁༺The༒End༻꧂</div>
+		
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
+          
+            <a href="/tags/CountVectorizer/" rel="tag"><i class="fa fa-tag"></i> CountVectorizer</a>
+          
+            <a href="/tags/LogisticRegression/" rel="tag"><i class="fa fa-tag"></i> LogisticRegression</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/python/Python常用功能、函数/" rel="next" title="Python常用功能、函数">
+                <i class="fa fa-chevron-left"></i> Python常用功能、函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/19/pandas/Pandas常用功能、函数/" rel="prev" title="Pandas常用功能、函数">
+                Pandas常用功能、函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="wxy555123" />
+            
+              <p class="site-author-name" itemprop="name">wxy555123</p>
+              <p class="site-description motion-element" itemprop="description">沉迷学习，无法自拔</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wxy555123" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wxy555123/activities" target="_blank" title="ZhiHu"><i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:810200579@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          <!-- ����������
+<div class="music163">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=2189499106&auto=0&height=32"></iframe>
+</div>
+-->
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基于NLP的股价预测"><span class="nav-text">基于NLP的股价预测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据简单预处理、划分"><span class="nav-text">1 数据简单预处理、划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基于词频的特征提取——构造词频矩阵"><span class="nav-text">2 基于词频的特征提取——构造词频矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-用逻辑回归-进行训练，查看训练结果精度-和-每个单词的权重参数ceof"><span class="nav-text">3 用逻辑回归 进行训练，查看训练结果精度 和 每个单词的权重参数ceof_</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-改进特征选择方法。用2个单词的词组-进行分词提取特征，构造新的频率矩阵"><span class="nav-text">4 改进特征选择方法。用2个单词的词组 进行分词提取特征，构造新的频率矩阵</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wxy555123</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.1.0</div>
+
+
+-->
+
+<div class="powered-by">
+<span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: '1524113382000',
+            owner: 'wxy555123',
+            repo: 'wxy555123.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6635c0ca693c03779556c7793801013f02358252',
+            
+                client_id: 'c082f003b32d19d29345'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript"
+color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>

@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next pisces" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,7 +99,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -130,7 +128,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/19/machine_learning_in_action/PCA主成分分析/output_20_0.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/machine_learning_in_action/PCA主成分分析/output_25_0.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/machine_learning_in_action/PCA主成分分析/output_26_0.png">
-<meta property="og:updated_time" content="2018-04-23T15:43:26.124Z">
+<meta property="og:updated_time" content="2018-04-24T07:12:55.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA 手写主成分分析">
 <meta name="twitter:description" content="PCA 手写主成分分析1234import numpy as npimport pandas as pddf = pd.read_csv(&apos;iris.data&apos;)df.head()       .dataframe thead tr:only-child th {         text-align: right;     }      .dataframe thead th {">
@@ -226,7 +224,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Do you like Van 游戏？</p>
+        <p class="site-subtitle">boy next door</p>
       
   </div>
 
@@ -277,6 +275,14 @@
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
 
       
@@ -417,7 +423,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-23 23:43:26" itemprop="dateModified" datetime="2018-04-23T23:43:26+08:00">2018-04-23</time>
+                <time title="更新于：2018-04-24 15:12:55" itemprop="dateModified" datetime="2018-04-24T15:12:55+08:00">2018-04-24</time>
               
             
           </span>
@@ -628,7 +634,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把每个特征用于分类的结果，都画成条形图，观察哪个特征更容易划分种类</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">label_dict = &#123;<span class="number">1</span>: <span class="string">'Iris-Setosa'</span>,</span><br><span class="line">              <span class="number">2</span>: <span class="string">'Iris-Versicolor'</span>,</span><br><span class="line">              <span class="number">3</span>: <span class="string">'Iris-Virgnica'</span>&#125;</span><br><span class="line"></span><br><span class="line">feature_dict = &#123;<span class="number">0</span>: <span class="string">'sepal length [cm]'</span>,</span><br><span class="line">                <span class="number">1</span>: <span class="string">'sepal width [cm]'</span>,</span><br><span class="line">                <span class="number">2</span>: <span class="string">'petal length [cm]'</span>,</span><br><span class="line">                <span class="number">3</span>: <span class="string">'petal width [cm]'</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> cnt <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, cnt+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> lab <span class="keyword">in</span> (<span class="string">'Iris-setosa'</span>, <span class="string">'Iris-versicolor'</span>, <span class="string">'Iris-virginica'</span>):</span><br><span class="line">        plt.hist(X[y==lab, cnt],</span><br><span class="line">                     label=lab,</span><br><span class="line">                     bins=<span class="number">10</span>,</span><br><span class="line">                     alpha=<span class="number">0.3</span>,)</span><br><span class="line">    plt.xlabel(feature_dict[cnt])</span><br><span class="line">    plt.legend(loc=<span class="string">'upper right'</span>, fancybox=<span class="keyword">True</span>, fontsize=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/04/19/machine_learning_in_action/PCA主成分分析/output_7_0.png" alt="png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 特征 归一化</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">X_std = StandardScaler().fit_transform(X)</span><br></pre></td></tr></table></figure>
-<h2 id="3-开始降维（发现有2个有用特征，决定从4维降到2维）"><a href="#3-开始降维（发现有2个有用特征，决定从4维降到2维）" class="headerlink" title="3 开始降维（发现有2个有用特征，决定从4维降到2维）"></a>3 开始降维（发现有2个有用特征，决定从4维降到2维）</h2><h3 id="1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）"><a href="#1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）" class="headerlink" title="1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）"></a>1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己算 协方差矩阵</span></span><br><span class="line">mean_vec = np.mean(X_std, axis=<span class="number">0</span>)</span><br><span class="line">cov_mat = (X_std - mean_vec).T.dot((X_std - mean_vec)) / (X_std.shape[<span class="number">0</span>]<span class="number">-1</span>)</span><br><span class="line">print(<span class="string">'Covariance matrix \n%s'</span> %cov_mat)</span><br></pre></td></tr></table></figure>
+<h2 id="3-协方差分析（发现有2个有用特征，决定从4维降到2维）"><a href="#3-协方差分析（发现有2个有用特征，决定从4维降到2维）" class="headerlink" title="3 协方差分析（发现有2个有用特征，决定从4维降到2维）"></a>3 协方差分析（发现有2个有用特征，决定从4维降到2维）</h2><h3 id="1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）"><a href="#1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）" class="headerlink" title="1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）"></a>1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己算 协方差矩阵</span></span><br><span class="line">mean_vec = np.mean(X_std, axis=<span class="number">0</span>)</span><br><span class="line">cov_mat = (X_std - mean_vec).T.dot((X_std - mean_vec)) / (X_std.shape[<span class="number">0</span>]<span class="number">-1</span>)</span><br><span class="line">print(<span class="string">'Covariance matrix \n%s'</span> %cov_mat)</span><br></pre></td></tr></table></figure>
 <pre><code>Covariance matrix 
 [[ 1.00675676 -0.10448539  0.87716999  0.82249094]
  [-0.10448539  1.00675676 -0.41802325 -0.35310295]
@@ -677,8 +683,8 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
  [-0.25956935 -0.92681168]
  [ 0.58184289 -0.01912775]
  [ 0.56609604 -0.06381646]]
-</code></pre><h3 id="5-用投影矩阵降维样本矩阵X"><a href="#5-用投影矩阵降维样本矩阵X" class="headerlink" title="5 用投影矩阵降维样本矩阵X"></a>5 用投影矩阵降维样本矩阵X</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y = X_std.dot(matrix_w)</span><br></pre></td></tr></table></figure>
-<h2 id="4-画图观察-降维前-和-降维后的样本分布"><a href="#4-画图观察-降维前-和-降维后的样本分布" class="headerlink" title="4 画图观察 降维前 和 降维后的样本分布"></a>4 画图观察 降维前 和 降维后的样本分布</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span> lab, col <span class="keyword">in</span> zip((<span class="string">'Iris-setosa'</span>, <span class="string">'Iris-versicolor'</span>, <span class="string">'Iris-virginica'</span>),</span><br><span class="line">                        (<span class="string">'blue'</span>, <span class="string">'red'</span>, <span class="string">'green'</span>)):</span><br><span class="line">     plt.scatter(X[y==lab, <span class="number">0</span>],</span><br><span class="line">                X[y==lab, <span class="number">1</span>],</span><br><span class="line">                label=lab,</span><br><span class="line">                c=col)</span><br><span class="line">plt.xlabel(<span class="string">'sepal_len'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'sepal_wid'</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="4-开始降维——用投影矩阵降维样本矩阵X"><a href="#4-开始降维——用投影矩阵降维样本矩阵X" class="headerlink" title="4 开始降维——用投影矩阵降维样本矩阵X"></a>4 开始降维——用投影矩阵降维样本矩阵X</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y = X_std.dot(matrix_w)</span><br></pre></td></tr></table></figure>
+<h2 id="5-画图观察-降维前-和-降维后的样本分布"><a href="#5-画图观察-降维前-和-降维后的样本分布" class="headerlink" title="5 画图观察 降维前 和 降维后的样本分布"></a>5 画图观察 降维前 和 降维后的样本分布</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span> lab, col <span class="keyword">in</span> zip((<span class="string">'Iris-setosa'</span>, <span class="string">'Iris-versicolor'</span>, <span class="string">'Iris-virginica'</span>),</span><br><span class="line">                        (<span class="string">'blue'</span>, <span class="string">'red'</span>, <span class="string">'green'</span>)):</span><br><span class="line">     plt.scatter(X[y==lab, <span class="number">0</span>],</span><br><span class="line">                X[y==lab, <span class="number">1</span>],</span><br><span class="line">                label=lab,</span><br><span class="line">                c=col)</span><br><span class="line">plt.xlabel(<span class="string">'sepal_len'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'sepal_wid'</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/04/19/machine_learning_in_action/PCA主成分分析/output_25_0.png" alt="png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span> lab, col <span class="keyword">in</span> zip((<span class="string">'Iris-setosa'</span>, <span class="string">'Iris-versicolor'</span>, <span class="string">'Iris-virginica'</span>),</span><br><span class="line">                        (<span class="string">'blue'</span>, <span class="string">'red'</span>, <span class="string">'green'</span>)):</span><br><span class="line">     plt.scatter(Y[y==lab, <span class="number">0</span>],</span><br><span class="line">                Y[y==lab, <span class="number">1</span>],</span><br><span class="line">                label=lab,</span><br><span class="line">                c=col)</span><br><span class="line">plt.xlabel(<span class="string">'Principal Component 1'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Principal Component 2'</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'lower center'</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/04/19/machine_learning_in_action/PCA主成分分析/output_26_0.png" alt="png"></p>
@@ -726,8 +732,8 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/OTHERS/备忘记录/" rel="next" title="备忘记录">
-                <i class="fa fa-chevron-left"></i> 备忘记录
+              <a href="/2018/04/19/pandas/Pandas常用功能、函数/" rel="next" title="Pandas常用功能、函数">
+                <i class="fa fa-chevron-left"></i> Pandas常用功能、函数
               </a>
             
           </div>
@@ -736,8 +742,8 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/pandas/Pandas常用功能、函数/" rel="prev" title="Pandas常用功能、函数">
-                Pandas常用功能、函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/19/machine_learning_theory/1机器学习流程/" rel="prev" title="1机器学习流程">
+                1机器学习流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -813,7 +819,7 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
                 alt="wxy555123" />
             
               <p class="site-author-name" itemprop="name">wxy555123</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">沉迷学习，无法自拔</p>
           </div>
 
           
@@ -821,9 +827,9 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives">
+                  <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -856,7 +862,15 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -901,7 +915,21 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -971,7 +999,7 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA-手写主成分分析"><span class="nav-text">PCA 手写主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据预处理"><span class="nav-text">1 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-画图，进行降维特征分析"><span class="nav-text">2 画图，进行降维特征分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-开始降维（发现有2个有用特征，决定从4维降到2维）"><span class="nav-text">3 开始降维（发现有2个有用特征，决定从4维降到2维）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）"><span class="nav-text">1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-对协方差矩阵进行-特征值分解"><span class="nav-text">2 对协方差矩阵进行 特征值分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-把特征值从大到小排列，并配对特征向量"><span class="nav-text">3 把特征值从大到小排列，并配对特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-通过前面特征值累加所占比重-的图像，判断取前多少特征值合适，组成投影矩阵W"><span class="nav-text">4 通过前面特征值累加所占比重 的图像，判断取前多少特征值合适，组成投影矩阵W</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-用投影矩阵降维样本矩阵X"><span class="nav-text">5 用投影矩阵降维样本矩阵X</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-画图观察-降维前-和-降维后的样本分布"><span class="nav-text">4 画图观察 降维前 和 降维后的样本分布</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA-手写主成分分析"><span class="nav-text">PCA 手写主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据预处理"><span class="nav-text">1 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-画图，进行降维特征分析"><span class="nav-text">2 画图，进行降维特征分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-协方差分析（发现有2个有用特征，决定从4维降到2维）"><span class="nav-text">3 协方差分析（发现有2个有用特征，决定从4维降到2维）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-计算样本X的-协方差矩阵（有4个特征，所以是4x4）"><span class="nav-text">1 计算样本X的 协方差矩阵（有4个特征，所以是4x4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-对协方差矩阵进行-特征值分解"><span class="nav-text">2 对协方差矩阵进行 特征值分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-把特征值从大到小排列，并配对特征向量"><span class="nav-text">3 把特征值从大到小排列，并配对特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-通过前面特征值累加所占比重-的图像，判断取前多少特征值合适，组成投影矩阵W"><span class="nav-text">4 通过前面特征值累加所占比重 的图像，判断取前多少特征值合适，组成投影矩阵W</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-开始降维——用投影矩阵降维样本矩阵X"><span class="nav-text">4 开始降维——用投影矩阵降维样本矩阵X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-画图观察-降维前-和-降维后的样本分布"><span class="nav-text">5 画图观察 降维前 和 降维后的样本分布</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1565,7 +1593,7 @@ array([  72.62003333,   95.76744019,   99.47895575,  100.        ])
   
 
 <script type="text/javascript"
-color="0,0,0" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 </body>
