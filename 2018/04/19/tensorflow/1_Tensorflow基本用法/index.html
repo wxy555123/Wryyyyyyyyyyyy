@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="变量 和 Session()定义1234567891011121314import tensorflow as tfa = 3# Create a variable.w = tf.Variable([[0.5,1.0]])x = tf.Variable([[2.0],[1.0]]) y = tf.matmul(w, x)  #variables have to be explicitly init">
+  <meta name="description" content=".eval() 和 sess.run()区别：最主要的区别就在于使用.eval()只能获取这个tensor的值，而使用sess.run()可以同时获取多个tensor中的值，12345678t = tf.constant(42.0)u = tf.constant(37.0)tu = tf.mul(t, u)ut = tf.mul(u, t)with sess.as_default():   tu.">
 <meta name="keywords" content="tensorflow">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensorflow基本语法">
+<meta property="og:title" content="Tensorflow基本用法">
 <meta property="og:url" content="http://yoursite.com/2018/04/19/tensorflow/1_Tensorflow基本用法/index.html">
 <meta property="og:site_name" content="新日暮里的幻想乡">
-<meta property="og:description" content="变量 和 Session()定义1234567891011121314import tensorflow as tfa = 3# Create a variable.w = tf.Variable([[0.5,1.0]])x = tf.Variable([[2.0],[1.0]]) y = tf.matmul(w, x)  #variables have to be explicitly init">
+<meta property="og:description" content=".eval() 和 sess.run()区别：最主要的区别就在于使用.eval()只能获取这个tensor的值，而使用sess.run()可以同时获取多个tensor中的值，12345678t = tf.constant(42.0)u = tf.constant(37.0)tu = tf.mul(t, u)ut = tf.mul(u, t)with sess.as_default():   tu.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-27T06:34:13.804Z">
+<meta property="og:updated_time" content="2018-05-05T08:07:41.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tensorflow基本语法">
-<meta name="twitter:description" content="变量 和 Session()定义1234567891011121314import tensorflow as tfa = 3# Create a variable.w = tf.Variable([[0.5,1.0]])x = tf.Variable([[2.0],[1.0]]) y = tf.matmul(w, x)  #variables have to be explicitly init">
+<meta name="twitter:title" content="Tensorflow基本用法">
+<meta name="twitter:description" content=".eval() 和 sess.run()区别：最主要的区别就在于使用.eval()只能获取这个tensor的值，而使用sess.run()可以同时获取多个tensor中的值，12345678t = tf.constant(42.0)u = tf.constant(37.0)tu = tf.mul(t, u)ut = tf.mul(u, t)with sess.as_default():   tu.">
 
 
 
@@ -146,7 +146,7 @@
   };
 </script>
 
-  <title>Tensorflow基本语法 | 新日暮里的幻想乡</title>
+  <title>Tensorflow基本用法 | 新日暮里的幻想乡</title>
   
 
 
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Tensorflow基本语法
+          <h1 class="post-title" itemprop="name headline">Tensorflow基本用法
               
             
           </h1>
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-04-27 14:34:13" itemprop="dateModified" datetime="2018-04-27T14:34:13+08:00">2018-04-27</time>
+                <time title="更新于：2018-05-05 16:07:41" itemprop="dateModified" datetime="2018-05-05T16:07:41+08:00">2018-05-05</time>
               
             
           </span>
@@ -471,13 +471,14 @@
       
 
       
-        <h2 id="变量-和-Session-定义"><a href="#变量-和-Session-定义" class="headerlink" title="变量 和 Session()定义"></a>变量 和 Session()定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="comment"># Create a variable.</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]]) </span><br><span class="line"></span><br><span class="line">y = tf.matmul(w, x)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#variables have to be explicitly initialized before you can run Ops</span></span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  <span class="comment">#第一种 session()定义方式</span></span><br><span class="line">    sess.run(init_op)</span><br><span class="line">    <span class="keyword">print</span> (y.eval())</span><br></pre></td></tr></table></figure>
+        <h2 id="eval-和-sess-run-区别："><a href="#eval-和-sess-run-区别：" class="headerlink" title=".eval() 和 sess.run()区别："></a>.eval() 和 sess.run()区别：</h2><p>最主要的区别就在于使用<code>.eval()</code>只能获取这个tensor的值，而使用<code>sess.run()</code>可以同时获取多个tensor中的值，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t = tf.constant(<span class="number">42.0</span>)</span><br><span class="line">u = tf.constant(<span class="number">37.0</span>)</span><br><span class="line">tu = tf.mul(t, u)</span><br><span class="line">ut = tf.mul(u, t)</span><br><span class="line"><span class="keyword">with</span> sess.as_default():</span><br><span class="line">   tu.eval()  <span class="comment"># runs one step</span></span><br><span class="line">   ut.eval()  <span class="comment"># runs one step</span></span><br><span class="line">   sess.run([tu, ut])  <span class="comment"># evaluates both tensors in a single step</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="变量-和-Session-定义"><a href="#变量-和-Session-定义" class="headerlink" title="变量 和 Session()定义"></a>变量 和 Session()定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="comment"># Create a variable.</span></span><br><span class="line">w = tf.Variable([[<span class="number">0.5</span>,<span class="number">1.0</span>]])</span><br><span class="line">x = tf.Variable([[<span class="number">2.0</span>],[<span class="number">1.0</span>]]) </span><br><span class="line"></span><br><span class="line">y = tf.matmul(w, x)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#variables have to be explicitly initialized before you can run Ops</span></span><br><span class="line">init_op = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  <span class="comment">#第一种 session()定义方式</span></span><br><span class="line">    sess.run(init_op)</span><br><span class="line">    <span class="keyword">print</span> (y.eval())</span><br></pre></td></tr></table></figure>
 <pre><code>Tensor(&quot;Variable_11/read:0&quot;, shape=(1, 2), dtype=float32)
 [[ 2.]]
 </code></pre><p>计算操作需要在 Session()——会话（计算图的区域） 中进行；<br>而且在使用 variable 时还需要 初始化全局变量操作</p>
 <h2 id="矩阵-和-常量"><a href="#矩阵-和-常量" class="headerlink" title="矩阵 和 常量"></a>矩阵 和 常量</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># float32</span></span><br><span class="line">tf.zeros([3, 4], int32) ==&gt; [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.zeros_like(tensor) ==&gt; [[0, 0, 0], [0, 0, 0]]</span><br><span class="line">tf.ones([2, 3], int32) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 'tensor' is [[1, 2, 3], [4, 5, 6]]</span></span><br><span class="line">tf.ones_like(tensor) ==&gt; [[1, 1, 1], [1, 1, 1]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 1-D Tensor populated with value list.</span></span><br><span class="line">tensor = tf.constant([1, 2, 3, 4, 5, 6, 7]) =&gt; [1 2 3 4 5 6 7]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Constant 2-D tensor populated with scalar value -1.</span></span><br><span class="line">tensor = tf.constant(-1.0, shape=[2, 3]) =&gt; [[-1. -1. -1.]</span><br><span class="line">                                              [<span class="number">-1.</span> <span class="number">-1.</span> <span class="number">-1.</span>]]</span><br><span class="line"></span><br><span class="line">tf.linspace(10.0, 12.0, 3, name="linspace") =&gt; [ 10.0  11.0  12.0]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 令'start' is 3</span></span><br><span class="line"><span class="comment"># 'limit' is 18</span></span><br><span class="line"><span class="comment"># 'delta' is 3</span></span><br><span class="line">tf.range(start, limit, delta) ==&gt; [3, 6, 9, 12, 15]</span><br></pre></td></tr></table></figure>
 <p>对比 Numpy 操作，发现区别并不大</p>
-<h2 id="另一种-Session-定义"><a href="#另一种-Session-定义" class="headerlink" title="另一种 Session() 定义"></a>另一种 Session() 定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment"># 初始化生成一个 均值为-1，方差为4的矩阵</span></span><br><span class="line">norm = tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], mean=<span class="number">-1</span>, stddev=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Shuffle the first dimension of a tensor</span></span><br><span class="line">c = tf.constant([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">shuff = tf.random_shuffle(c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Each time we run these ops, different results are generated</span></span><br><span class="line">sess = tf.Session()  <span class="comment">#第二种 session()定义方式</span></span><br><span class="line"><span class="keyword">print</span> (sess.run(norm))</span><br><span class="line"><span class="keyword">print</span> (sess.run(shuff))</span><br></pre></td></tr></table></figure>
+<h2 id="另一种-Session-定义"><a href="#另一种-Session-定义" class="headerlink" title="另一种 Session() 定义"></a>另一种 Session() 定义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment"># 初始化生成一个 均值为-1，方差为4的矩阵</span></span><br><span class="line">norm = tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], mean=<span class="number">-1</span>, stddev=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Shuffle the first dimension of a tensor</span></span><br><span class="line">c = tf.constant([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">shuff = tf.random_shuffle(c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Each time we run these ops, different results are generated</span></span><br><span class="line">sess = tf.Session()  <span class="comment">#第二种 session()定义方式</span></span><br><span class="line"><span class="keyword">print</span> (sess.run(norm))</span><br><span class="line"><span class="keyword">print</span> (sess.run(shuff))</span><br><span class="line">sess.close() <span class="comment">#这种方法没有明确的区域，所以要关闭来指定作用域</span></span><br></pre></td></tr></table></figure>
 <pre><code>[[ 3.78657341 -3.94182277 -3.65419507]
  [-7.0396409  -5.51102114  3.56082773]]
 [[5 6]
@@ -495,9 +496,13 @@
  [ 0.  0.  0.]
  [ 0.  0.  0.]]
 </code></pre><p>不推荐使用，还是建议使用 tensorflow 语法</p>
-<h2 id="placeholder-定义-待输入占位变量"><a href="#placeholder-定义-待输入占位变量" class="headerlink" title="placeholder() 定义 待输入占位变量"></a>placeholder() 定义 待输入占位变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input1 = tf.placeholder(tf.float32)</span><br><span class="line">input2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.mul(input1, input2)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>], input2:[<span class="number">2.</span>]&#125;))</span><br></pre></td></tr></table></figure>
-<pre><code>[array([ 14.], dtype=float32)]
-</code></pre><p>这些变量可以在使用时再临时 用 feed_dict字典格式 赋值</p>
+<h2 id="Fetch-and-Feed"><a href="#Fetch-and-Feed" class="headerlink" title="Fetch and Feed"></a>Fetch and Feed</h2><p>Fetch 把多个op放在一个数组中一起run</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fetch</span></span><br><span class="line">imput1 = tf.constant(<span class="number">3.0</span>)</span><br><span class="line">imput2 = tf.constant(<span class="number">2.0</span>)</span><br><span class="line">imput3 = tf.constant(<span class="number">1.0</span>)</span><br><span class="line"></span><br><span class="line">add = tf.add(imput1, imput2)</span><br><span class="line">mul = tf.multiply(imput1, imput2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    res = sess.run([add, mul])</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
+<pre><code>[5.0, 6.0]
+</code></pre><p>Feed 在运行时，用字典结构给占位符赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">imput1 = tf.placeholder(tf.float32)</span><br><span class="line">imput2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.add(imput1, imput2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(output, feed_dict=&#123;</span><br><span class="line">        imput1:[<span class="number">1</span>],</span><br><span class="line">        imput2:[<span class="number">2</span>]</span><br><span class="line">    &#125;))</span><br></pre></td></tr></table></figure>
+<h2 id="使用flags定义命令行参数"><a href="#使用flags定义命令行参数" class="headerlink" title="使用flags定义命令行参数"></a>使用flags定义命令行参数</h2><p>tf定义了tf.app.flags，用于支持接受命令行传递参数，相当于接受argv。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment">#第一个是参数名称，第二个参数是默认值，第三个是参数描述</span></span><br><span class="line">tf.app.flags.DEFINE_string(<span class="string">'str_name'</span>, <span class="string">'def_v_1'</span>,<span class="string">"descrip1"</span>)</span><br><span class="line">tf.app.flags.DEFINE_integer(<span class="string">'int_name'</span>, <span class="number">10</span>,<span class="string">"descript2"</span>)</span><br><span class="line">tf.app.flags.DEFINE_boolean(<span class="string">'bool_name'</span>, <span class="keyword">False</span>, <span class="string">"descript3"</span>)</span><br><span class="line"></span><br><span class="line">FLAGS = tf.app.flags.FLAGS</span><br><span class="line"></span><br><span class="line"><span class="comment">#必须带参数，否则：'TypeError: main() takes no arguments (1 given)';   main的参数名随意定义，无要求</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(_)</span>:</span>  </span><br><span class="line">    print(FLAGS.str_name)</span><br><span class="line">    print(FLAGS.int_name)</span><br><span class="line">    print(FLAGS.bool_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    tf.app.run()  <span class="comment">#执行main函数</span></span><br></pre></td></tr></table></figure></p>
+<p>执行：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//不带参数时：</span><br><span class="line">[root@test]# <span class="keyword">python</span> tt.<span class="keyword">py</span></span><br><span class="line">def_v_1</span><br><span class="line"><span class="number">10</span></span><br><span class="line">False</span><br><span class="line">//给定参数时：</span><br><span class="line">[root@test]# <span class="keyword">python</span> tt.<span class="keyword">py</span> --str_name test_str --int_name <span class="number">99</span> --bool_name True</span><br><span class="line">test_str</span><br><span class="line"><span class="number">99</span></span><br><span class="line">True</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -538,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/math/linear_algebra/1向量、矩阵、向量范数、矩阵范数/" rel="next" title="1向量、矩阵、向量范数、矩阵范数">
-                <i class="fa fa-chevron-left"></i> 1向量、矩阵、向量范数、矩阵范数
+              <a href="/2018/04/19/OTHERS/备忘记录/" rel="next" title="备忘记录">
+                <i class="fa fa-chevron-left"></i> 备忘记录
               </a>
             
           </div>
@@ -548,8 +553,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/python/Python面向对象和类/" rel="prev" title="Python面向对象和类">
-                Python面向对象和类 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/19/machine_learning_in_action/CreditCard/" rel="prev" title="数据挖掘——信用卡欺诈检测">
+                数据挖掘——信用卡欺诈检测 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -635,7 +640,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -735,7 +740,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -805,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量-和-Session-定义"><span class="nav-text">变量 和 Session()定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵-和-常量"><span class="nav-text">矩阵 和 常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一种-Session-定义"><span class="nav-text">另一种 Session() 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#累加-演示"><span class="nav-text">累加 演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#train-Saver-保存-Session-操作"><span class="nav-text">train.Saver() 保存 Session() 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert-to-tensor-转换-numpy-的语法为-tensorflow-类型"><span class="nav-text">convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#placeholder-定义-待输入占位变量"><span class="nav-text">placeholder() 定义 待输入占位变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#eval-和-sess-run-区别："><span class="nav-text">.eval() 和 sess.run()区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量-和-Session-定义"><span class="nav-text">变量 和 Session()定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵-和-常量"><span class="nav-text">矩阵 和 常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一种-Session-定义"><span class="nav-text">另一种 Session() 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#累加-演示"><span class="nav-text">累加 演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#train-Saver-保存-Session-操作"><span class="nav-text">train.Saver() 保存 Session() 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert-to-tensor-转换-numpy-的语法为-tensorflow-类型"><span class="nav-text">convert_to_tensor() 转换 numpy 的语法为 tensorflow 类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fetch-and-Feed"><span class="nav-text">Fetch and Feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用flags定义命令行参数"><span class="nav-text">使用flags定义命令行参数</span></a></li></ol></div>
             
 
           </div>
@@ -1399,7 +1406,7 @@
   
 
 <script type="text/javascript"
-color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+color="0,0,0" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 </body>
