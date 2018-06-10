@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="整理特色语法类 输出数值要加 .eval()  计算类 tf.nn.sigmoid()  tf.nn.softmax tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。 tf.add() tf.matmul() tf.reduce_mean() tf.square()平方算法类 优化器tf.train.GradientDescentOp">
-<meta name="keywords" content="tensorflow">
+  <meta name="description" content="一、优化器介绍tensorflow优化器12345678910tf.train.GradientDescentOptimizertf.train.AdadeltaOptimizertf.train.AdagradOptimizertf.train.AdagradDAOptimizertf.train.MomentumOptimizertf.train.AdamOptimizertf.train.F">
+<meta name="keywords" content="Optimizer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensorflow整理">
-<meta property="og:url" content="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/index.html">
+<meta property="og:title" content="Tensorflow专题2：优化器Optimizer">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/tensorflow/Tensorflow专题2：优化器Optimizer/index.html">
 <meta property="og:site_name" content="新日暮里的幻想乡">
-<meta property="og:description" content="整理特色语法类 输出数值要加 .eval()  计算类 tf.nn.sigmoid()  tf.nn.softmax tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。 tf.add() tf.matmul() tf.reduce_mean() tf.square()平方算法类 优化器tf.train.GradientDescentOp">
+<meta property="og:description" content="一、优化器介绍tensorflow优化器12345678910tf.train.GradientDescentOptimizertf.train.AdadeltaOptimizertf.train.AdagradOptimizertf.train.AdagradDAOptimizertf.train.MomentumOptimizertf.train.AdamOptimizertf.train.F">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-03T13:56:03.008Z">
+<meta property="og:updated_time" content="2018-05-11T16:52:16.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tensorflow整理">
-<meta name="twitter:description" content="整理特色语法类 输出数值要加 .eval()  计算类 tf.nn.sigmoid()  tf.nn.softmax tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。 tf.add() tf.matmul() tf.reduce_mean() tf.square()平方算法类 优化器tf.train.GradientDescentOp">
+<meta name="twitter:title" content="Tensorflow专题2：优化器Optimizer">
+<meta name="twitter:description" content="一、优化器介绍tensorflow优化器12345678910tf.train.GradientDescentOptimizertf.train.AdadeltaOptimizertf.train.AdagradOptimizertf.train.AdagradDAOptimizertf.train.MomentumOptimizertf.train.AdamOptimizertf.train.F">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/10/tensorflow/Tensorflow专题2：优化器Optimizer/"/>
 
 
 
@@ -146,7 +146,7 @@
   };
 </script>
 
-  <title>Tensorflow整理 | 新日暮里的幻想乡</title>
+  <title>Tensorflow专题2：优化器Optimizer | 新日暮里的幻想乡</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/tensorflow/0_Tensorflow整理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/tensorflow/Tensorflow专题2：优化器Optimizer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wxy555123">
@@ -367,12 +367,7 @@
       <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">Tensorflow整理
-              
-            
-          </h1>
-        
+		
 
         <div class="post-meta">
           <span class="post-time">
@@ -393,7 +388,7 @@
                 
               
 
-              <time title="创建于：2018-04-19 00:51:27" itemprop="dateCreated datePublished" datetime="2018-04-19T00:51:27+08:00">2018-04-19</time>
+              <time title="创建于：2018-05-10 00:11:27" itemprop="dateCreated datePublished" datetime="2018-05-10T00:11:27+08:00">2018-05-10</time>
             
 
             
@@ -410,7 +405,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-05-03 21:56:03" itemprop="dateModified" datetime="2018-05-03T21:56:03+08:00">2018-05-03</time>
+                <time title="更新于：2018-05-12 00:52:16" itemprop="dateModified" datetime="2018-05-12T00:52:16+08:00">2018-05-12</time>
               
             
           </span>
@@ -442,8 +437,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/19/tensorflow/0_Tensorflow整理/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/19/tensorflow/0_Tensorflow整理/" itemprop="commentsCount"></span>
+                <a href="/2018/05/10/tensorflow/Tensorflow专题2：优化器Optimizer/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/10/tensorflow/Tensorflow专题2：优化器Optimizer/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -455,10 +450,22 @@
           
 
           
-
           
-
         </div>
+		
+		  
+		  
+		  
+        
+          <h1 class="post-title" itemprop="name headline">Tensorflow专题2：优化器Optimizer
+              
+            
+          </h1>
+        
+		  
+		  
+		  
+
       </header>
     
 
@@ -471,28 +478,41 @@
       
 
       
-        <h1 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h1><h2 id="特色语法类"><a href="#特色语法类" class="headerlink" title="特色语法类"></a>特色语法类</h2><ul>
-<li>输出数值要加 .eval()</li>
-</ul>
-<h2 id="计算类"><a href="#计算类" class="headerlink" title="计算类"></a>计算类</h2><ul>
-<li>tf.nn.sigmoid() </li>
-<li>tf.nn.softmax</li>
-<li>tf.nn.softmax_cross_entropy_with_logits(y_hat, y)：交叉熵函数。</li>
-<li>tf.add()</li>
-<li>tf.matmul()</li>
-<li>tf.reduce_mean()</li>
-<li>tf.square()平方<h2 id="算法类-优化器"><a href="#算法类-优化器" class="headerlink" title="算法类 优化器"></a>算法类 优化器</h2>tf.train.GradientDescentOptimizer()：梯度下降</li>
-</ul>
-<h2 id="功能类"><a href="#功能类" class="headerlink" title="功能类"></a>功能类</h2><ul>
-<li>tf.equal(a, b)  ：比较是否相等</li>
-<li>tf.cast(a, “float”)  :类型转换</li>
-<li>tf.placeholder(“float”, [None, 10]) ：None is for infinite 这是一个n行10列的动态矩阵</li>
-<li>tf.InteractiveSession(): 它能让你在运行图的时候，插入一些计算图</li>
-<li>tf.Session(): 需要在启动session之前构建整个计算图，然后启动该计算图。</li>
-<li>tf.random_normal([2, 3], mean=-1, stddev=4) ：高斯初始化生成一个 均值为-1，方差为4的矩阵</li>
-</ul>
-<h2 id="经验总结类"><a href="#经验总结类" class="headerlink" title="经验总结类"></a>经验总结类</h2><ul>
-<li>Tensorflow 定义的任何数据类型都推荐用 float32</li>
+        <h1 id="一、优化器介绍"><a href="#一、优化器介绍" class="headerlink" title="一、优化器介绍"></a>一、优化器介绍</h1><h2 id="tensorflow优化器"><a href="#tensorflow优化器" class="headerlink" title="tensorflow优化器"></a>tensorflow优化器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tf.train.GradientDescentOptimizer</span><br><span class="line">tf.train.AdadeltaOptimizer</span><br><span class="line">tf.train.AdagradOptimizer</span><br><span class="line">tf.train.AdagradDAOptimizer</span><br><span class="line">tf.train.MomentumOptimizer</span><br><span class="line">tf.train.AdamOptimizer</span><br><span class="line">tf.train.FtrlOptimizer</span><br><span class="line">tf.train.ProximalGradientDescentOptimizer</span><br><span class="line">tf.train.ProximalAdagradOptimizer</span><br><span class="line">tf.train.RMSPropOptimizer1234567891011</span><br></pre></td></tr></table></figure>
+<h2 id="1）GradientDescent梯度下降法"><a href="#1）GradientDescent梯度下降法" class="headerlink" title="1）GradientDescent梯度下降法"></a>1）GradientDescent梯度下降法</h2><h3 id="TF函数实现："><a href="#TF函数实现：" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.GradientDescentOptimizer</code></p>
+<p>设：<br>$h_W(x)=W_1x$，其参数是W_1，则其损失函数是：<br>$J(W_1)=\frac{1}{2m}\sum^{m}_{i=1}(h_W(x^{i})-y^{i})^2$<br>则W1W1通过如下求得：<br>$minimize\ J(W_1)$</p>
+<p>标准梯度下降法：标准梯度下降先计算所有样本汇总误差，然后根据总误差来更新权值。<br>随机梯度下降法：随机梯度下降随机抽取一个样本来计算误差，然后更新权值。<br>批量梯度下降法：批量梯度下降算是一种折中的方案，从总样本中选取一个批次（比如一共有10000个样本，随机选取100个样本作为一个batch），然后计算这个batch的总误差，根据总误差来更新权值。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>1.合适的学习率，α 比较难获得<br>α 过大导致震荡无法得到最优解，过小导致学习过程漫长。<br>2.对所有参数学习率只有一个，如果数据是稀疏的，并且特征具有不同的频率时，更倾向于对不同频率特征使用不同的学习率，对很少发生的特征采用较大的学习率。<br>3.目标函数门限需要提前定义，一旦计算中小于门限就停止，数据调度训练的选择对其有影响，通常使用shuffle打断以减小这种影响。<br>4.高维非凸误差函数最小求解技术难度大。</p>
+<h2 id="2）Momentum"><a href="#2）Momentum" class="headerlink" title="2）Momentum"></a>2）Momentum</h2><h3 id="TF函数实现：-1"><a href="#TF函数实现：-1" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.MomentumOptimizer</code><br>动量法<br>ρ：动力通常设为 0.9</p>
+<p>$W_t=ρW_{t-1}-η\nabla_W {J(W)}$<br>当前权值的改变会受到上一次全职改变的影响，类似小球向下滚动的时候带上了惯性。这样可以加快小球向下的速度。</p>
+<h2 id="3）NAG（Nesterov-accelerated-gradient）"><a href="#3）NAG（Nesterov-accelerated-gradient）" class="headerlink" title="3）NAG（Nesterov accelerated gradient）"></a>3）NAG（Nesterov accelerated gradient）</h2><h3 id="TF函数实现：-2"><a href="#TF函数实现：-2" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.MomentumOptimizer</code></p>
+<p>$W_t=ρW_{t-1}-η\nabla_W {J(W-ρW_{t-1})}$<br>NAG在TF中跟Momentum合并在同一个函数tf.train.MomentumOptimizer中，可以通过参数配置启用。在Momentum中小球会盲目跟从下坡的梯度，容易发生错误，所以我们需要一个更聪明的小球，这个小球提前知道它要去哪里，它还要知道走到坡底的时候速度慢下来而不是又冲上另一个坡。我们可以提前计算下一个位置的梯度，然后使用到当前位置。</p>
+<h2 id="4）Adagrad"><a href="#4）Adagrad" class="headerlink" title="4）Adagrad"></a>4）Adagrad</h2><h3 id="TF函数实现：-3"><a href="#TF函数实现：-3" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.AdagradOptimizer</code><br><code>tf.train.AdagradDAOptimizer</code></p>
+<p>Adagrad会累加之前所有的梯度平方。<br>$ΔW_t=-\frac η{\sqrt{\sum_{τ}^{t}g_τ^2+ϵ}}⨀g_t$<br>$W_{t+1}=W_t-\frac η{\sqrt{\sum_{τ}^{t}g_τ^2+ϵ}}⨀g_t$<br>通常上述的求和针对一个窗长w求解，以减小运算量。</p>
+<p>它是基于SGD的一种算法，它的核心思想是对比比较常见的数据给予它比较小的学习率去调整参数，对于比较罕见的数据给予它较大的学习率去调整参数。它很适合应用于数据稀疏的数据集（比如一个图片的数据集，有10000张狗的照片，10000张猫的照片，只有100张大象的照片）。<br>Adagrad主要的优势在于不需要人为的调节学习率，它可以自动调节。它的缺点在于，随着迭代次数的增多，学习率也会越来越低，最终会趋向于0。</p>
+<h2 id="5）RMSprop"><a href="#5）RMSprop" class="headerlink" title="5）RMSprop"></a>5）RMSprop</h2><h3 id="TF函数实现：-4"><a href="#TF函数实现：-4" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.RMSPropOptimizer</code></p>
+<p>$E|g^2|_t=0.9E|g^2|_{t-1}+0.1g^2_t$<br>$W_{t+1}=W_t-\frac η{\sqrt {E|g2|_t+ϵ}}⨀g_t$<br>学习速率梯度均方根均值指数衰减。</p>
+<p>RMSprop借鉴了一些Adagrad的思想，不过这里RMSprop只用到了前t-1次梯度平方的平均值加上当前梯度的平方的和的开平方作为学习率的分母。这样RMSprop不会出现学习率越来越低的问题，而且也能自己调节学习率，并且可以有一个比较好的效果。</p>
+<h2 id="6）Adadelta"><a href="#6）Adadelta" class="headerlink" title="6）Adadelta"></a>6）Adadelta</h2><h3 id="TF函数实现：-5"><a href="#TF函数实现：-5" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.AdadeltaOptimizer</code></p>
+<p>该算法不需要手动调优学习速率α，抗噪声能力强，可以选择不同的模型结构。<br>Adadelta是对Adagrad的扩展。Adadelta只累加固定大小的项，并且也不直接存储这些项，仅仅是计算对应的平均值。<br>上一节的参数更新模型是：<br>$W_{t+1}=W_t - α\frac{dJ(W)}{dW_t}$<br>为方便，把$\frac{dJ(W)}{dW_t}$记作$g_t$，把平滑后的梯度记作$E|g|_t$,则其平方表示如下：<br>$E|g^2|_t = ρE|g^2|_{t-1}+(1-ρ)g^2_t$<br>其中ρ是平滑/衰减因子。其均方根得到的该值如下：<br>$RMS|g|_t=\sqrt {E|g^2|_t+ϵ}$<br>其中ϵ是为了防止后续计算分母为零而引入的参数常量。<br>$ΔW=-\frac{RMS|ΔW|_{t-1}}{RMS|g|_t}g_t$<br>$W_t+1=W_t+ΔW_t$</p>
+<h3 id="Adadelta-t时刻跟新过程如下："><a href="#Adadelta-t时刻跟新过程如下：" class="headerlink" title="Adadelta t时刻跟新过程如下："></a>Adadelta t时刻跟新过程如下：</h3><p>前提衰减因子ρ，常数ϵ，初始的W值。</p>
+<p>1 计算变量E|g2|0=0E|g2|0=0，E|ΔW2|0=0E|ΔW2|0=0<br>2: for t=1:T do %%Loop over #of updates</p>
+<blockquote>
+<p>3: 计算梯度：$g_t $<br>4: 滑动平均梯度:$E|g^2|_t = ρE|g^2|_{t-1}+(1-ρ)g^2_t$</p>
+<ol>
+<li>计算参数跟新$ΔW=-\frac{RMS|ΔW|_{t-1}}{RMS|g|_t}g_t$</li>
+<li>计算更新$E|Δx^2|_t=ρE|ΔW^2|_{t-1} + (1-ρ)W^2$</li>
+<li>更新参数$W_{t+1}=W_t+ΔW_t$</li>
+</ol>
+</blockquote>
+<p>8.end for</p>
+<h2 id="7）Adam"><a href="#7）Adam" class="headerlink" title="7）Adam"></a>7）Adam</h2><h3 id="TF函数实现：-6"><a href="#TF函数实现：-6" class="headerlink" title="TF函数实现："></a>TF函数实现：</h3><p><code>tf.train.AdamOptimizer</code></p>
+<p>Adam(Adaptive Moment Estimation)加上了bias校正和momentum，在优化末期，梯度更稀疏时，它比RMSprop稍微好点。<br>$m_t=β_1m_{t-1}+(1-β_1)g_t$<br>$v_t=β_2v_{t-1}+(1-β_2)g^2_t$<br>其中$m_t$是梯度均值，$v_t$是梯度偏方差。这两个值初始化时为0的张量。在训练开始时，$m_t$和$v_t$趋向于零。可以使用如下估计方法抵消：<br>$\hat m_t=\frac{m_t}{1-β^t_1}$<br>$\hat v_t=\frac {v_t}{1-β^t_2}$<br>$W_{t+1}=W_t-\frac η{\sqrt{\hat v_t+ϵ}}\hat m_t$<br>就像Adadelta和RMSprop一样Adam会存储之前衰减的平方梯度，同时它也会保存之前衰减的梯度。经过一些处理之后再使用类似Adadelta和RMSprop的方式更新参数。</p>
+<h2 id="tf-train-FtrlOptimizer"><a href="#tf-train-FtrlOptimizer" class="headerlink" title="tf.train.FtrlOptimizer"></a>tf.train.FtrlOptimizer</h2><h2 id="tf-train-ProximalGradientDescentOptimizer"><a href="#tf-train-ProximalGradientDescentOptimizer" class="headerlink" title="tf.train.ProximalGradientDescentOptimizer"></a>tf.train.ProximalGradientDescentOptimizer</h2><h2 id="tf-train-ProximalAdagradOptimizer"><a href="#tf-train-ProximalAdagradOptimizer" class="headerlink" title="tf.train.ProximalAdagradOptimizer"></a>tf.train.ProximalAdagradOptimizer</h2><h2 id="其它梯度优化方法"><a href="#其它梯度优化方法" class="headerlink" title="其它梯度优化方法"></a>其它梯度优化方法</h2><p>1.数据重拍(shuffle函数)和数据多次重复训练<br>2.批量归一化，防止逐级训练中的梯度消失和溢出<br>3.提前终止，防止过拟合，监控验证数据集在训练中的损失，合适时提前终止。<br>4.增加高斯分布的梯度噪声，<br>$g_{t,i}=g_{t,i}+N(0,δ^2)$<br>$δ^2_t=\frac η{(1+t)^γ}$<br>这使得网络对初始化不敏感。</p>
+<h1 id="二、总结"><a href="#二、总结" class="headerlink" title="二、总结"></a>二、总结</h1><h2 id="如何选用optimizer"><a href="#如何选用optimizer" class="headerlink" title="如何选用optimizer"></a>如何选用optimizer</h2><ul>
+<li>对于稀疏数据：<br>使用学习率可自适应的优化方法如：RMSprop，不用手动调节，而且最好采用默认值 </li>
+<li>追求精度：<br>SGD。虽然通常训练时间更长，容易陷入鞍点，但是在好的初始化和学习率调度方案的情况下，结果更可靠 </li>
+<li>如果在意更快的收敛，并且需要训练较深较复杂的网络时：<br>推荐使用学习率自适应的优化方法，如：Adadelta，RMSprop，Adam是比较相近的算法，在相似的情况下表现差不多。NAG收敛也比较快。</li>
 </ul>
 
       
@@ -521,7 +541,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tensorflow/" rel="tag"><i class="fa fa-tag"></i> tensorflow</a>
+            <a href="/tags/Optimizer/" rel="tag"><i class="fa fa-tag"></i> Optimizer</a>
           
         </div>
       
@@ -534,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/python/Python常用功能、函数/" rel="next" title="Python常用功能、函数">
-                <i class="fa fa-chevron-left"></i> Python常用功能、函数
+              <a href="/2018/05/01/tensorflow/Tensorflow专题1：生成随机数/" rel="next" title="Tensorflow专题1：生成随机数">
+                <i class="fa fa-chevron-left"></i> Tensorflow专题1：生成随机数
               </a>
             
           </div>
@@ -544,8 +564,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/machine_learning_in_action/CreditCard/" rel="prev" title="数据挖掘——信用卡欺诈检测">
-                数据挖掘——信用卡欺诈检测 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/10/tensorflow/Tensorflow专题3：模型优化策略/" rel="prev" title="Tensorflow专题3：模型优化策略">
+                Tensorflow专题3：模型优化策略 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,6 +574,8 @@
 
       
       
+        
+     
     </footer>
   </div>
   
@@ -621,7 +643,7 @@
                 alt="wxy555123" />
             
               <p class="site-author-name" itemprop="name">wxy555123</p>
-              <p class="site-description motion-element" itemprop="description">乖乖站好</p>
+              <p class="site-description motion-element" itemprop="description">专注数学，机器学习和数据挖掘应用</p>
           </div>
 
           
@@ -631,7 +653,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -731,7 +753,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -801,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#整理"><span class="nav-text">整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特色语法类"><span class="nav-text">特色语法类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算类"><span class="nav-text">计算类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法类-优化器"><span class="nav-text">算法类 优化器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能类"><span class="nav-text">功能类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验总结类"><span class="nav-text">经验总结类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、优化器介绍"><span class="nav-text">一、优化器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorflow优化器"><span class="nav-text">tensorflow优化器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1）GradientDescent梯度下降法"><span class="nav-text">1）GradientDescent梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现："><span class="nav-text">TF函数实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）Momentum"><span class="nav-text">2）Momentum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-1"><span class="nav-text">TF函数实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3）NAG（Nesterov-accelerated-gradient）"><span class="nav-text">3）NAG（Nesterov accelerated gradient）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-2"><span class="nav-text">TF函数实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4）Adagrad"><span class="nav-text">4）Adagrad</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-3"><span class="nav-text">TF函数实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5）RMSprop"><span class="nav-text">5）RMSprop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-4"><span class="nav-text">TF函数实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6）Adadelta"><span class="nav-text">6）Adadelta</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-5"><span class="nav-text">TF函数实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adadelta-t时刻跟新过程如下："><span class="nav-text">Adadelta t时刻跟新过程如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7）Adam"><span class="nav-text">7）Adam</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TF函数实现：-6"><span class="nav-text">TF函数实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-train-FtrlOptimizer"><span class="nav-text">tf.train.FtrlOptimizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-train-ProximalGradientDescentOptimizer"><span class="nav-text">tf.train.ProximalGradientDescentOptimizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-train-ProximalAdagradOptimizer"><span class="nav-text">tf.train.ProximalAdagradOptimizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它梯度优化方法"><span class="nav-text">其它梯度优化方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、总结"><span class="nav-text">二、总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选用optimizer"><span class="nav-text">如何选用optimizer</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1011,7 +1043,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: '1524070287000',
+            id: '1525882287000',
             owner: 'wxy555123',
             repo: 'wxy555123.github.io',
             
@@ -1418,7 +1450,7 @@
   
 
 <script type="text/javascript"
-color="0,0,0" opacity='0.7' zIndex="-2" count="80" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+color="0,0,0" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 </body>
