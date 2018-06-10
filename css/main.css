@@ -1802,7 +1802,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a8f2ff;
+  background: #cba4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2955,7 +2955,11 @@ ul.breadcrumb li+li:last-child {
   margin: 5px 0 15px;
   text-align: left;
 }
+.post-title .post-title-link {
+  margin-left: 60px;
+}
 .posts-expand .post-title-link {
+  margin-left: 0;
   color: #2a7ae2;
 }
 .posts-expand .post-title-link:hover {
