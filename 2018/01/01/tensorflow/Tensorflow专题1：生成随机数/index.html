@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #000000; /*��������ɫ*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #CCCCCC, 0 0 5px     #CCCCCC; /*��Ӱ��ɫ*/
+    }
+    .pace .pace-activity {
+        border-top-color: #FFFFFF;    /*�ϱ߿���ɫ*/
+        border-left-color: #FFFFFF;    /*��߿���ɫ*/
+    }
+</style>
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":true,"transition":{"post_block":null,"post_header":null,"post_body":null,"coll_header":null,"sidebar":null}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="随机数函数 tf.random_normal &amp;amp; tf.random_uniform &amp;amp; tf.truncated_normal &amp;amp; tf.random_shuffle tf.random_normal从正态分布输出随机值。 1random_normal(shape,mean=0.0,stddev=1.0,dtype=tf.float32,seed=None,name=No">
+<meta name="keywords" content="tf.random">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow专题1：生成随机数">
+<meta property="og:url" content="http://yoursite.com/2018/01/01/tensorflow/Tensorflow专题1：生成随机数/index.html">
+<meta property="og:site_name" content="新日暮里的幻想乡">
+<meta property="og:description" content="随机数函数 tf.random_normal &amp;amp; tf.random_uniform &amp;amp; tf.truncated_normal &amp;amp; tf.random_shuffle tf.random_normal从正态分布输出随机值。 1random_normal(shape,mean=0.0,stddev=1.0,dtype=tf.float32,seed=None,name=No">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T03:49:40.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tensorflow专题1：生成随机数">
+<meta name="twitter:description" content="随机数函数 tf.random_normal &amp;amp; tf.random_uniform &amp;amp; tf.truncated_normal &amp;amp; tf.random_shuffle tf.random_normal从正态分布输出随机值。 1random_normal(shape,mean=0.0,stddev=1.0,dtype=tf.float32,seed=None,name=No">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="新日暮里的幻想乡" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/01/tensorflow/Tensorflow专题1：生成随机数/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Tensorflow专题1：生成随机数 | 新日暮里的幻想乡</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8b8d3dbc822302a739163af5eeb0d699";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新日暮里的幻想乡</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">boy next door</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/tensorflow/Tensorflow专题1：生成随机数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wxy555123">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新日暮里的幻想乡">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+		
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-01-01 20:51:27" itemprop="dateCreated datePublished" datetime="2018-01-01T20:51:27+08:00">2018-01-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-07-18 11:49:40" itemprop="dateModified" datetime="2018-07-18T11:49:40+08:00">2018-07-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/01/tensorflow/Tensorflow专题1：生成随机数/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/01/tensorflow/Tensorflow专题1：生成随机数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+          
+        </div>
+		
+		  
+		  
+		  
+        
+          <h1 class="post-title" itemprop="name headline">Tensorflow专题1：生成随机数
+              
+            
+          </h1>
+        
+		  
+		  
+		  
+
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="随机数函数-tf-random-normal-amp-tf-random-uniform-amp-tf-truncated-normal-amp-tf-random-shuffle"><a href="#随机数函数-tf-random-normal-amp-tf-random-uniform-amp-tf-truncated-normal-amp-tf-random-shuffle" class="headerlink" title="随机数函数 tf.random_normal &amp; tf.random_uniform &amp; tf.truncated_normal &amp; tf.random_shuffle"></a>随机数函数 tf.random_normal &amp; tf.random_uniform &amp; tf.truncated_normal &amp; tf.random_shuffle</h1><p><br></p>
+<h2 id="tf-random-normal"><a href="#tf-random-normal" class="headerlink" title="tf.random_normal"></a>tf.random_normal</h2><p>从正态分布输出随机值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random_normal(shape,mean=<span class="number">0.0</span>,stddev=<span class="number">1.0</span>,dtype=tf.float32,seed=<span class="keyword">None</span>,name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<p>shape：一个一维整数张量或Python数组。代表张量的形状。<br>mean：数据类型为dtype的张量值或Python值。是正态分布的均值。<br>stddev：数据类型为dtype的张量值或Python值。是正态分布的标准差<br>dtype： 输出的数据类型。<br>seed：一个Python整数。是随机种子。<br>name： 操作的名称(可选)</p>
+<h2 id="tf-random-uniform"><a href="#tf-random-uniform" class="headerlink" title="tf.random_uniform"></a>tf.random_uniform</h2><p>从均匀分布中返回随机值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">random_uniform(  </span><br><span class="line">    shape,<span class="comment"># 生成的张量的形状  </span></span><br><span class="line">    minval=<span class="number">0</span>,  </span><br><span class="line">    maxval=<span class="keyword">None</span>,  </span><br><span class="line">    dtype=tf.float32,  </span><br><span class="line">    seed=<span class="keyword">None</span>,  </span><br><span class="line">    name=<span class="keyword">None</span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>返回值的范围默认是0到1的左闭右开区间，即[0，1)。minval为指定最小边界，默认为1。maxval为指定的最大边界，如果是数据浮点型则默认为1，如果数据为整形则必须指定。</p>
+<h2 id="tf-truncated-normal"><a href="#tf-truncated-normal" class="headerlink" title="tf.truncated_normal"></a>tf.truncated_normal</h2><p>截断的正态分布函数。生成的值遵循一个正态分布，但如果生成的值大于平均值2个标准偏差的值则丢弃重新选择。<br>故，只取横轴区间（μ-2σ，μ+2σ）内的值，面积为95.449974%</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">truncated_normal(  </span><br><span class="line">    shape,<span class="comment">#一个一维整数张量或Python数组。代表张量的形状。  </span></span><br><span class="line">    mean=<span class="number">0.0</span>,<span class="comment">#数据类型为dtype的张量值或Python值。是正态分布的均值。  </span></span><br><span class="line">    stddev=<span class="number">1.0</span>,<span class="comment">#数据类型为dtype的张量值或Python值。是正态分布的标准差  </span></span><br><span class="line">    dtype=tf.float32,<span class="comment">#输出的数据类型。  </span></span><br><span class="line">    seed=<span class="keyword">None</span>,<span class="comment">#一个Python整数。是随机种子。  </span></span><br><span class="line">    name=<span class="keyword">None</span><span class="comment">#操作的名称(可选)  </span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="tf-random-shuffle"><a href="#tf-random-shuffle" class="headerlink" title="tf.random_shuffle"></a>tf.random_shuffle</h2><p>沿着要被洗牌的张量的第一个维度，随机打乱。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">random_shuffle(  </span><br><span class="line">    value,<span class="comment"># 要被洗牌的张量  </span></span><br><span class="line">    seed=<span class="keyword">None</span>,  </span><br><span class="line">    name=<span class="keyword">None</span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>即下面这种效果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">1</span>, <span class="number">2</span>],       [[<span class="number">5</span>, <span class="number">6</span>],  </span><br><span class="line"> [3, 4],  ==&gt;   [1, 2],  </span><br><span class="line"> [<span class="number">5</span>, <span class="number">6</span>]]        [<span class="number">3</span>, <span class="number">4</span>]]</span><br></pre></td></tr></table></figure></p>
+<h2 id="附录1：生成随机数的操作的源码random-ops-py"><a href="#附录1：生成随机数的操作的源码random-ops-py" class="headerlink" title="附录1：生成随机数的操作的源码random_ops.py"></a>附录1：生成随机数的操作的源码random_ops.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Copyright 2015 The TensorFlow Authors. All Rights Reserved.  </span></span><br><span class="line"><span class="comment">#  </span></span><br><span class="line"><span class="comment"># Licensed under the Apache License, Version 2.0 (the "License");  </span></span><br><span class="line"><span class="comment"># you may not use this file except in compliance with the License.  </span></span><br><span class="line"><span class="comment"># You may obtain a copy of the License at  </span></span><br><span class="line"><span class="comment">#  </span></span><br><span class="line"><span class="comment">#     http://www.apache.org/licenses/LICENSE-2.0  </span></span><br><span class="line"><span class="comment">#  </span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software  </span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an "AS IS" BASIS,  </span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  </span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and  </span></span><br><span class="line"><span class="comment"># limitations under the License.  </span></span><br><span class="line"><span class="comment"># ==============================================================================  </span></span><br><span class="line"><span class="string">"""Operations for generating random numbers."""</span>  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import  </span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division  </span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.framework <span class="keyword">import</span> dtypes  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.framework <span class="keyword">import</span> ops  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.framework <span class="keyword">import</span> random_seed  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.ops <span class="keyword">import</span> array_ops  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.ops <span class="keyword">import</span> control_flow_ops  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.ops <span class="keyword">import</span> gen_random_ops  </span><br><span class="line"><span class="keyword">from</span> tensorflow.python.ops <span class="keyword">import</span> math_ops  </span><br><span class="line"><span class="comment"># go/tf-wildcard-import  </span></span><br><span class="line"><span class="comment"># pylint: disable=wildcard-import  </span></span><br><span class="line"><span class="keyword">from</span> tensorflow.python.ops.gen_random_ops <span class="keyword">import</span> *  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># pylint: enable=wildcard-import  </span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_ShapeTensor</span><span class="params">(shape)</span>:</span>  </span><br><span class="line">  <span class="string">"""Convert to an int32 or int64 tensor, defaulting to int32 if empty."""</span>  </span><br><span class="line">  <span class="keyword">if</span> isinstance(shape, (tuple, list)) <span class="keyword">and</span> <span class="keyword">not</span> shape:  </span><br><span class="line">    dtype = dtypes.int32  </span><br><span class="line">  <span class="keyword">else</span>:  </span><br><span class="line">    dtype = <span class="keyword">None</span>  </span><br><span class="line">  <span class="keyword">return</span> ops.convert_to_tensor(shape, dtype=dtype, name=<span class="string">"shape"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># pylint: disable=protected-access  </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_normal</span><span class="params">(shape,  </span></span></span><br><span class="line"><span class="function"><span class="params">                  mean=<span class="number">0.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                  stddev=<span class="number">1.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                  dtype=dtypes.float32,  </span></span></span><br><span class="line"><span class="function"><span class="params">                  seed=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                  name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Outputs random values from a normal distribution. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output tensor. </span></span><br><span class="line"><span class="string">    mean: A 0-D Tensor or Python value of type `dtype`. The mean of the normal </span></span><br><span class="line"><span class="string">      distribution. </span></span><br><span class="line"><span class="string">    stddev: A 0-D Tensor or Python value of type `dtype`. The standard deviation </span></span><br><span class="line"><span class="string">      of the normal distribution. </span></span><br><span class="line"><span class="string">    dtype: The type of the output. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for the operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A tensor of the specified shape filled with random normal values. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"random_normal"</span>, [shape, mean, stddev]) <span class="keyword">as</span> name:  </span><br><span class="line">    shape_tensor = _ShapeTensor(shape)  </span><br><span class="line">    mean_tensor = ops.convert_to_tensor(mean, dtype=dtype, name=<span class="string">"mean"</span>)  </span><br><span class="line">    stddev_tensor = ops.convert_to_tensor(stddev, dtype=dtype, name=<span class="string">"stddev"</span>)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    rnd = gen_random_ops._random_standard_normal(  </span><br><span class="line">        shape_tensor, dtype, seed=seed1, seed2=seed2)  </span><br><span class="line">    mul = rnd * stddev_tensor  </span><br><span class="line">    value = math_ops.add(mul, mean_tensor, name=name)  </span><br><span class="line">    <span class="keyword">return</span> value  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"RandomStandardNormal"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parameterized_truncated_normal</span><span class="params">(shape,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   means=<span class="number">0.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   stddevs=<span class="number">1.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   minvals=<span class="number">-2.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   maxvals=<span class="number">2.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   dtype=dtypes.float32,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   seed=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                                   name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Outputs random values from a truncated normal distribution. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  The generated values follow a normal distribution with specified mean and </span></span><br><span class="line"><span class="string">  standard deviation, except that values whose magnitude is more than 2 standard </span></span><br><span class="line"><span class="string">  deviations from the mean are dropped and re-picked. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output tensor. </span></span><br><span class="line"><span class="string">    means: A 0-D Tensor or Python value of type `dtype`. The mean of the </span></span><br><span class="line"><span class="string">      truncated normal distribution. </span></span><br><span class="line"><span class="string">    stddevs: A 0-D Tensor or Python value of type `dtype`. The standard </span></span><br><span class="line"><span class="string">      deviation of the truncated normal distribution. </span></span><br><span class="line"><span class="string">    minvals: A 0-D Tensor or Python value of type `dtype`. The minimum value of </span></span><br><span class="line"><span class="string">      the truncated normal distribution. </span></span><br><span class="line"><span class="string">    maxvals: A 0-D Tensor or Python value of type `dtype`. The maximum value of </span></span><br><span class="line"><span class="string">      the truncated normal distribution. </span></span><br><span class="line"><span class="string">    dtype: The type of the output. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for the operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A tensor of the specified shape filled with random truncated normal values. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"parameterized_truncated_normal"</span>,  </span><br><span class="line">                      [shape, means, stddevs, minvals, maxvals]) <span class="keyword">as</span> name:  </span><br><span class="line">    shape_tensor = _ShapeTensor(shape)  </span><br><span class="line">    means_tensor = ops.convert_to_tensor(means, dtype=dtype, name=<span class="string">"means"</span>)  </span><br><span class="line">    stddevs_tensor = ops.convert_to_tensor(stddevs, dtype=dtype, name=<span class="string">"stddevs"</span>)  </span><br><span class="line">    minvals_tensor = ops.convert_to_tensor(minvals, dtype=dtype, name=<span class="string">"minvals"</span>)  </span><br><span class="line">    maxvals_tensor = ops.convert_to_tensor(maxvals, dtype=dtype, name=<span class="string">"maxvals"</span>)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    rnd = gen_random_ops._parameterized_truncated_normal(  </span><br><span class="line">        shape_tensor,  </span><br><span class="line">        means_tensor,  </span><br><span class="line">        stddevs_tensor,  </span><br><span class="line">        minvals_tensor,  </span><br><span class="line">        maxvals_tensor,  </span><br><span class="line">        seed=seed1,  </span><br><span class="line">        seed2=seed2)  </span><br><span class="line">    <span class="keyword">return</span> rnd  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">truncated_normal</span><span class="params">(shape,  </span></span></span><br><span class="line"><span class="function"><span class="params">                     mean=<span class="number">0.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                     stddev=<span class="number">1.0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                     dtype=dtypes.float32,  </span></span></span><br><span class="line"><span class="function"><span class="params">                     seed=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                     name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Outputs random values from a truncated normal distribution. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  The generated values follow a normal distribution with specified mean and </span></span><br><span class="line"><span class="string">  standard deviation, except that values whose magnitude is more than 2 standard </span></span><br><span class="line"><span class="string">  deviations from the mean are dropped and re-picked. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output tensor. </span></span><br><span class="line"><span class="string">    mean: A 0-D Tensor or Python value of type `dtype`. The mean of the </span></span><br><span class="line"><span class="string">      truncated normal distribution. </span></span><br><span class="line"><span class="string">    stddev: A 0-D Tensor or Python value of type `dtype`. The standard deviation </span></span><br><span class="line"><span class="string">      of the truncated normal distribution. </span></span><br><span class="line"><span class="string">    dtype: The type of the output. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for the operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A tensor of the specified shape filled with random truncated normal values. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"truncated_normal"</span>, [shape, mean, stddev]) <span class="keyword">as</span> name:  </span><br><span class="line">    shape_tensor = _ShapeTensor(shape)  </span><br><span class="line">    mean_tensor = ops.convert_to_tensor(mean, dtype=dtype, name=<span class="string">"mean"</span>)  </span><br><span class="line">    stddev_tensor = ops.convert_to_tensor(stddev, dtype=dtype, name=<span class="string">"stddev"</span>)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    rnd = gen_random_ops._truncated_normal(  </span><br><span class="line">        shape_tensor, dtype, seed=seed1, seed2=seed2)  </span><br><span class="line">    mul = rnd * stddev_tensor  </span><br><span class="line">    value = math_ops.add(mul, mean_tensor, name=name)  </span><br><span class="line">    <span class="keyword">return</span> value  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"ParameterizedTruncatedNormal"</span>)  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"TruncatedNormal"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_uniform</span><span class="params">(shape,  </span></span></span><br><span class="line"><span class="function"><span class="params">                   minval=<span class="number">0</span>,  </span></span></span><br><span class="line"><span class="function"><span class="params">                   maxval=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                   dtype=dtypes.float32,  </span></span></span><br><span class="line"><span class="function"><span class="params">                   seed=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                   name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Outputs random values from a uniform distribution. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  The generated values follow a uniform distribution in the range </span></span><br><span class="line"><span class="string">  `[minval, maxval)`. The lower bound `minval` is included in the range, while </span></span><br><span class="line"><span class="string">  the upper bound `maxval` is excluded. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  For floats, the default range is `[0, 1)`.  For ints, at least `maxval` must </span></span><br><span class="line"><span class="string">  be specified explicitly. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  In the integer case, the random integers are slightly biased unless </span></span><br><span class="line"><span class="string">  `maxval - minval` is an exact power of two.  The bias is small for values of </span></span><br><span class="line"><span class="string">  `maxval - minval` significantly smaller than the range of the output (either </span></span><br><span class="line"><span class="string">  `2**32` or `2**64`). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output tensor. </span></span><br><span class="line"><span class="string">    minval: A 0-D Tensor or Python value of type `dtype`. The lower bound on the </span></span><br><span class="line"><span class="string">      range of random values to generate.  Defaults to 0. </span></span><br><span class="line"><span class="string">    maxval: A 0-D Tensor or Python value of type `dtype`. The upper bound on </span></span><br><span class="line"><span class="string">      the range of random values to generate.  Defaults to 1 if `dtype` is </span></span><br><span class="line"><span class="string">      floating point. </span></span><br><span class="line"><span class="string">    dtype: The type of the output: `float32`, `float64`, `int32`, or `int64`. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for the operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A tensor of the specified shape filled with random uniform values. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Raises: </span></span><br><span class="line"><span class="string">    ValueError: If `dtype` is integral and `maxval` is not specified. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  dtype = dtypes.as_dtype(dtype)  </span><br><span class="line">  <span class="keyword">if</span> maxval <span class="keyword">is</span> <span class="keyword">None</span>:  </span><br><span class="line">    <span class="keyword">if</span> dtype.is_integer:  </span><br><span class="line">      <span class="keyword">raise</span> ValueError(<span class="string">"Must specify maxval for integer dtype %r"</span> % dtype)  </span><br><span class="line">    maxval = <span class="number">1</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"random_uniform"</span>, [shape, minval, maxval]) <span class="keyword">as</span> name:  </span><br><span class="line">    shape = _ShapeTensor(shape)  </span><br><span class="line">    minval = ops.convert_to_tensor(minval, dtype=dtype, name=<span class="string">"min"</span>)  </span><br><span class="line">    maxval = ops.convert_to_tensor(maxval, dtype=dtype, name=<span class="string">"max"</span>)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    <span class="keyword">if</span> dtype.is_integer:  </span><br><span class="line">      <span class="keyword">return</span> gen_random_ops._random_uniform_int(  </span><br><span class="line">          shape, minval, maxval, seed=seed1, seed2=seed2, name=name)  </span><br><span class="line">    <span class="keyword">else</span>:  </span><br><span class="line">      rnd = gen_random_ops._random_uniform(  </span><br><span class="line">          shape, dtype, seed=seed1, seed2=seed2)  </span><br><span class="line">      <span class="keyword">return</span> math_ops.add(rnd * (maxval - minval), minval, name=name)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"RandomUniform"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_shuffle</span><span class="params">(value, seed=None, name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Randomly shuffles a tensor along its first dimension. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  The tensor is shuffled along dimension 0, such that each `value[j]` is mapped </span></span><br><span class="line"><span class="string">  to one and only one `output[i]`. For example, a mapping that might occur for a </span></span><br><span class="line"><span class="string">  3x2 tensor is: </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  ```python </span></span><br><span class="line"><span class="string">  [[1, 2],       [[5, 6], </span></span><br><span class="line"><span class="string">   [3, 4],  ==&gt;   [1, 2], </span></span><br><span class="line"><span class="string">   [5, 6]]        [3, 4]] </span></span><br><span class="line"><span class="string">  ``` </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    value: A Tensor to be shuffled. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for the operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A tensor of same shape and type as `value`, shuffled along its first </span></span><br><span class="line"><span class="string">    dimension. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">  <span class="keyword">return</span> gen_random_ops._random_shuffle(  </span><br><span class="line">      value, seed=seed1, seed2=seed2, name=name)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_crop</span><span class="params">(value, size, seed=None, name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Randomly crops a tensor to a given size. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Slices a shape `size` portion out of `value` at a uniformly chosen offset. </span></span><br><span class="line"><span class="string">  Requires `value.shape &gt;= size`. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  If a dimension should not be cropped, pass the full size of that dimension. </span></span><br><span class="line"><span class="string">  For example, RGB images can be cropped with </span></span><br><span class="line"><span class="string">  `size = [crop_height, crop_width, 3]`. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    value: Input tensor to crop. </span></span><br><span class="line"><span class="string">    size: 1-D tensor with size the rank of `value`. </span></span><br><span class="line"><span class="string">    seed: Python integer. Used to create a random seed. See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: A name for this operation (optional). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    A cropped tensor of the same rank as `value` and shape `size`. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="comment"># TODO(shlens): Implement edge case to guarantee output size dimensions.  </span></span><br><span class="line">  <span class="comment"># If size &gt; value.shape, zero pad the result so that it always has shape  </span></span><br><span class="line">  <span class="comment"># exactly size.  </span></span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"random_crop"</span>, [value, size]) <span class="keyword">as</span> name:  </span><br><span class="line">    value = ops.convert_to_tensor(value, name=<span class="string">"value"</span>)  </span><br><span class="line">    size = ops.convert_to_tensor(size, dtype=dtypes.int32, name=<span class="string">"size"</span>)  </span><br><span class="line">    shape = array_ops.shape(value)  </span><br><span class="line">    check = control_flow_ops.Assert(  </span><br><span class="line">        math_ops.reduce_all(shape &gt;= size),  </span><br><span class="line">        [<span class="string">"Need value.shape &gt;= size, got "</span>, shape, size],  </span><br><span class="line">        summarize=<span class="number">1000</span>)  </span><br><span class="line">    shape = control_flow_ops.with_dependencies([check], shape)  </span><br><span class="line">    limit = shape - size + <span class="number">1</span>  </span><br><span class="line">    offset = random_uniform(  </span><br><span class="line">        array_ops.shape(shape),  </span><br><span class="line">        dtype=size.dtype,  </span><br><span class="line">        maxval=size.dtype.max,  </span><br><span class="line">        seed=seed) % limit  </span><br><span class="line">    <span class="keyword">return</span> array_ops.slice(value, offset, size, name=name)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multinomial</span><span class="params">(logits, num_samples, seed=None, name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Draws samples from a multinomial distribution. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Example: </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  ```python </span></span><br><span class="line"><span class="string">  # samples has shape [1, 5], where each value is either 0 or 1 with equal </span></span><br><span class="line"><span class="string">  # probability. </span></span><br><span class="line"><span class="string">  samples = tf.multinomial(tf.log([[10., 10.]]), 5) </span></span><br><span class="line"><span class="string">  ``` </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    logits: 2-D Tensor with shape `[batch_size, num_classes]`.  Each slice </span></span><br><span class="line"><span class="string">      `[i, :]` represents the log-odds for all classes. </span></span><br><span class="line"><span class="string">    num_samples: 0-D.  Number of independent samples to draw for each row slice. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distribution. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: Optional name for the operation. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    The drawn samples of shape `[batch_size, num_samples]`. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"multinomial"</span>, [logits]):  </span><br><span class="line">    logits = ops.convert_to_tensor(logits, name=<span class="string">"logits"</span>)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    <span class="keyword">return</span> gen_random_ops.multinomial(  </span><br><span class="line">        logits, num_samples, seed=seed1, seed2=seed2)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"Multinomial"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_gamma</span><span class="params">(shape,  </span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha,  </span></span></span><br><span class="line"><span class="function"><span class="params">                 beta=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                 dtype=dtypes.float32,  </span></span></span><br><span class="line"><span class="function"><span class="params">                 seed=None,  </span></span></span><br><span class="line"><span class="function"><span class="params">                 name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Draws `shape` samples from each of the given Gamma distribution(s). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  `alpha` is the shape parameter describing the distribution(s), and `beta` is </span></span><br><span class="line"><span class="string">  the inverse scale parameter(s). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Example: </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    samples = tf.random_gamma([10], [0.5, 1.5]) </span></span><br><span class="line"><span class="string">    # samples has shape [10, 2], where each slice [:, 0] and [:, 1] represents </span></span><br><span class="line"><span class="string">    # the samples drawn from each distribution </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    samples = tf.random_gamma([7, 5], [0.5, 1.5]) </span></span><br><span class="line"><span class="string">    # samples has shape [7, 5, 2], where each slice [:, :, 0] and [:, :, 1] </span></span><br><span class="line"><span class="string">    # represents the 7x5 samples drawn from each of the two distributions </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    samples = tf.random_gamma([30], [[1.],[3.],[5.]], beta=[[3., 4.]]) </span></span><br><span class="line"><span class="string">    # samples has shape [30, 3, 2], with 30 samples each of 3x2 distributions. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    Note: Because internal calculations are done using `float64` and casting has </span></span><br><span class="line"><span class="string">    `floor` semantics, we must manually map zero outcomes to the smallest </span></span><br><span class="line"><span class="string">    possible positive floating-point value, i.e., `np.finfo(dtype).tiny`.  This </span></span><br><span class="line"><span class="string">    means that `np.finfo(dtype).tiny` occurs more frequently than it otherwise </span></span><br><span class="line"><span class="string">    should.  This bias can only happen for small values of `alpha`, i.e., </span></span><br><span class="line"><span class="string">    `alpha &lt;&lt; 1` or large values of `beta`, i.e., `beta &gt;&gt; 1`. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output samples </span></span><br><span class="line"><span class="string">      to be drawn per alpha/beta-parameterized distribution. </span></span><br><span class="line"><span class="string">    alpha: A Tensor or Python value or N-D array of type `dtype`. `alpha` </span></span><br><span class="line"><span class="string">      provides the shape parameter(s) describing the gamma distribution(s) to </span></span><br><span class="line"><span class="string">      sample. Must be broadcastable with `beta`. </span></span><br><span class="line"><span class="string">    beta: A Tensor or Python value or N-D array of type `dtype`. Defaults to 1. </span></span><br><span class="line"><span class="string">      `beta` provides the inverse scale parameter(s) of the gamma </span></span><br><span class="line"><span class="string">      distribution(s) to sample. Must be broadcastable with `alpha`. </span></span><br><span class="line"><span class="string">    dtype: The type of alpha, beta, and the output: `float16`, `float32`, or </span></span><br><span class="line"><span class="string">      `float64`. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distributions. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: Optional name for the operation. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    samples: a `Tensor` of shape `tf.concat(shape, tf.shape(alpha + beta))` </span></span><br><span class="line"><span class="string">      with values of type `dtype`. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"random_gamma"</span>, [shape, alpha, beta]):  </span><br><span class="line">    shape = ops.convert_to_tensor(shape, name=<span class="string">"shape"</span>, dtype=dtypes.int32)  </span><br><span class="line">    alpha = ops.convert_to_tensor(alpha, name=<span class="string">"alpha"</span>, dtype=dtype)  </span><br><span class="line">    beta = ops.convert_to_tensor(  </span><br><span class="line">        beta <span class="keyword">if</span> beta <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="number">1</span>, name=<span class="string">"beta"</span>, dtype=dtype)  </span><br><span class="line">    alpha_broadcast = alpha + array_ops.zeros_like(beta)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    <span class="keyword">return</span> math_ops.maximum(  </span><br><span class="line">        np.finfo(dtype.as_numpy_dtype).tiny,  </span><br><span class="line">        gen_random_ops._random_gamma(  </span><br><span class="line">            shape, alpha_broadcast, seed=seed1, seed2=seed2) / beta)  </span><br><span class="line">  </span><br><span class="line">ops.NotDifferentiable(<span class="string">"RandomGamma"</span>)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_poisson</span><span class="params">(lam, shape, dtype=dtypes.float32, seed=None, name=None)</span>:</span>  </span><br><span class="line">  <span class="string">"""Draws `shape` samples from each of the given Poisson distribution(s). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  `lam` is the rate parameter describing the distribution(s). </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Example: </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    samples = tf.random_poisson([0.5, 1.5], [10]) </span></span><br><span class="line"><span class="string">    # samples has shape [10, 2], where each slice [:, 0] and [:, 1] represents </span></span><br><span class="line"><span class="string">    # the samples drawn from each distribution </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    samples = tf.random_poisson([12.2, 3.3], [7, 5]) </span></span><br><span class="line"><span class="string">    # samples has shape [7, 5, 2], where each slice [:, :, 0] and [:, :, 1] </span></span><br><span class="line"><span class="string">    # represents the 7x5 samples drawn from each of the two distributions </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Args: </span></span><br><span class="line"><span class="string">    lam: A Tensor or Python value or N-D array of type `dtype`. </span></span><br><span class="line"><span class="string">      `lam` provides the rate parameter(s) describing the poisson </span></span><br><span class="line"><span class="string">      distribution(s) to sample. </span></span><br><span class="line"><span class="string">    shape: A 1-D integer Tensor or Python array. The shape of the output samples </span></span><br><span class="line"><span class="string">      to be drawn per "rate"-parameterized distribution. </span></span><br><span class="line"><span class="string">    dtype: The type of `lam` and the output: `float16`, `float32`, or </span></span><br><span class="line"><span class="string">      `float64`. </span></span><br><span class="line"><span class="string">    seed: A Python integer. Used to create a random seed for the distributions. </span></span><br><span class="line"><span class="string">      See </span></span><br><span class="line"><span class="string">      @&#123;tf.set_random_seed&#125; </span></span><br><span class="line"><span class="string">      for behavior. </span></span><br><span class="line"><span class="string">    name: Optional name for the operation. </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  Returns: </span></span><br><span class="line"><span class="string">    samples: a `Tensor` of shape `tf.concat(shape, tf.shape(lam))` with </span></span><br><span class="line"><span class="string">      values of type `dtype`. </span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="keyword">with</span> ops.name_scope(name, <span class="string">"random_poisson"</span>, [lam, shape]):  </span><br><span class="line">    lam = ops.convert_to_tensor(lam, name=<span class="string">"lam"</span>, dtype=dtype)  </span><br><span class="line">    shape = ops.convert_to_tensor(shape, name=<span class="string">"shape"</span>, dtype=dtypes.int32)  </span><br><span class="line">    seed1, seed2 = random_seed.get_seed(seed)  </span><br><span class="line">    <span class="keyword">return</span> gen_random_ops._random_poisson(shape, lam, seed=seed1, seed2=seed2)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<!-- 添加文章结束标记 -->
+	
+		
+		<div style="margin: 60px 0 120px 0; text-align:center;color: #000;font-size:14px;">꧁༺The༒End༻꧂</div>
+		
+	
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tf-random/" rel="tag"><i class="fa fa-tag"></i> tf.random</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/19/tensorflow/Tensorflow函数整理/" rel="next" title="Tensorflow函数整理">
+                <i class="fa fa-chevron-left"></i> Tensorflow函数整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/02/tensorflow/Tensorflow专题2：优化器Optimizer/" rel="prev" title="Tensorflow专题2：优化器Optimizer">
+                Tensorflow专题2：优化器Optimizer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+        
+     
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="wxy555123" />
+            
+              <p class="site-author-name" itemprop="name">wxy555123</p>
+              <p class="site-description motion-element" itemprop="description">专注数学，机器学习和数据挖掘应用</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wxy555123" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wxy555123/activities" target="_blank" title="ZhiHu"><i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:810200579@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          <!-- ����������
+<div class="music163">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=2189499106&auto=0&height=32"></iframe>
+</div>
+-->
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#随机数函数-tf-random-normal-amp-tf-random-uniform-amp-tf-truncated-normal-amp-tf-random-shuffle"><span class="nav-text">随机数函数 tf.random_normal &amp; tf.random_uniform &amp; tf.truncated_normal &amp; tf.random_shuffle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-random-normal"><span class="nav-text">tf.random_normal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-random-uniform"><span class="nav-text">tf.random_uniform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-truncated-normal"><span class="nav-text">tf.truncated_normal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-random-shuffle"><span class="nav-text">tf.random_shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录1：生成随机数的操作的源码random-ops-py"><span class="nav-text">附录1：生成随机数的操作的源码random_ops.py</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wxy555123</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.1.0</div>
+
+
+-->
+
+<div class="powered-by">
+<span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: '1514811087000',
+            owner: 'wxy555123',
+            repo: 'wxy555123.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6635c0ca693c03779556c7793801013f02358252',
+            
+                client_id: 'c082f003b32d19d29345'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript"
+  color="0,0,0" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  
+</body>
+</html>
