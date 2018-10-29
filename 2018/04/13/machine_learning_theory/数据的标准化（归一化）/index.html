@@ -116,26 +116,24 @@
 
 
 
-  <meta name="description" content="几种归一化方式数据的标准化（normalization）是将数据按比例缩放，使之落入一个小的特定区间。在某些比较和评价的指标处理中经常会用到，去除数据的单位限制，将其转化为无量纲的纯数值，便于不同单位或量级的指标能够进行比较和加权。 　　其中最典型的就是数据的归一化处理，即将数据统一映射到[0,1]区间上，常见的数据归一化的方法有： 1）min-max标准化(Min-max normalizati">
+  <meta name="description" content="几种归一化方式1、(0,1)标准化： 这是最简单也是最容易想到的方法，通过遍历feature vector里的每一个数据，将Max和Min的记录下来，并通过Max-Min作为基数（即Min=0，Max=1）进行数据的归一化处理： {x}_{normalization}=\frac{x-Min}{Max-Min}Python实现： 123def MaxMinNormalization(x,Max,M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据的标准化（归一化）">
 <meta property="og:url" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/index.html">
-<meta property="og:site_name" content="新日暮里的幻想乡">
-<meta property="og:description" content="几种归一化方式数据的标准化（normalization）是将数据按比例缩放，使之落入一个小的特定区间。在某些比较和评价的指标处理中经常会用到，去除数据的单位限制，将其转化为无量纲的纯数值，便于不同单位或量级的指标能够进行比较和加权。 　　其中最典型的就是数据的归一化处理，即将数据统一映射到[0,1]区间上，常见的数据归一化的方法有： 1）min-max标准化(Min-max normalizati">
+<meta property="og:site_name" content="BIZARRE ADVENTURE">
+<meta property="og:description" content="几种归一化方式1、(0,1)标准化： 这是最简单也是最容易想到的方法，通过遍历feature vector里的每一个数据，将Max和Min的记录下来，并通过Max-Min作为基数（即Min=0，Max=1）进行数据的归一化处理： {x}_{normalization}=\frac{x-Min}{Max-Min}Python实现： 123def MaxMinNormalization(x,Max,M">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/min-max.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/log-function.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/atan-function.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/z-score.png">
-<meta property="og:updated_time" content="2018-05-04T08:01:09.784Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/titter.gif">
+<meta property="og:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/2018-09-28-19-13-43.png">
+<meta property="og:updated_time" content="2018-09-28T11:13:55.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据的标准化（归一化）">
-<meta name="twitter:description" content="几种归一化方式数据的标准化（normalization）是将数据按比例缩放，使之落入一个小的特定区间。在某些比较和评价的指标处理中经常会用到，去除数据的单位限制，将其转化为无量纲的纯数值，便于不同单位或量级的指标能够进行比较和加权。 　　其中最典型的就是数据的归一化处理，即将数据统一映射到[0,1]区间上，常见的数据归一化的方法有： 1）min-max标准化(Min-max normalizati">
-<meta name="twitter:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/min-max.png">
+<meta name="twitter:description" content="几种归一化方式1、(0,1)标准化： 这是最简单也是最容易想到的方法，通过遍历feature vector里的每一个数据，将Max和Min的记录下来，并通过Max-Min作为基数（即Min=0，Max=1）进行数据的归一化处理： {x}_{normalization}=\frac{x-Min}{Max-Min}Python实现： 123def MaxMinNormalization(x,Max,M">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/13/machine_learning_theory/数据的标准化（归一化）/titter.gif">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="新日暮里的幻想乡" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="BIZARRE ADVENTURE" type="application/atom+xml" />
 
 
 
@@ -150,7 +148,7 @@
   };
 </script>
 
-  <title>数据的标准化（归一化） | 新日暮里的幻想乡</title>
+  <title>数据的标准化（归一化） | BIZARRE ADVENTURE</title>
   
 
 
@@ -219,12 +217,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">新日暮里的幻想乡</span>
+        <span class="site-title">BIZARRE ADVENTURE</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">boy next door</p>
+        <p class="site-subtitle">I have a dream...</p>
       
   </div>
 
@@ -365,7 +363,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="新日暮里的幻想乡">
+      <meta itemprop="name" content="BIZARRE ADVENTURE">
     </span>
 
     
@@ -410,7 +408,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2018-05-04 16:01:09" itemprop="dateModified" datetime="2018-05-04T16:01:09+08:00">2018-05-04</time>
+                <time title="更新于：2018-09-28 19:13:55" itemprop="dateModified" datetime="2018-09-28T19:13:55+08:00">2018-09-28</time>
               
             
           </span>
@@ -483,21 +481,23 @@
       
 
       
-        <h2 id="几种归一化方式"><a href="#几种归一化方式" class="headerlink" title="几种归一化方式"></a>几种归一化方式</h2><p>数据的标准化（normalization）是将数据按比例缩放，使之落入一个小的特定区间。在某些比较和评价的指标处理中经常会用到，去除数据的单位限制，将其转化为无量纲的纯数值，便于不同单位或量级的指标能够进行比较和加权。</p>
-<p>　　其中最典型的就是数据的归一化处理，即将数据统一映射到[0,1]区间上，常见的数据归一化的方法有：</p>
-<h3 id="1）min-max标准化-Min-max-normalization"><a href="#1）min-max标准化-Min-max-normalization" class="headerlink" title="1）min-max标准化(Min-max normalization)"></a>1）min-max标准化(Min-max normalization)</h3><p>　　也叫离差标准化，是对原始数据的线性变换，使结果落到[0,1]区间，转换函数如下：</p>
-<p><img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/min-max.png" alt="min-max"></p>
-<p>　　其中max为样本数据的最大值，min为样本数据的最小值。这种方法有一个缺陷就是当有新数据加入时，可能导致max和min的变化，需要重新定义。</p>
-<h3 id="2）log函数转换"><a href="#2）log函数转换" class="headerlink" title="2）log函数转换"></a>2）log函数转换</h3><p>　　通过以10为底的log函数转换的方法同样可以实现归一下，具体方法如下：</p>
-<p><img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/log-function.png" alt="log-function"></p>
-<p>　　看了下网上很多介绍都是x*=log10(x)，其实是有问题的，这个结果并非一定落到[0,1]区间上，应该还要除以log10(max)，max为样本数据最大值，并且所有的数据都要大于等于1。</p>
-<h3 id="3）atan函数转换"><a href="#3）atan函数转换" class="headerlink" title="3）atan函数转换"></a>3）atan函数转换</h3><p>　　用反正切函数也可以实现数据的归一化：</p>
-<p><img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/atan-function.png" alt="atan-function"></p>
-<p>　　使用这个方法需要注意的是如果想映射的区间为[0,1]，则数据都应该大于等于0，小于0的数据将被映射到[-1,0]区间上。</p>
-<p>　　而并非所有数据标准化的结果都映射到[0,1]区间上，其中最常见的标准化方法就是Z标准化，也是SPSS中最为常用的标准化方法：</p>
-<h3 id="4）z-score-标准化-zero-mean-normalization"><a href="#4）z-score-标准化-zero-mean-normalization" class="headerlink" title="4）z-score 标准化(zero-mean normalization)"></a>4）z-score 标准化(zero-mean normalization)</h3><p>　　也叫标准差标准化，经过处理的数据符合标准正态分布，即均值为0，标准差为1，其转化函数为：</p>
-<p><img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/z-score.png" alt="z-score"></p>
-<p>　　其中μ为所有样本数据的均值，σ为所有样本数据的标准差。</p>
+        <h2 id="几种归一化方式"><a href="#几种归一化方式" class="headerlink" title="几种归一化方式"></a>几种归一化方式</h2><p>1、(0,1)标准化：</p>
+<p>这是最简单也是最容易想到的方法，通过遍历feature vector里的每一个数据，将Max和Min的记录下来，并通过Max-Min作为基数（即Min=0，Max=1）进行数据的归一化处理：</p>
+<script type="math/tex; mode=display">{x}_{normalization}=\frac{x-Min}{Max-Min}</script><p>Python实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MaxMinNormalization</span><span class="params">(x,Max,Min)</span>:</span></span><br><span class="line">    x = (x - Min) / (Max - Min);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br></pre></td></tr></table></figure>
+<p>找大小的方法直接用np.max()和np.min()就行了，尽量不要用python内建的max()和min()，除非你喜欢用List管理数字<img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/titter.gif" alt="偷笑">。</p>
+<p>2、Z-score标准化：</p>
+<p>这种方法给予原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1，这里的关键在于复合标准正态分布，个人认为在一定程度上改变了特征的分布，关于使用经验上欢迎讨论，我对这种标准化不是非常地熟悉，转化函数为：</p>
+<script type="math/tex; mode=display">{x}_{normalization}=\frac{x-\mu }{\sigma }</script><p>Python实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Z_ScoreNormalization</span><span class="params">(x,mu,sigma)</span>:</span></span><br><span class="line">    x = (x - mu) / sigma;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_train_data</span><span class="params">(batch_size=<span class="number">60</span>,time_step=<span class="number">20</span>,train_begin=<span class="number">0</span>,train_end=<span class="number">5800</span>)</span>:</span></span><br><span class="line">    batch_index=[]</span><br><span class="line">    data_train=data[train_begin:train_end]</span><br><span class="line">    <span class="comment">#标准化 np.mean(data_train,axis=0) 计算每一列的均值,np.std(data_train,axis=0)每列的标准差</span></span><br><span class="line">    normalized_train_data=(data_train-np.mean(data_train,axis=<span class="number">0</span>))/np.std(data_train,axis=<span class="number">0</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">"normalized_train_data:\n"</span>,normalized_train_data</span><br></pre></td></tr></table></figure>
+<p>这里一样，mu（即均值）用np.average()，sigma（即标准差）用np.std()即可。</p>
+<p>3、Sigmoid函数</p>
+<p>Sigmoid函数是一个具有S形曲线的函数，是良好的阈值函数，在(0, 0.5)处中心对称，在(0, 0.5)附近有比较大的斜率，而当数据趋向于正无穷和负无穷的时候，映射出来的值就会无限趋向于1和0，是个人非常喜欢的“归一化方法”，之所以打引号是因为我觉得Sigmoid函数在阈值分割上也有很不错的表现，根据公式的改变，就可以改变分割阈值，这里作为归一化方法，我们只考虑(0, 0.5)作为分割阈值的点的情况：</p>
+<p><img src="/2018/04/13/machine_learning_theory/数据的标准化（归一化）/2018-09-28-19-13-43.png" alt=""></p>
+<script type="math/tex; mode=display">{x}_{normalization}=\frac{1}{1+{e}^{-x}}</script><p>Python实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(X,useStatus)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> useStatus:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.0</span> / (<span class="number">1</span> + np.exp(-float(X)));</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> float(X);</span><br></pre></td></tr></table></figure>
+<p>这里useStatus管理是否使用sigmoid的状态，方便调试使用。</p>
 
       
     </div>
@@ -542,8 +542,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/hexo/Hexo Next优化&踩坑/" rel="prev" title="Hexo Next优化&踩坑">
-                Hexo Next优化&踩坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/hexo/GIT命令/" rel="prev" title="GIT命令">
+                GIT命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -621,7 +621,7 @@
                 alt="wxy555123" />
             
               <p class="site-author-name" itemprop="name">wxy555123</p>
-              <p class="site-description motion-element" itemprop="description">专注数学，机器学习和数据挖掘应用</p>
+              <p class="site-description motion-element" itemprop="description">专注机器学习和深度学习领域</p>
           </div>
 
           
@@ -631,7 +631,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -775,7 +775,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -845,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#几种归一化方式"><span class="nav-text">几种归一化方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）min-max标准化-Min-max-normalization"><span class="nav-text">1）min-max标准化(Min-max normalization)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）log函数转换"><span class="nav-text">2）log函数转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）atan函数转换"><span class="nav-text">3）atan函数转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4）z-score-标准化-zero-mean-normalization"><span class="nav-text">4）z-score 标准化(zero-mean normalization)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#几种归一化方式"><span class="nav-text">几种归一化方式</span></a></li></ol></div>
             
 
           </div>
@@ -1420,6 +1430,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
